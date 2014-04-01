@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{D183A3D8-5FD8-494B-B014-37F57B35E655}") = "UpdateExchangeRate3", "UpdateExchangeRate3.dtproj", "{DA4EFCD8-D46B-4A1B-927B-A206479BA425}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA4EFCD8-D46B-4A1B-927B-A206479BA425}.Development|Default.ActiveCfg = Development
+		{DA4EFCD8-D46B-4A1B-927B-A206479BA425}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

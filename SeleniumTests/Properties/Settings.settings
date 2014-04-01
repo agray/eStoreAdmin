@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SeleniumTests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Selenium2Browser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">firefox</Value>
+    </Setting>
+    <Setting Name="ApplicationTestEnvironment" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.mywipstoreadmin.com.au</Value>
+    </Setting>
+    <Setting Name="ManagerUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">user1</Value>
+    </Setting>
+    <Setting Name="AdministratorUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">user2</Value>
+    </Setting>
+    <Setting Name="StaffUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">user3</Value>
+    </Setting>
+    <Setting Name="ManagerPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bond00&amp;</Value>
+    </Setting>
+    <Setting Name="AdministratorPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bond00&amp;</Value>
+    </Setting>
+    <Setting Name="StaffPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bond00&amp;</Value>
+    </Setting>
+    <Setting Name="UnlockerUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">AnotherUser</Value>
+    </Setting>
+    <Setting Name="UnlockerPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bond00&amp;</Value>
+    </Setting>
+    <Setting Name="ApplicationLoginPage" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/Authentication/Login.aspx</Value>
+    </Setting>
+    <Setting Name="ChromeEXELocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\SeleniumDrivers</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

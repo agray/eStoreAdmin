@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DashboardMaster.master.cs" Inherits="eStoreAdminWeb.DashboardMaster" %>
+<%@ Register Src="~/Controls/MasterMenu.ascx" TagName="MasterMenu" TagPrefix="eStore" %>
+<%@ Register Src="~/Controls/PageGenerated.ascx" TagName="Generated" TagPrefix="Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>Dashboard</title>
+    <link href="../Stylesheets/PP_tabs.css" rel="stylesheet" type="text/css" />
+    <link href="../Stylesheets/PP_style.css" rel="stylesheet" type="text/css" />
+    <link rel="SHORTCUT ICON" href="../Icons/eStoreLogo_small.ico" type="image/x-icon" />
+</head>
+<body>
+    <div id="DivCentrePage">
+        <form id="dashboardMasterForm" runat="server">
+            <div id="login">
+                <asp:LoginView ID="MasterLoginView" runat="server">
+                     <LoggedInTemplate>
+                        <table width="100%">
+                            <tr>
+                                <td align="left" style="width:10%">
+                                    <asp:Image ID="Logo2" runat="server" 
+                                               ImageUrl="~/Images/System/eStoreLogoTransparent.png"
+                                               ImageAlign="Middle" />
+                                </td>
+                                <td align="right">
+                                    WELCOME&nbsp;<asp:LoginName ID="MasterLoginName" runat="server" /><br/>
+                                    <asp:HyperLink ID="ChangePasswordHyperLink" runat="server"
+                                                   NavigateUrl="~/Authentication/ChangeMyPassword.aspx"
+                                                   Text="CHANGE PASSWORD"
+                                                   ForeColor="White"
+                                                   Font-Size="Smaller" /><br/>
+                                    <asp:LoginStatus ID="MasterLoginStatus" runat="server"
+                                                     LogoutAction="Redirect" 
+                                                     LogoutPageUrl="~/Authentication/LoggedOut.aspx"
+                                                     ForeColor="White"
+                                                     Font-Size="Smaller"
+                                                     LogoutText="LOGOUT" />
+                                </td>
+                            </tr>
+                        </table>
+                     </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div id="DivNavBar">
+                <table>
+	                <tr>
+		                <td colspan="2">
+		                    <eStore:MasterMenu ID="MasterTopMenu" runat="server" />
+		                </td>
+	                </tr>
+	            </table>
+	         </div>
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td valign="top">
+                            <div id="DivDashboardMain">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <Page:Generated ID="pageGenerated" runat="server" />
+        </form>
+    </div>
+</body>
+</html>

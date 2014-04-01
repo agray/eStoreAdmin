@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="eStoreAdminWeb.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AustraliaCountryID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="connString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=PHEONIX\PHEONIX;Initial Catalog=eStore;User ID=sa;Password=bond007</Value>
+    </Setting>
+    <Setting Name="HomeCountry" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Australia</Value>
+    </Setting>
+    <Setting Name="CatalogueImagesDir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/CatalogueImages/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

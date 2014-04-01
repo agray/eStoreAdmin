@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/eStoreAdminMaster.Master" AutoEventWireup="true" CodeBehind="ReportMaster.Master.cs" Inherits="eStoreAdminWeb.ReportMaster" %>
+<%@ MasterType VirtualPath="~/MasterPages/eStoreAdminMaster.Master" %>
+<%@ Import Namespace="eStoreAdminWeb" %>
+<%@ Import Namespace="phoenixconsulting.common.handlers" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <%if (SessionHandler.isSessionTimedOut(Context, Page)) { %>
+        <%FormsAuthentication.RedirectToLoginPage(); 
+      } %>
+    <h1>Reports</h1>
+    <p>Use the links on this page to view various reports.</p>
+    <table>
+        <tr>
+            <td valign="top" style="width:150px">
+                <asp:TreeView ID="MenuTreeView" runat="server" 
+                              DataSourceID="SiteMapDataSource1"
+                              HoverNodeStyle-BackColor="#e4e6fa"
+                              SelectedNodeStyle-BackColor="#e4e6fa"
+                              SelectedNodeStyle-ForeColor="Black"
+                              ForeColor="#6699FF"
+                              Font-Size="X-Small">
+                </asp:TreeView>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+            </td>
+            <td valign="top" style="padding-left: 30px; border-left: 1px solid #999;">
+                <div>
+                    <asp:ContentPlaceHolder ID="uxMainContent" runat="server" />
+                </div>
+            </td>
+        </tr>
+    </table>  
+</asp:Content>                        

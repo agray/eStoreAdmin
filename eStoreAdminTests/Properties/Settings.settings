@@ -1,0 +1,25 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="eStoreAdminTests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EmailResponseSalutation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Hi </Value>
+    </Setting>
+    <Setting Name="EmailResponseOpening" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Thank you for your email.
+
+</Value>
+    </Setting>
+    <Setting Name="EmailResponseClosing" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Regards,
+
+</Value>
+    </Setting>
+    <Setting Name="TradingName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PetsPlayground</Value>
+    </Setting>
+    <Setting Name="AdminEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">andrew.paul.gray@gmail.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

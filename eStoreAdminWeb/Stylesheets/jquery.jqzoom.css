@@ -1,0 +1,92 @@
+.zoomPad{
+	position:relative;
+	display:block;
+	cursor:crosshair;
+}
+
+
+.zoomPreload{
+   -moz-opacity:0.8;
+   opacity: 0.8;
+   filter: alpha(opacity = 80);
+   color: #333;
+   font-size: 12px;
+   font-family: Tahoma;
+   text-decoration: none;
+   border: 1px solid #CCC;
+   background-color: white;
+   padding: 8px;
+   text-align:center;
+   background-image: url(../images/zoomloader.gif);
+   
+   width:90px;
+   height:43px;
+   top:0px;
+   left:0px;
+    * width:100px;
+    * height:49px;
+}
+
+
+.zoomPup{
+	background-color: #FFF;
+	-moz-opacity:0.6;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	
+	border:1px solid #CCC;
+  cursor:crosshair;
+}
+
+.zoomOverlay{
+	left:0px;
+	top:0px;
+	background:#FFF;
+	/*opacity:0.5;*/
+	width:100%;
+	height:100%;
+}
+
+.zoomWindow{
+	left:110%;
+	top:40px;
+	background:#FFF;
+	height:auto;
+	float:left;
+
+}
+.zoomWrapper{
+	
+	border:1px solid #999;
+}
+.zoomWrapperTitle{
+	background:#999;
+	color:#FFF;
+	height:18px;
+	line-height:18px;
+	width:100%;
+	text-align:center;
+	font-size:10px;
+  top:0px;
+  left:0px;
+  -moz-opacity:0.6;
+  opacity: 0.6;
+  filter: alpha(opacity = 60);
+}
+.zoomWrapperImage{
+  position:relative;
+  float:left;
+
+}
+.zoomWrapperImage img
+{
+    display: inline-block;
+  border:0px;
+}
+
+
+
+/*********************************************************
+/ When clicking on thumbs jqzoom will add the class
+/ "zoomThumbActive" on the anchor selected
+/*********************************************************/

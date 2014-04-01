@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~\Web\Reporting\ReportsHome.aspx" title="Reports"  description="Reports">
+    <siteMapNode url="~\Web\Reporting\Orders.aspx" title="ORDERS" />
+    <siteMapNode url="~\Web\Reporting\Accounts.aspx" title="ACCOUNTS" />
+    <siteMapNode url="~\Web\Reporting\BestSellersByQuantity.aspx" title="BEST SELLERS BY QUANTITY" />
+    <siteMapNode url="~\Web\Reporting\BestSellersByValue.aspx" title="BEST SELLERS BY VALUE" />
+    <siteMapNode url="~\Web\Reporting\EmailOptInCustomers.aspx" title="EMAIL OPT-IN CUSTOMERS" />
+    <siteMapNode url="~\Web\Reporting\InventoryReOrder.aspx" title="INVENTORY RE-ORDER" />
+    <siteMapNode url="~\Web\Reporting\MostFrequentCustomers.aspx" title="MOST FREQUENT CUSTOMERS" />
+    <siteMapNode url="~\Web\Reporting\TopSpendingCustomers.aspx" title="TOP SPENDING CUSTOMERS" />
+    <siteMapNode url="~\Web\Reporting\TopEarningCustomers.aspx" title="TOP EARNING CUSTOMERS" />
+    <siteMapNode url="~\Web\Reporting\TopEarningProducts.aspx" title="TOP EARNING PRODUCTS" />
+    <siteMapNode url="~\Web\Reporting\OrderPickList.aspx" title="ORDER PICK LIST" />
+    <siteMapNode url="~\Web\Reporting\ActivityLog.aspx" title="ACTIVITY LOG" />
+    <siteMapNode url="~\Web\Reporting\SuppliersReport.aspx" title="SUPPLIER LIST" />
+  </siteMapNode>
+</siteMap>

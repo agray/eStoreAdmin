@@ -1,0 +1,2198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="eStoreAdminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="eStoreAdminModelStoreContainer">
+          <EntitySet Name="AuditLog" EntityType="eStoreAdminModel.Store.AuditLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BadWord" EntityType="eStoreAdminModel.Store.BadWord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Brand" EntityType="eStoreAdminModel.Store.Brand" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Category" EntityType="eStoreAdminModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CCExpiryMonth" EntityType="eStoreAdminModel.Store.CCExpiryMonth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CCExpiryYear" EntityType="eStoreAdminModel.Store.CCExpiryYear" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currency" EntityType="eStoreAdminModel.Store.Currency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerAddress" EntityType="eStoreAdminModel.Store.CustomerAddress" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Department" EntityType="eStoreAdminModel.Store.Department" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Email" EntityType="eStoreAdminModel.Store.Email" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Links" EntityType="eStoreAdminModel.Store.Links" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Order" EntityType="eStoreAdminModel.Store.Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderDetail" EntityType="eStoreAdminModel.Store.OrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="eStoreAdminModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductColor" EntityType="eStoreAdminModel.Store.ProductColor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductImage" EntityType="eStoreAdminModel.Store.ProductImage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductSize" EntityType="eStoreAdminModel.Store.ProductSize" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SavedSearch" EntityType="eStoreAdminModel.Store.SavedSearch" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Settings" EntityType="eStoreAdminModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShipCost" EntityType="eStoreAdminModel.Store.ShipCost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShipToCountry" EntityType="eStoreAdminModel.Store.ShipToCountry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShipToMode" EntityType="eStoreAdminModel.Store.ShipToMode" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SocialNetworking" EntityType="eStoreAdminModel.Store.SocialNetworking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Supplier" EntityType="eStoreAdminModel.Store.Supplier" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Testimonials" EntityType="eStoreAdminModel.Store.Testimonials" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Theme" EntityType="eStoreAdminModel.Store.Theme" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="eStoreAdminModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WishList" EntityType="eStoreAdminModel.Store.WishList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zone" EntityType="eStoreAdminModel.Store.Zone" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CustomerAddress_ShipToCountry" Association="eStoreAdminModel.Store.FK_CustomerAddress_ShipToCountry">
+            <End Role="ShipToCountry" EntitySet="ShipToCountry" />
+            <End Role="CustomerAddress" EntitySet="CustomerAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAddress_Users" Association="eStoreAdminModel.Store.FK_CustomerAddress_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CustomerAddress" EntitySet="CustomerAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_ShipToCountry" Association="eStoreAdminModel.Store.FK_Order_ShipToCountry">
+            <End Role="ShipToCountry" EntitySet="ShipToCountry" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_ShipToMode" Association="eStoreAdminModel.Store.FK_Order_ShipToMode">
+            <End Role="ShipToMode" EntitySet="ShipToMode" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Order" Association="eStoreAdminModel.Store.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderDetail" EntitySet="OrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Brand" Association="eStoreAdminModel.Store.FK_Product_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColor_Product" Association="eStoreAdminModel.Store.FK_ProductColor_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductColor" EntitySet="ProductColor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductImage_Product" Association="eStoreAdminModel.Store.FK_ProductImage_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductImage" EntitySet="ProductImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductSize_Product" Association="eStoreAdminModel.Store.FK_ProductSize_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductSize" EntitySet="ProductSize" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipToCountry_Currency" Association="eStoreAdminModel.Store.FK_ShipToCountry_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="ShipToCountry" EntitySet="ShipToCountry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipToCountry_Zone" Association="eStoreAdminModel.Store.FK_ShipToCountry_Zone">
+            <End Role="Zone" EntitySet="Zone" />
+            <End Role="ShipToCountry" EntitySet="ShipToCountry" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialNetworking_Category" Association="eStoreAdminModel.Store.FK_SocialNetworking_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="SocialNetworking" EntitySet="SocialNetworking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialNetworking_Department" Association="eStoreAdminModel.Store.FK_SocialNetworking_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="SocialNetworking" EntitySet="SocialNetworking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialNetworking_Product" Association="eStoreAdminModel.Store.FK_SocialNetworking_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="SocialNetworking" EntitySet="SocialNetworking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tCategory_tDepartment" Association="eStoreAdminModel.Store.FK_tCategory_tDepartment">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tProduct_tCategory" Association="eStoreAdminModel.Store.FK_tProduct_tCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tProduct_tDepartment" Association="eStoreAdminModel.Store.FK_tProduct_tDepartment">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tProduct_tSupplier" Association="eStoreAdminModel.Store.FK_tProduct_tSupplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tShipCost_tZone" Association="eStoreAdminModel.Store.FK_tShipCost_tZone">
+            <End Role="Zone" EntitySet="Zone" />
+            <End Role="ShipCost" EntitySet="ShipCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tShipCosts_tShipToMode" Association="eStoreAdminModel.Store.FK_tShipCosts_tShipToMode">
+            <End Role="ShipToMode" EntitySet="ShipToMode" />
+            <End Role="ShipCost" EntitySet="ShipCost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Category" Association="eStoreAdminModel.Store.FK_WishList_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Department" Association="eStoreAdminModel.Store.FK_WishList_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Product" Association="eStoreAdminModel.Store.FK_WishList_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Users" Association="eStoreAdminModel.Store.FK_WishList_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WishList" EntitySet="WishList" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorNum" Type="int" Nullable="false" />
+          <Property Name="StoreName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Data1" Type="nvarchar" MaxLength="256" />
+          <Property Name="Data2" Type="nvarchar" MaxLength="256" />
+          <Property Name="Data3" Type="nvarchar" MaxLength="256" />
+          <Property Name="Data4" Type="nvarchar" MaxLength="256" />
+          <Property Name="Status" Type="varchar" MaxLength="256" />
+          <Property Name="LongData" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="BadWord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BadWord" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="DepID" Type="int" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="SEOTitle" Type="varchar" MaxLength="50" />
+          <Property Name="SEOKeywords" Type="varchar" MaxLength="200" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="200" />
+          <Property Name="SEOFriendlyNameURL" Type="varchar" MaxLength="100" />
+          <Property Name="301Redirect" Type="bit" />
+        </EntityType>
+        <EntityType Name="CCExpiryMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CCExpiryMonth" Type="varchar" Nullable="false" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="CCExpiryYear">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CCExpiryYear" Type="varchar" Nullable="false" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="ExchangeRate" Type="float" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CustomerAddress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AddressType" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SuburbCity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateProvinceRegion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ZipPostcode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CountryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="SEOTitle" Type="varchar" MaxLength="50" />
+          <Property Name="SEOKeywords" Type="varchar" MaxLength="200" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="200" />
+          <Property Name="SEOFriendlyNameURL" Type="varchar" MaxLength="100" />
+          <Property Name="301Redirect" Type="bit" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="EmailAddress" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Subject" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Message" Type="varchar(max)" Nullable="false" />
+          <Property Name="DateReceived" Type="datetime" Nullable="false" />
+          <Property Name="ReplyMessage" Type="varchar(max)" />
+          <Property Name="DateSent" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LinkURL" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LinkText" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LinkDescription" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="LinkType" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BillingFirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BillingLastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BillingAddress" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="BillingSuburbCity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BillingStateProvinceRegion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BillingZipPostcode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="BillingCountryID" Type="int" Nullable="false" />
+          <Property Name="ShippingFirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ShippingLastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ShippingAddress" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ShippingSuburbCity" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ShippingStateProvinceRegion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ShippingZipPostcode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ShippingCountryID" Type="int" Nullable="false" />
+          <Property Name="ShippingModeID" Type="int" Nullable="false" />
+          <Property Name="ShippingCost" Type="float" Nullable="false" />
+          <Property Name="CCApprovalStatus" Type="int" />
+          <Property Name="ShipDate" Type="datetime" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="Comments" Type="varchar(max)" />
+          <Property Name="GiftTag" Type="varchar(max)" />
+          <Property Name="TxnID" Type="varchar" MaxLength="16" />
+          <Property Name="SettlementDate" Type="datetime" />
+          <Property Name="IsRefunded" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="RefundPONum" Type="varchar" MaxLength="16" />
+          <Property Name="TotalCost" Type="float" />
+          <Property Name="OrderTotal" Type="float" />
+          <Property Name="PayPal_Ack" Type="varchar" MaxLength="10" />
+          <Property Name="PayPal_CorrelationID" Type="varchar" MaxLength="20" />
+          <Property Name="PayPal_TimeStamp" Type="datetime" />
+          <Property Name="PayPal_FeeAmount" Type="float" />
+          <Property Name="PayPal_PaymentStatus" Type="varchar" MaxLength="20" />
+          <Property Name="PayPal_ReasonCode" Type="varchar" MaxLength="20" />
+          <Property Name="PayPal_PaymentDate" Type="datetime" />
+          <Property Name="PayPal_NetOfFee" Type="float" />
+          <Property Name="PayPal_RefundTransactionID" Type="varchar" MaxLength="17" />
+          <Property Name="PayPal_FeeRefundAmount" Type="float" />
+          <Property Name="PayPal_GrossRefundAmount" Type="float" />
+          <Property Name="PayPal_NetRefundAmount" Type="float" />
+          <Property Name="PayPal_TotalRefundedAmount" Type="float" />
+          <Property Name="UserID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="float" Nullable="false" />
+          <Property Name="ProductWeight" Type="float" Nullable="false" />
+          <Property Name="ColorID" Type="int" Nullable="false" />
+          <Property Name="SizeID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="4000" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
+          <Property Name="CatID" Type="int" />
+          <Property Name="DepID" Type="int" />
+          <Property Name="QuantityPerUnit" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="UnitsInStock" Type="int" Nullable="false" />
+          <Property Name="UnitsOnOrder" Type="int" Nullable="false" />
+          <Property Name="ReOrderLevel" Type="int" Nullable="false" />
+          <Property Name="Active" Type="int" Nullable="false" />
+          <Property Name="IsOnSale" Type="int" Nullable="false" />
+          <Property Name="DiscountUnitPrice" Type="money" />
+          <Property Name="NumViews" Type="int" Nullable="false" />
+          <Property Name="WholesalePrice" Type="money" Nullable="false" />
+          <Property Name="SEOTitle" Type="varchar" MaxLength="50" />
+          <Property Name="SEOKeywords" Type="varchar" MaxLength="200" />
+          <Property Name="SEODescription" Type="varchar" MaxLength="200" />
+          <Property Name="SEOFriendlyNameURL" Type="varchar" MaxLength="100" />
+          <Property Name="301Redirect" Type="bit" Nullable="false" />
+          <Property Name="BrandID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductColor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="IsDefault" Type="int" Nullable="false" />
+          <Property Name="imgPath" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="imgName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductSize">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SavedSearch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Criteria" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Type" Type="varchar" Nullable="false" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="ShipCost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="ModeID" Type="int" Nullable="false" />
+          <Property Name="MaxWeight" Type="float" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShipToCountry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyID" Type="int" Nullable="false" />
+          <Property Name="ZoneID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CountryCode" Type="char" Nullable="false" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="ShipToMode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SocialNetworking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepID" Type="int" Nullable="false" />
+          <Property Name="CatID" Type="int" Nullable="false" />
+          <Property Name="ProdID" Type="int" Nullable="false" />
+          <Property Name="HasSocialNetworking" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ContactName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BusinessPhone" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="MobilePhone" Type="varchar" MaxLength="10" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CitySuburb" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateProvinceRegion" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ZipPostcode" Type="int" Nullable="false" />
+          <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Testimonials">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CustomerCountry" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TestimonialText" Type="varchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Theme">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MasterPage" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="RequireNewsletter" Type="bit" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="255" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="LastActivityDate" Type="datetime" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="IsOnLine" Type="bit" />
+          <Property Name="IsLockedOut" Type="bit" />
+          <Property Name="LastLockedOutDate" Type="datetime" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WishList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DepID" Type="int" Nullable="false" />
+          <Property Name="CatID" Type="int" Nullable="false" />
+          <Property Name="ProdID" Type="int" Nullable="false" />
+          <Property Name="ProdDetails" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ImgPath" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="ProdWeight" Type="float" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="IsOnSale" Type="int" Nullable="false" />
+          <Property Name="DiscPrice" Type="money" Nullable="false" />
+          <Property Name="ColorID" Type="int" Nullable="false" />
+          <Property Name="ColorName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SizeID" Type="int" Nullable="false" />
+          <Property Name="SizeName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CustomerAddress_ShipToCountry">
+          <End Role="ShipToCountry" Type="eStoreAdminModel.Store.ShipToCountry" Multiplicity="1" />
+          <End Role="CustomerAddress" Type="eStoreAdminModel.Store.CustomerAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToCountry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CustomerAddress">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAddress_Users">
+          <End Role="Users" Type="eStoreAdminModel.Store.Users" Multiplicity="1" />
+          <End Role="CustomerAddress" Type="eStoreAdminModel.Store.CustomerAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CustomerAddress">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_ShipToCountry">
+          <End Role="ShipToCountry" Type="eStoreAdminModel.Store.ShipToCountry" Multiplicity="1" />
+          <End Role="Order" Type="eStoreAdminModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToCountry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ShippingCountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_ShipToMode">
+          <End Role="ShipToMode" Type="eStoreAdminModel.Store.ShipToMode" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order" Type="eStoreAdminModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToMode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ShippingModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Order">
+          <End Role="Order" Type="eStoreAdminModel.Store.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="eStoreAdminModel.Store.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Brand">
+          <End Role="Brand" Type="eStoreAdminModel.Store.Brand" Multiplicity="1" />
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="BrandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColor_Product">
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="0..1" />
+          <End Role="ProductColor" Type="eStoreAdminModel.Store.ProductColor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProductColor">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductImage_Product">
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="0..1" />
+          <End Role="ProductImage" Type="eStoreAdminModel.Store.ProductImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProductImage">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductSize_Product">
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="0..1" />
+          <End Role="ProductSize" Type="eStoreAdminModel.Store.ProductSize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProductSize">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipToCountry_Currency">
+          <End Role="Currency" Type="eStoreAdminModel.Store.Currency" Multiplicity="1" />
+          <End Role="ShipToCountry" Type="eStoreAdminModel.Store.ShipToCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipToCountry">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipToCountry_Zone">
+          <End Role="Zone" Type="eStoreAdminModel.Store.Zone" Multiplicity="1" />
+          <End Role="ShipToCountry" Type="eStoreAdminModel.Store.ShipToCountry" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipToCountry">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialNetworking_Category">
+          <End Role="Category" Type="eStoreAdminModel.Store.Category" Multiplicity="1" />
+          <End Role="SocialNetworking" Type="eStoreAdminModel.Store.SocialNetworking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocialNetworking">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialNetworking_Department">
+          <End Role="Department" Type="eStoreAdminModel.Store.Department" Multiplicity="1" />
+          <End Role="SocialNetworking" Type="eStoreAdminModel.Store.SocialNetworking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocialNetworking">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialNetworking_Product">
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="1" />
+          <End Role="SocialNetworking" Type="eStoreAdminModel.Store.SocialNetworking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocialNetworking">
+              <PropertyRef Name="ProdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tCategory_tDepartment">
+          <End Role="Department" Type="eStoreAdminModel.Store.Department" Multiplicity="0..1" />
+          <End Role="Category" Type="eStoreAdminModel.Store.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tProduct_tCategory">
+          <End Role="Category" Type="eStoreAdminModel.Store.Category" Multiplicity="0..1" />
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tProduct_tDepartment">
+          <End Role="Department" Type="eStoreAdminModel.Store.Department" Multiplicity="0..1" />
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tProduct_tSupplier">
+          <End Role="Supplier" Type="eStoreAdminModel.Store.Supplier" Multiplicity="1" />
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tShipCost_tZone">
+          <End Role="Zone" Type="eStoreAdminModel.Store.Zone" Multiplicity="1" />
+          <End Role="ShipCost" Type="eStoreAdminModel.Store.ShipCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipCost">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tShipCosts_tShipToMode">
+          <End Role="ShipToMode" Type="eStoreAdminModel.Store.ShipToMode" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShipCost" Type="eStoreAdminModel.Store.ShipCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToMode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipCost">
+              <PropertyRef Name="ModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Category">
+          <End Role="Category" Type="eStoreAdminModel.Store.Category" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Department">
+          <End Role="Department" Type="eStoreAdminModel.Store.Department" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Product">
+          <End Role="Product" Type="eStoreAdminModel.Store.Product" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="ProdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Users">
+          <End Role="Users" Type="eStoreAdminModel.Store.Users" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.Store.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'eStore.dbo.Metrics' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="Metrics">
+        <Property Name="NetSalesYTDCount" Type="float" />
+        <Property Name="NetSalesMTDCount" Type="float" />
+        <Property Name="NetSalesTodayCount" Type="float" />
+        <Property Name="TotalOrdersCount" Type="float" />
+        <Property Name="TotalOrdersMTDCount" Type="float" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eStoreAdminModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="eStoreAdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuditLogs" EntityType="eStoreAdminModel.AuditLog" />
+          <EntitySet Name="BadWords" EntityType="eStoreAdminModel.BadWord" />
+          <EntitySet Name="Brands" EntityType="eStoreAdminModel.Brand" />
+          <EntitySet Name="Categories" EntityType="eStoreAdminModel.Category" />
+          <EntitySet Name="CCExpiryMonths" EntityType="eStoreAdminModel.CCExpiryMonth" />
+          <EntitySet Name="CCExpiryYears" EntityType="eStoreAdminModel.CCExpiryYear" />
+          <EntitySet Name="Currencies" EntityType="eStoreAdminModel.Currency" />
+          <EntitySet Name="CustomerAddresses" EntityType="eStoreAdminModel.CustomerAddress" />
+          <EntitySet Name="Departments" EntityType="eStoreAdminModel.Department" />
+          <EntitySet Name="Emails" EntityType="eStoreAdminModel.Email" />
+          <EntitySet Name="Links" EntityType="eStoreAdminModel.Link" />
+          <EntitySet Name="Orders" EntityType="eStoreAdminModel.Order" />
+          <EntitySet Name="OrderDetails" EntityType="eStoreAdminModel.OrderDetail" />
+          <EntitySet Name="Products" EntityType="eStoreAdminModel.Product" />
+          <EntitySet Name="ProductColors" EntityType="eStoreAdminModel.ProductColor" />
+          <EntitySet Name="ProductImages" EntityType="eStoreAdminModel.ProductImage" />
+          <EntitySet Name="ProductSizes" EntityType="eStoreAdminModel.ProductSize" />
+          <EntitySet Name="SavedSearches" EntityType="eStoreAdminModel.SavedSearch" />
+          <EntitySet Name="Settings" EntityType="eStoreAdminModel.Setting" />
+          <EntitySet Name="ShipCosts" EntityType="eStoreAdminModel.ShipCost" />
+          <EntitySet Name="ShipToCountries" EntityType="eStoreAdminModel.ShipToCountry" />
+          <EntitySet Name="ShipToModes" EntityType="eStoreAdminModel.ShipToMode" />
+          <EntitySet Name="SocialNetworkings" EntityType="eStoreAdminModel.SocialNetworking" />
+          <EntitySet Name="Suppliers" EntityType="eStoreAdminModel.Supplier" />
+          <EntitySet Name="Testimonials" EntityType="eStoreAdminModel.Testimonial" />
+          <EntitySet Name="Themes" EntityType="eStoreAdminModel.Theme" />
+          <EntitySet Name="Users" EntityType="eStoreAdminModel.User" />
+          <EntitySet Name="WishLists" EntityType="eStoreAdminModel.WishList" />
+          <EntitySet Name="Zones" EntityType="eStoreAdminModel.Zone" />
+          <AssociationSet Name="FK_Product_Brand" Association="eStoreAdminModel.FK_Product_Brand">
+            <End Role="Brand" EntitySet="Brands" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialNetworking_Category" Association="eStoreAdminModel.FK_SocialNetworking_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="SocialNetworking" EntitySet="SocialNetworkings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tCategory_tDepartment" Association="eStoreAdminModel.FK_tCategory_tDepartment">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Category" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tProduct_tCategory" Association="eStoreAdminModel.FK_tProduct_tCategory">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Category" Association="eStoreAdminModel.FK_WishList_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipToCountry_Currency" Association="eStoreAdminModel.FK_ShipToCountry_Currency">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="ShipToCountry" EntitySet="ShipToCountries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAddress_ShipToCountry" Association="eStoreAdminModel.FK_CustomerAddress_ShipToCountry">
+            <End Role="ShipToCountry" EntitySet="ShipToCountries" />
+            <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAddress_Users" Association="eStoreAdminModel.FK_CustomerAddress_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CustomerAddress" EntitySet="CustomerAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialNetworking_Department" Association="eStoreAdminModel.FK_SocialNetworking_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="SocialNetworking" EntitySet="SocialNetworkings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tProduct_tDepartment" Association="eStoreAdminModel.FK_tProduct_tDepartment">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Department" Association="eStoreAdminModel.FK_WishList_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_ShipToCountry" Association="eStoreAdminModel.FK_Order_ShipToCountry">
+            <End Role="ShipToCountry" EntitySet="ShipToCountries" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_ShipToMode" Association="eStoreAdminModel.FK_Order_ShipToMode">
+            <End Role="ShipToMode" EntitySet="ShipToModes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetail_Order" Association="eStoreAdminModel.FK_OrderDetail_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductColor_Product" Association="eStoreAdminModel.FK_ProductColor_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductColor" EntitySet="ProductColors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductImage_Product" Association="eStoreAdminModel.FK_ProductImage_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductImage" EntitySet="ProductImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductSize_Product" Association="eStoreAdminModel.FK_ProductSize_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductSize" EntitySet="ProductSizes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SocialNetworking_Product" Association="eStoreAdminModel.FK_SocialNetworking_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="SocialNetworking" EntitySet="SocialNetworkings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tProduct_tSupplier" Association="eStoreAdminModel.FK_tProduct_tSupplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Product" Association="eStoreAdminModel.FK_WishList_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tShipCost_tZone" Association="eStoreAdminModel.FK_tShipCost_tZone">
+            <End Role="Zone" EntitySet="Zones" />
+            <End Role="ShipCost" EntitySet="ShipCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tShipCosts_tShipToMode" Association="eStoreAdminModel.FK_tShipCosts_tShipToMode">
+            <End Role="ShipToMode" EntitySet="ShipToModes" />
+            <End Role="ShipCost" EntitySet="ShipCosts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipToCountry_Zone" Association="eStoreAdminModel.FK_ShipToCountry_Zone">
+            <End Role="Zone" EntitySet="Zones" />
+            <End Role="ShipToCountry" EntitySet="ShipToCountries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WishList_Users" Association="eStoreAdminModel.FK_WishList_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="WishList" EntitySet="WishLists" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AuditLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorNum" Type="Int32" Nullable="false" />
+          <Property Name="StoreName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="EndDate" Type="DateTime" />
+          <Property Name="Data1" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Data2" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Data3" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Data4" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="LongData" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BadWord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BadWord1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="eStoreAdminModel.FK_Product_Brand" FromRole="Brand" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="DepID" Type="Int32" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="SEOTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeywords" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SEOFriendlyNameURL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="C301Redirect" Type="Boolean" />
+          <NavigationProperty Name="SocialNetworkings" Relationship="eStoreAdminModel.FK_SocialNetworking_Category" FromRole="Category" ToRole="SocialNetworking" />
+          <NavigationProperty Name="Department" Relationship="eStoreAdminModel.FK_tCategory_tDepartment" FromRole="Category" ToRole="Department" />
+          <NavigationProperty Name="Products" Relationship="eStoreAdminModel.FK_tProduct_tCategory" FromRole="Category" ToRole="Product" />
+          <NavigationProperty Name="WishLists" Relationship="eStoreAdminModel.FK_WishList_Category" FromRole="Category" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="CCExpiryMonth">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CCExpiryMonth1" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CCExpiryYear">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CCExpiryYear1" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="ExchangeRate" Type="Double" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" />
+          <NavigationProperty Name="ShipToCountries" Relationship="eStoreAdminModel.FK_ShipToCountry_Currency" FromRole="Currency" ToRole="ShipToCountry" />
+        </EntityType>
+        <EntityType Name="CustomerAddress">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="AddressType" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SuburbCity" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StateProvinceRegion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ZipPostcode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ShipToCountry" Relationship="eStoreAdminModel.FK_CustomerAddress_ShipToCountry" FromRole="CustomerAddress" ToRole="ShipToCountry" />
+          <NavigationProperty Name="User" Relationship="eStoreAdminModel.FK_CustomerAddress_Users" FromRole="CustomerAddress" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="SEOTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeywords" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SEOFriendlyNameURL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="C301Redirect" Type="Boolean" />
+          <NavigationProperty Name="Categories" Relationship="eStoreAdminModel.FK_tCategory_tDepartment" FromRole="Department" ToRole="Category" />
+          <NavigationProperty Name="SocialNetworkings" Relationship="eStoreAdminModel.FK_SocialNetworking_Department" FromRole="Department" ToRole="SocialNetworking" />
+          <NavigationProperty Name="Products" Relationship="eStoreAdminModel.FK_tProduct_tDepartment" FromRole="Department" ToRole="Product" />
+          <NavigationProperty Name="WishLists" Relationship="eStoreAdminModel.FK_WishList_Department" FromRole="Department" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DateReceived" Type="DateTime" Nullable="false" />
+          <Property Name="ReplyMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="DateSent" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Link">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LinkURL" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LinkText" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LinkDescription" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="LinkType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillingFirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillingLastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillingAddress" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BillingSuburbCity" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillingStateProvinceRegion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BillingZipPostcode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="BillingCountryID" Type="Int32" Nullable="false" />
+          <Property Name="ShippingFirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShippingLastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShippingAddress" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ShippingSuburbCity" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShippingStateProvinceRegion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShippingZipPostcode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ShippingCountryID" Type="Int32" Nullable="false" />
+          <Property Name="ShippingModeID" Type="Int32" Nullable="false" />
+          <Property Name="ShippingCost" Type="Double" Nullable="false" />
+          <Property Name="CCApprovalStatus" Type="Int32" />
+          <Property Name="ShipDate" Type="DateTime" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="GiftTag" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="TxnID" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="SettlementDate" Type="DateTime" />
+          <Property Name="IsRefunded" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="RefundPONum" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="TotalCost" Type="Double" />
+          <Property Name="OrderTotal" Type="Double" />
+          <Property Name="PayPal_Ack" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PayPal_CorrelationID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PayPal_TimeStamp" Type="DateTime" />
+          <Property Name="PayPal_FeeAmount" Type="Double" />
+          <Property Name="PayPal_PaymentStatus" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PayPal_ReasonCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PayPal_PaymentDate" Type="DateTime" />
+          <Property Name="PayPal_NetOfFee" Type="Double" />
+          <Property Name="PayPal_RefundTransactionID" Type="String" MaxLength="17" Unicode="false" FixedLength="false" />
+          <Property Name="PayPal_FeeRefundAmount" Type="Double" />
+          <Property Name="PayPal_GrossRefundAmount" Type="Double" />
+          <Property Name="PayPal_NetRefundAmount" Type="Double" />
+          <Property Name="PayPal_TotalRefundedAmount" Type="Double" />
+          <Property Name="UserID" Type="Guid" />
+          <NavigationProperty Name="ShipToCountry" Relationship="eStoreAdminModel.FK_Order_ShipToCountry" FromRole="Order" ToRole="ShipToCountry" />
+          <NavigationProperty Name="ShipToMode" Relationship="eStoreAdminModel.FK_Order_ShipToMode" FromRole="Order" ToRole="ShipToMode" />
+          <NavigationProperty Name="OrderDetails" Relationship="eStoreAdminModel.FK_OrderDetail_Order" FromRole="Order" ToRole="OrderDetail" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Double" Nullable="false" />
+          <Property Name="ProductWeight" Type="Double" Nullable="false" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" />
+          <Property Name="SizeID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="eStoreAdminModel.FK_OrderDetail_Order" FromRole="OrderDetail" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="CatID" Type="Int32" />
+          <Property Name="DepID" Type="Int32" />
+          <Property Name="QuantityPerUnit" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="UnitsInStock" Type="Int32" Nullable="false" />
+          <Property Name="UnitsOnOrder" Type="Int32" Nullable="false" />
+          <Property Name="ReOrderLevel" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Int32" Nullable="false" />
+          <Property Name="IsOnSale" Type="Int32" Nullable="false" />
+          <Property Name="DiscountUnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NumViews" Type="Int32" Nullable="false" />
+          <Property Name="WholesalePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SEOTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SEOKeywords" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SEODescription" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="SEOFriendlyNameURL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="C301Redirect" Type="Boolean" Nullable="false" />
+          <Property Name="BrandID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Brand" Relationship="eStoreAdminModel.FK_Product_Brand" FromRole="Product" ToRole="Brand" />
+          <NavigationProperty Name="Category" Relationship="eStoreAdminModel.FK_tProduct_tCategory" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Department" Relationship="eStoreAdminModel.FK_tProduct_tDepartment" FromRole="Product" ToRole="Department" />
+          <NavigationProperty Name="ProductColors" Relationship="eStoreAdminModel.FK_ProductColor_Product" FromRole="Product" ToRole="ProductColor" />
+          <NavigationProperty Name="ProductImages" Relationship="eStoreAdminModel.FK_ProductImage_Product" FromRole="Product" ToRole="ProductImage" />
+          <NavigationProperty Name="ProductSizes" Relationship="eStoreAdminModel.FK_ProductSize_Product" FromRole="Product" ToRole="ProductSize" />
+          <NavigationProperty Name="SocialNetworkings" Relationship="eStoreAdminModel.FK_SocialNetworking_Product" FromRole="Product" ToRole="SocialNetworking" />
+          <NavigationProperty Name="Supplier" Relationship="eStoreAdminModel.FK_tProduct_tSupplier" FromRole="Product" ToRole="Supplier" />
+          <NavigationProperty Name="WishLists" Relationship="eStoreAdminModel.FK_WishList_Product" FromRole="Product" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="ProductColor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="eStoreAdminModel.FK_ProductColor_Product" FromRole="ProductColor" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="IsDefault" Type="Int32" Nullable="false" />
+          <Property Name="imgPath" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="imgName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="eStoreAdminModel.FK_ProductImage_Product" FromRole="ProductImage" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductSize">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="eStoreAdminModel.FK_ProductSize_Product" FromRole="ProductSize" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="SavedSearch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Criteria" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ShipCost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneID" Type="Int32" Nullable="false" />
+          <Property Name="ModeID" Type="Int32" Nullable="false" />
+          <Property Name="MaxWeight" Type="Double" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Zone" Relationship="eStoreAdminModel.FK_tShipCost_tZone" FromRole="ShipCost" ToRole="Zone" />
+          <NavigationProperty Name="ShipToMode" Relationship="eStoreAdminModel.FK_tShipCosts_tShipToMode" FromRole="ShipCost" ToRole="ShipToMode" />
+        </EntityType>
+        <EntityType Name="ShipToCountry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyID" Type="Int32" Nullable="false" />
+          <Property Name="ZoneID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Currency" Relationship="eStoreAdminModel.FK_ShipToCountry_Currency" FromRole="ShipToCountry" ToRole="Currency" />
+          <NavigationProperty Name="CustomerAddresses" Relationship="eStoreAdminModel.FK_CustomerAddress_ShipToCountry" FromRole="ShipToCountry" ToRole="CustomerAddress" />
+          <NavigationProperty Name="Orders" Relationship="eStoreAdminModel.FK_Order_ShipToCountry" FromRole="ShipToCountry" ToRole="Order" />
+          <NavigationProperty Name="Zone" Relationship="eStoreAdminModel.FK_ShipToCountry_Zone" FromRole="ShipToCountry" ToRole="Zone" />
+        </EntityType>
+        <EntityType Name="ShipToMode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="eStoreAdminModel.FK_Order_ShipToMode" FromRole="ShipToMode" ToRole="Order" />
+          <NavigationProperty Name="ShipCosts" Relationship="eStoreAdminModel.FK_tShipCosts_tShipToMode" FromRole="ShipToMode" ToRole="ShipCost" />
+        </EntityType>
+        <EntityType Name="SocialNetworking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepID" Type="Int32" Nullable="false" />
+          <Property Name="CatID" Type="Int32" Nullable="false" />
+          <Property Name="ProdID" Type="Int32" Nullable="false" />
+          <Property Name="HasSocialNetworking" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="eStoreAdminModel.FK_SocialNetworking_Category" FromRole="SocialNetworking" ToRole="Category" />
+          <NavigationProperty Name="Department" Relationship="eStoreAdminModel.FK_SocialNetworking_Department" FromRole="SocialNetworking" ToRole="Department" />
+          <NavigationProperty Name="Product" Relationship="eStoreAdminModel.FK_SocialNetworking_Product" FromRole="SocialNetworking" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BusinessPhone" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MobilePhone" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CitySuburb" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StateProvinceRegion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ZipPostcode" Type="Int32" Nullable="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="eStoreAdminModel.FK_tProduct_tSupplier" FromRole="Supplier" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Testimonial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CustomerCountry" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TestimonialText" Type="String" Nullable="false" MaxLength="8000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Theme">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MasterPage" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="RequireNewsletter" Type="Boolean" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="LastActivityDate" Type="DateTime" />
+          <Property Name="LastLoginDate" Type="DateTime" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" />
+          <Property Name="CreationDate" Type="DateTime" />
+          <Property Name="IsOnLine" Type="Boolean" />
+          <Property Name="IsLockedOut" Type="Boolean" />
+          <Property Name="LastLockedOutDate" Type="DateTime" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" />
+          <NavigationProperty Name="CustomerAddresses" Relationship="eStoreAdminModel.FK_CustomerAddress_Users" FromRole="Users" ToRole="CustomerAddress" />
+          <NavigationProperty Name="WishLists" Relationship="eStoreAdminModel.FK_WishList_Users" FromRole="Users" ToRole="WishList" />
+        </EntityType>
+        <EntityType Name="WishList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="DepID" Type="Int32" Nullable="false" />
+          <Property Name="CatID" Type="Int32" Nullable="false" />
+          <Property Name="ProdID" Type="Int32" Nullable="false" />
+          <Property Name="ProdDetails" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="ImgPath" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ProdWeight" Type="Double" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="IsOnSale" Type="Int32" Nullable="false" />
+          <Property Name="DiscPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ColorID" Type="Int32" Nullable="false" />
+          <Property Name="ColorName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SizeID" Type="Int32" Nullable="false" />
+          <Property Name="SizeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="eStoreAdminModel.FK_WishList_Category" FromRole="WishList" ToRole="Category" />
+          <NavigationProperty Name="Department" Relationship="eStoreAdminModel.FK_WishList_Department" FromRole="WishList" ToRole="Department" />
+          <NavigationProperty Name="Product" Relationship="eStoreAdminModel.FK_WishList_Product" FromRole="WishList" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="eStoreAdminModel.FK_WishList_Users" FromRole="WishList" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ShipCosts" Relationship="eStoreAdminModel.FK_tShipCost_tZone" FromRole="Zone" ToRole="ShipCost" />
+          <NavigationProperty Name="ShipToCountries" Relationship="eStoreAdminModel.FK_ShipToCountry_Zone" FromRole="Zone" ToRole="ShipToCountry" />
+        </EntityType>
+        <Association Name="FK_Product_Brand">
+          <End Role="Brand" Type="eStoreAdminModel.Brand" Multiplicity="1" />
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="BrandID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialNetworking_Category">
+          <End Role="Category" Type="eStoreAdminModel.Category" Multiplicity="1" />
+          <End Role="SocialNetworking" Type="eStoreAdminModel.SocialNetworking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocialNetworking">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tCategory_tDepartment">
+          <End Role="Department" Type="eStoreAdminModel.Department" Multiplicity="0..1" />
+          <End Role="Category" Type="eStoreAdminModel.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tProduct_tCategory">
+          <End Role="Category" Type="eStoreAdminModel.Category" Multiplicity="0..1" />
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Category">
+          <End Role="Category" Type="eStoreAdminModel.Category" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipToCountry_Currency">
+          <End Role="Currency" Type="eStoreAdminModel.Currency" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShipToCountry" Type="eStoreAdminModel.ShipToCountry" Multiplicity="*" >
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipToCountry">
+              <PropertyRef Name="CurrencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAddress_ShipToCountry">
+          <End Role="ShipToCountry" Type="eStoreAdminModel.ShipToCountry" Multiplicity="1" />
+          <End Role="CustomerAddress" Type="eStoreAdminModel.CustomerAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToCountry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CustomerAddress">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAddress_Users">
+          <End Role="Users" Type="eStoreAdminModel.User" Multiplicity="1" />
+          <End Role="CustomerAddress" Type="eStoreAdminModel.CustomerAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="CustomerAddress">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialNetworking_Department">
+          <End Role="Department" Type="eStoreAdminModel.Department" Multiplicity="1" />
+          <End Role="SocialNetworking" Type="eStoreAdminModel.SocialNetworking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocialNetworking">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tProduct_tDepartment">
+          <End Role="Department" Type="eStoreAdminModel.Department" Multiplicity="0..1" />
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Department">
+          <End Role="Department" Type="eStoreAdminModel.Department" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="DepID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_ShipToCountry">
+          <End Role="ShipToCountry" Type="eStoreAdminModel.ShipToCountry" Multiplicity="1" />
+          <End Role="Order" Type="eStoreAdminModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToCountry">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ShippingCountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_ShipToMode">
+          <End Role="ShipToMode" Type="eStoreAdminModel.ShipToMode" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Order" Type="eStoreAdminModel.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToMode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ShippingModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetail_Order">
+          <End Role="Order" Type="eStoreAdminModel.Order" Multiplicity="1" />
+          <End Role="OrderDetail" Type="eStoreAdminModel.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductColor_Product">
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="0..1" />
+          <End Role="ProductColor" Type="eStoreAdminModel.ProductColor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProductColor">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductImage_Product">
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="0..1" />
+          <End Role="ProductImage" Type="eStoreAdminModel.ProductImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProductImage">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductSize_Product">
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="0..1" />
+          <End Role="ProductSize" Type="eStoreAdminModel.ProductSize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProductSize">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SocialNetworking_Product">
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="1" />
+          <End Role="SocialNetworking" Type="eStoreAdminModel.SocialNetworking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SocialNetworking">
+              <PropertyRef Name="ProdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tProduct_tSupplier">
+          <End Role="Supplier" Type="eStoreAdminModel.Supplier" Multiplicity="1" />
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Product">
+          <End Role="Product" Type="eStoreAdminModel.Product" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="ProdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tShipCost_tZone">
+          <End Role="Zone" Type="eStoreAdminModel.Zone" Multiplicity="1" />
+          <End Role="ShipCost" Type="eStoreAdminModel.ShipCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipCost">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tShipCosts_tShipToMode">
+          <End Role="ShipToMode" Type="eStoreAdminModel.ShipToMode" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShipCost" Type="eStoreAdminModel.ShipCost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShipToMode">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipCost">
+              <PropertyRef Name="ModeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipToCountry_Zone">
+          <End Role="Zone" Type="eStoreAdminModel.Zone" Multiplicity="1" >
+          </End>
+          <End Role="ShipToCountry" Type="eStoreAdminModel.ShipToCountry" Multiplicity="*" >
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ShipToCountry">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WishList_Users">
+          <End Role="Users" Type="eStoreAdminModel.User" Multiplicity="1" />
+          <End Role="WishList" Type="eStoreAdminModel.WishList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="WishList">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eStoreAdminModelStoreContainer" CdmEntityContainer="eStoreAdminEntities">
+          <EntitySetMapping Name="AuditLogs"><EntityTypeMapping TypeName="eStoreAdminModel.AuditLog"><MappingFragment StoreEntitySet="AuditLog">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ErrorNum" ColumnName="ErrorNum" />
+            <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+            <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+            <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+            <ScalarProperty Name="Data1" ColumnName="Data1" />
+            <ScalarProperty Name="Data2" ColumnName="Data2" />
+            <ScalarProperty Name="Data3" ColumnName="Data3" />
+            <ScalarProperty Name="Data4" ColumnName="Data4" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="LongData" ColumnName="LongData" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BadWords"><EntityTypeMapping TypeName="eStoreAdminModel.BadWord"><MappingFragment StoreEntitySet="BadWord">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="BadWord1" ColumnName="BadWord" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Brands"><EntityTypeMapping TypeName="eStoreAdminModel.Brand"><MappingFragment StoreEntitySet="Brand">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Categories"><EntityTypeMapping TypeName="eStoreAdminModel.Category"><MappingFragment StoreEntitySet="Category">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="DepID" ColumnName="DepID" />
+            <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+            <ScalarProperty Name="SEOTitle" ColumnName="SEOTitle" />
+            <ScalarProperty Name="SEOKeywords" ColumnName="SEOKeywords" />
+            <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+            <ScalarProperty Name="SEOFriendlyNameURL" ColumnName="SEOFriendlyNameURL" />
+            <ScalarProperty Name="C301Redirect" ColumnName="301Redirect" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CCExpiryMonths"><EntityTypeMapping TypeName="eStoreAdminModel.CCExpiryMonth"><MappingFragment StoreEntitySet="CCExpiryMonth">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CCExpiryMonth1" ColumnName="CCExpiryMonth" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CCExpiryYears"><EntityTypeMapping TypeName="eStoreAdminModel.CCExpiryYear"><MappingFragment StoreEntitySet="CCExpiryYear">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CCExpiryYear1" ColumnName="CCExpiryYear" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Currencies"><EntityTypeMapping TypeName="eStoreAdminModel.Currency"><MappingFragment StoreEntitySet="Currency">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+            <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CustomerAddresses"><EntityTypeMapping TypeName="eStoreAdminModel.CustomerAddress"><MappingFragment StoreEntitySet="CustomerAddress">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="SuburbCity" ColumnName="SuburbCity" />
+            <ScalarProperty Name="StateProvinceRegion" ColumnName="StateProvinceRegion" />
+            <ScalarProperty Name="ZipPostcode" ColumnName="ZipPostcode" />
+            <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Departments"><EntityTypeMapping TypeName="eStoreAdminModel.Department"><MappingFragment StoreEntitySet="Department">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+            <ScalarProperty Name="SEOTitle" ColumnName="SEOTitle" />
+            <ScalarProperty Name="SEOKeywords" ColumnName="SEOKeywords" />
+            <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+            <ScalarProperty Name="SEOFriendlyNameURL" ColumnName="SEOFriendlyNameURL" />
+            <ScalarProperty Name="C301Redirect" ColumnName="301Redirect" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Emails"><EntityTypeMapping TypeName="eStoreAdminModel.Email"><MappingFragment StoreEntitySet="Email">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+            <ScalarProperty Name="Subject" ColumnName="Subject" />
+            <ScalarProperty Name="Message" ColumnName="Message" />
+            <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+            <ScalarProperty Name="ReplyMessage" ColumnName="ReplyMessage" />
+            <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Links"><EntityTypeMapping TypeName="eStoreAdminModel.Link"><MappingFragment StoreEntitySet="Links">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="LinkURL" ColumnName="LinkURL" />
+            <ScalarProperty Name="LinkText" ColumnName="LinkText" />
+            <ScalarProperty Name="LinkDescription" ColumnName="LinkDescription" />
+            <ScalarProperty Name="LinkType" ColumnName="LinkType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Orders"><EntityTypeMapping TypeName="eStoreAdminModel.Order"><MappingFragment StoreEntitySet="Order">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+            <ScalarProperty Name="BillingFirstName" ColumnName="BillingFirstName" />
+            <ScalarProperty Name="BillingLastName" ColumnName="BillingLastName" />
+            <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+            <ScalarProperty Name="BillingSuburbCity" ColumnName="BillingSuburbCity" />
+            <ScalarProperty Name="BillingStateProvinceRegion" ColumnName="BillingStateProvinceRegion" />
+            <ScalarProperty Name="BillingZipPostcode" ColumnName="BillingZipPostcode" />
+            <ScalarProperty Name="BillingCountryID" ColumnName="BillingCountryID" />
+            <ScalarProperty Name="ShippingFirstName" ColumnName="ShippingFirstName" />
+            <ScalarProperty Name="ShippingLastName" ColumnName="ShippingLastName" />
+            <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
+            <ScalarProperty Name="ShippingSuburbCity" ColumnName="ShippingSuburbCity" />
+            <ScalarProperty Name="ShippingStateProvinceRegion" ColumnName="ShippingStateProvinceRegion" />
+            <ScalarProperty Name="ShippingZipPostcode" ColumnName="ShippingZipPostcode" />
+            <ScalarProperty Name="ShippingCountryID" ColumnName="ShippingCountryID" />
+            <ScalarProperty Name="ShippingModeID" ColumnName="ShippingModeID" />
+            <ScalarProperty Name="ShippingCost" ColumnName="ShippingCost" />
+            <ScalarProperty Name="CCApprovalStatus" ColumnName="CCApprovalStatus" />
+            <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+            <ScalarProperty Name="Comments" ColumnName="Comments" />
+            <ScalarProperty Name="GiftTag" ColumnName="GiftTag" />
+            <ScalarProperty Name="TxnID" ColumnName="TxnID" />
+            <ScalarProperty Name="SettlementDate" ColumnName="SettlementDate" />
+            <ScalarProperty Name="IsRefunded" ColumnName="IsRefunded" />
+            <ScalarProperty Name="RefundPONum" ColumnName="RefundPONum" />
+            <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+            <ScalarProperty Name="OrderTotal" ColumnName="OrderTotal" />
+            <ScalarProperty Name="PayPal_Ack" ColumnName="PayPal_Ack" />
+            <ScalarProperty Name="PayPal_CorrelationID" ColumnName="PayPal_CorrelationID" />
+            <ScalarProperty Name="PayPal_TimeStamp" ColumnName="PayPal_TimeStamp" />
+            <ScalarProperty Name="PayPal_FeeAmount" ColumnName="PayPal_FeeAmount" />
+            <ScalarProperty Name="PayPal_PaymentStatus" ColumnName="PayPal_PaymentStatus" />
+            <ScalarProperty Name="PayPal_ReasonCode" ColumnName="PayPal_ReasonCode" />
+            <ScalarProperty Name="PayPal_PaymentDate" ColumnName="PayPal_PaymentDate" />
+            <ScalarProperty Name="PayPal_NetOfFee" ColumnName="PayPal_NetOfFee" />
+            <ScalarProperty Name="PayPal_RefundTransactionID" ColumnName="PayPal_RefundTransactionID" />
+            <ScalarProperty Name="PayPal_FeeRefundAmount" ColumnName="PayPal_FeeRefundAmount" />
+            <ScalarProperty Name="PayPal_GrossRefundAmount" ColumnName="PayPal_GrossRefundAmount" />
+            <ScalarProperty Name="PayPal_NetRefundAmount" ColumnName="PayPal_NetRefundAmount" />
+            <ScalarProperty Name="PayPal_TotalRefundedAmount" ColumnName="PayPal_TotalRefundedAmount" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails"><EntityTypeMapping TypeName="eStoreAdminModel.OrderDetail"><MappingFragment StoreEntitySet="OrderDetail">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+            <ScalarProperty Name="ProductWeight" ColumnName="ProductWeight" />
+            <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+            <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+            <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Products"><EntityTypeMapping TypeName="eStoreAdminModel.Product"><MappingFragment StoreEntitySet="Product">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+            <ScalarProperty Name="CatID" ColumnName="CatID" />
+            <ScalarProperty Name="DepID" ColumnName="DepID" />
+            <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+            <ScalarProperty Name="Weight" ColumnName="Weight" />
+            <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+            <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+            <ScalarProperty Name="ReOrderLevel" ColumnName="ReOrderLevel" />
+            <ScalarProperty Name="Active" ColumnName="Active" />
+            <ScalarProperty Name="IsOnSale" ColumnName="IsOnSale" />
+            <ScalarProperty Name="DiscountUnitPrice" ColumnName="DiscountUnitPrice" />
+            <ScalarProperty Name="NumViews" ColumnName="NumViews" />
+            <ScalarProperty Name="WholesalePrice" ColumnName="WholesalePrice" />
+            <ScalarProperty Name="SEOTitle" ColumnName="SEOTitle" />
+            <ScalarProperty Name="SEOKeywords" ColumnName="SEOKeywords" />
+            <ScalarProperty Name="SEODescription" ColumnName="SEODescription" />
+            <ScalarProperty Name="SEOFriendlyNameURL" ColumnName="SEOFriendlyNameURL" />
+            <ScalarProperty Name="C301Redirect" ColumnName="301Redirect" />
+            <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductColors"><EntityTypeMapping TypeName="eStoreAdminModel.ProductColor"><MappingFragment StoreEntitySet="ProductColor">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductImages"><EntityTypeMapping TypeName="eStoreAdminModel.ProductImage"><MappingFragment StoreEntitySet="ProductImage">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+            <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+            <ScalarProperty Name="imgName" ColumnName="imgName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductSizes"><EntityTypeMapping TypeName="eStoreAdminModel.ProductSize"><MappingFragment StoreEntitySet="ProductSize">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SavedSearches"><EntityTypeMapping TypeName="eStoreAdminModel.SavedSearch"><MappingFragment StoreEntitySet="SavedSearch">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Settings"><EntityTypeMapping TypeName="eStoreAdminModel.Setting"><MappingFragment StoreEntitySet="Settings">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ShipCosts"><EntityTypeMapping TypeName="eStoreAdminModel.ShipCost"><MappingFragment StoreEntitySet="ShipCost">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+            <ScalarProperty Name="ModeID" ColumnName="ModeID" />
+            <ScalarProperty Name="MaxWeight" ColumnName="MaxWeight" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ShipToCountries"><EntityTypeMapping TypeName="eStoreAdminModel.ShipToCountry"><MappingFragment StoreEntitySet="ShipToCountry">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+            <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ShipToModes"><EntityTypeMapping TypeName="eStoreAdminModel.ShipToMode"><MappingFragment StoreEntitySet="ShipToMode">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SocialNetworkings"><EntityTypeMapping TypeName="eStoreAdminModel.SocialNetworking"><MappingFragment StoreEntitySet="SocialNetworking">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="DepID" ColumnName="DepID" />
+            <ScalarProperty Name="CatID" ColumnName="CatID" />
+            <ScalarProperty Name="ProdID" ColumnName="ProdID" />
+            <ScalarProperty Name="HasSocialNetworking" ColumnName="HasSocialNetworking" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Suppliers"><EntityTypeMapping TypeName="eStoreAdminModel.Supplier"><MappingFragment StoreEntitySet="Supplier">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+            <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+            <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+            <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+            <ScalarProperty Name="Address" ColumnName="Address" />
+            <ScalarProperty Name="CitySuburb" ColumnName="CitySuburb" />
+            <ScalarProperty Name="StateProvinceRegion" ColumnName="StateProvinceRegion" />
+            <ScalarProperty Name="ZipPostcode" ColumnName="ZipPostcode" />
+            <ScalarProperty Name="Country" ColumnName="Country" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Testimonials"><EntityTypeMapping TypeName="eStoreAdminModel.Testimonial"><MappingFragment StoreEntitySet="Testimonials">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+            <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+            <ScalarProperty Name="TestimonialText" ColumnName="TestimonialText" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Themes"><EntityTypeMapping TypeName="eStoreAdminModel.Theme"><MappingFragment StoreEntitySet="Theme">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="MasterPage" ColumnName="MasterPage" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="eStoreAdminModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="Username" ColumnName="Username" />
+            <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="RequireNewsletter" ColumnName="RequireNewsletter" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Comment" ColumnName="Comment" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+            <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+            <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+            <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+            <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+            <ScalarProperty Name="IsOnLine" ColumnName="IsOnLine" />
+            <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+            <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+            <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+            <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+            <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+            <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="WishLists"><EntityTypeMapping TypeName="eStoreAdminModel.WishList"><MappingFragment StoreEntitySet="WishList">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="DepID" ColumnName="DepID" />
+            <ScalarProperty Name="CatID" ColumnName="CatID" />
+            <ScalarProperty Name="ProdID" ColumnName="ProdID" />
+            <ScalarProperty Name="ProdDetails" ColumnName="ProdDetails" />
+            <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+            <ScalarProperty Name="ProdWeight" ColumnName="ProdWeight" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="IsOnSale" ColumnName="IsOnSale" />
+            <ScalarProperty Name="DiscPrice" ColumnName="DiscPrice" />
+            <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+            <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+            <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+            <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Zones"><EntityTypeMapping TypeName="eStoreAdminModel.Zone"><MappingFragment StoreEntitySet="Zone">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="eStoreAdminModel">
+        <EntityTypeShape EntityType="eStoreAdminModel.AuditLog" Width="1.5" PointX="10.75" PointY="3" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.BadWord" Width="1.5" PointX="0.75" PointY="3" Height="1.2836116536458331" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Brand" Width="1.5" PointX="3" PointY="6.625" Height="1.4279589843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Category" Width="1.5" PointX="3" PointY="9.5" Height="3.2357796223958317" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.CCExpiryMonth" Width="1.5" PointX="2.75" PointY="3" Height="1.2636116536458317" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.CCExpiryYear" Width="1.5" PointX="4.75" PointY="3" Height="1.2636116536458326" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Currency" Width="1.5" PointX="9.75" PointY="18.375" Height="1.921000976562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.CustomerAddress" Width="1.5" PointX="14.25" PointY="9.25" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Department" Width="1.5" PointX="0.75" PointY="9.625" Height="2.9070849609374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Email" Width="1.5" PointX="12.75" PointY="3" Height="2.2496956380208317" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Link" Width="1.5" PointX="12.75" PointY="6" Height="1.7566536458333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Order" Width="1.5" PointX="14.25" PointY="15.125" Height="8.49489420572917" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.OrderDetail" Width="1.5" PointX="16.5" PointY="18" Height="2.7427376302083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Product" Width="1.5" PointX="5.25" PointY="8" Height="6.1940315755208388" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.ProductColor" Width="1.5" PointX="7.5" PointY="6.75" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.ProductImage" Width="1.5" PointX="7.5" PointY="13.125" Height="1.9210009765625031" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.ProductSize" Width="1.5" PointX="7.5" PointY="15.875" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.SavedSearch" Width="1.5" PointX="14.75" PointY="3" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Setting" Width="1.5" PointX="14.75" PointY="6" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.ShipCost" Width="1.5" PointX="12" PointY="21.25" Height="2.0853483072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.ShipToCountry" Width="1.5" PointX="12" PointY="18.125" Height="2.4140429687500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.ShipToMode" Width="1.5" PointX="12" PointY="15.5" Height="1.5923063151041692" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.SocialNetworking" Width="1.5" PointX="7.5" PointY="10" Height="2.2496956380208246" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Supplier" Width="1.5" PointX="3" PointY="13.75" Height="2.9070849609374942" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Testimonial" Width="1.5" PointX="0.75" PointY="18" Height="1.5923063151041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Theme" Width="1.5" PointX="2.75" PointY="18" Height="1.4279589843750102" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.User" Width="1.5" PointX="8.25" PointY="0.75" Height="4.7149055989583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.WishList" Width="1.5" PointX="10.5" PointY="9" Height="4.2218636067708246" IsExpanded="true" />
+        <EntityTypeShape EntityType="eStoreAdminModel.Zone" Width="1.5" PointX="9.75" PointY="21.5" Height="1.5923063151041674" IsExpanded="true" />
+        <AssociationConnector Association="eStoreAdminModel.FK_Product_Brand" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.3124994999999995" />
+          <ConnectorPoint PointX="6" PointY="7.3124994999999995" />
+          <ConnectorPoint PointX="6" PointY="8" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_SocialNetworking_Category" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="12.735779622395832" />
+          <ConnectorPoint PointX="3.75" PointY="12.985779622395832" />
+          <ConnectorPoint PointX="5" PointY="12.985779622395832" />
+          <ConnectorPoint PointX="5" PointY="14.444031575520839" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="14.444031575520839" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="14.444031575520839" />
+          <ConnectorPoint PointX="7.125" PointY="14.444031575520839" />
+          <ConnectorPoint PointX="7.125" PointY="11.124847819010412" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="11.124847819010412" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="11.124847819010412" />
+          <ConnectorPoint PointX="7.5" PointY="11.124847819010412" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_tCategory_tDepartment" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.07854248046875" />
+          <ConnectorPoint PointX="3" PointY="11.07854248046875" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_tProduct_tCategory" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="11.117889811197916" />
+          <ConnectorPoint PointX="5.25" PointY="11.117889811197916" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_WishList_Category" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.277692905598958" />
+          <ConnectorPoint PointX="5" PointY="10.277692905598958" />
+          <ConnectorPoint PointX="5" PointY="7.75" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="7.7499999999999991" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="7.75" />
+          <ConnectorPoint PointX="7.25" PointY="7.75" />
+          <ConnectorPoint PointX="7.25" PointY="8.75" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="8.75" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="8.75" />
+          <ConnectorPoint PointX="11.25" PointY="8.75" />
+          <ConnectorPoint PointX="11.25" PointY="9" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_ShipToCountry_Currency" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="19.335500488281248" />
+          <ConnectorPoint PointX="12" PointY="19.335500488281248" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_CustomerAddress_ShipToCountry" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.5" PointY="18.125" />
+          <ConnectorPoint PointX="13.875" PointY="17.75" />
+          <ConnectorPoint PointX="13.875" PointY="10.70354248046875" />
+          <ConnectorPoint PointX="14.25" PointY="10.70354248046875" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_CustomerAddress_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="1.84375" />
+          <ConnectorPoint PointX="14.5" PointY="1.84375" />
+          <ConnectorPoint PointX="14.5" PointY="9.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_SocialNetworking_Department" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="12.5320849609375" />
+          <ConnectorPoint PointX="1.5" PointY="13.235779622395832" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="13.235779622395832" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="13.235779622395832" />
+          <ConnectorPoint PointX="4.75" PointY="13.235779622395832" />
+          <ConnectorPoint PointX="4.75" PointY="14.694031575520839" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="14.694031575520839" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="14.694031575520839" />
+          <ConnectorPoint PointX="7.25" PointY="14.694031575520839" />
+          <ConnectorPoint PointX="7.25" PointY="10.531171909505211" />
+          <ConnectorPoint PointX="7.5" PointY="10.531171909505211" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_tProduct_tDepartment" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="12.5320849609375" />
+          <ConnectorPoint PointX="1.9062525" PointY="13.461639811197916" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="13.461639811197916" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="13.461639811197916" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="13.461639811197916" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="13.461639811197916" />
+          <ConnectorPoint PointX="5.25" PointY="13.461639811197916" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_WishList_Department" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.320519240234374" />
+          <ConnectorPoint PointX="2.75" PointY="10.320519240234374" />
+          <ConnectorPoint PointX="2.75" PointY="9.25" />
+          <ConnectorPoint PointX="4.75" PointY="9.25" />
+          <ConnectorPoint PointX="4.75" PointY="7.875" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="7.875" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="7.8749999999999991" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="7.875" />
+          <ConnectorPoint PointX="7" PointY="7.875" />
+          <ConnectorPoint PointX="7" PointY="8.875" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="8.875" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="8.875" />
+          <ConnectorPoint PointX="10.843748" PointY="8.875" />
+          <ConnectorPoint PointX="10.843748" PointY="9" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_Order_ShipToCountry" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.5" PointY="19.363273984374995" />
+          <ConnectorPoint PointX="13.979166666666666" PointY="19.363273984374995" />
+          <ConnectorPoint PointX="14.145833333333334" PointY="19.363273984374995" />
+          <ConnectorPoint PointX="14.25" PointY="19.363273984374995" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_Order_ShipToMode" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.5" PointY="16.296153157552084" />
+          <ConnectorPoint PointX="13.791666666666666" PointY="16.296153157552084" />
+          <ConnectorPoint PointX="13.958333333333334" PointY="16.296153157552084" />
+          <ConnectorPoint PointX="14.25" PointY="16.296153157552084" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_OrderDetail_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="15.75" PointY="19.371368815104169" />
+          <ConnectorPoint PointX="16.5" PointY="19.371368815104169" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_ProductColor_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.1711531575520837" />
+          <ConnectorPoint PointX="6.916666666666667" PointY="8.1711531575520837" />
+          <ConnectorPoint PointX="7.083333333333333" PointY="8.1711531575520837" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="8.1711531575520837" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="8.1711531575520837" />
+          <ConnectorPoint PointX="7.5" PointY="8.1711531575520837" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_ProductImage_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="13.659515787760419" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="13.659515787760418" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="13.659515787760419" />
+          <ConnectorPoint PointX="7.5" PointY="13.659515787760419" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_ProductSize_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="14.194031575520839" />
+          <ConnectorPoint PointX="6" PointY="16.671153157552084" />
+          <ConnectorPoint PointX="7.5" PointY="16.671153157552084" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_SocialNetworking_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="11.749771728515619" />
+          <ConnectorPoint PointX="7.041666666666667" PointY="11.749771728515617" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="11.749771728515619" />
+          <ConnectorPoint PointX="7.5" PointY="11.749771728515619" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_tProduct_tSupplier" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.972015787760419" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="13.972015787760419" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="13.972015787760419" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="13.972015787760419" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="13.972015787760419" />
+          <ConnectorPoint PointX="5.25" PointY="13.972015787760419" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_WishList_Product" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.46875" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="9.46875" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="9.46875" />
+          <ConnectorPoint PointX="10.5" PointY="9.46875" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_tShipCost_tZone" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="22.296153157552084" />
+          <ConnectorPoint PointX="12" PointY="22.296153157552084" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_tShipCosts_tShipToMode" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.5" PointY="17.029997622796476" />
+          <ConnectorPoint PointX="13.816074434901122" PointY="17.346072057697597" />
+          <ConnectorPoint PointX="13.933925565098878" PointY="17.463923187895354" />
+          <ConnectorPoint PointX="14.0625" PointY="17.592497622796476" />
+          <ConnectorPoint PointX="14.0625" PointY="20.6875" />
+          <ConnectorPoint PointX="13.5" PointY="21.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_ShipToCountry_Zone" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="21.5" />
+          <ConnectorPoint PointX="11.625" PointY="21.125" />
+          <ConnectorPoint PointX="11.625" PointY="19.332021484375" />
+          <ConnectorPoint PointX="12" PointY="19.332021484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="eStoreAdminModel.FK_WishList_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.40625" PointY="5.4649055989583388" />
+          <ConnectorPoint PointX="9.40625" PointY="12.687347819010412" />
+          <ConnectorPoint PointX="10.5" PointY="12.687347819010412" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

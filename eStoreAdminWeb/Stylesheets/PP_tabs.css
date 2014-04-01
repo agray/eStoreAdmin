@@ -1,0 +1,126 @@
+﻿/* CSS Document */
+/* default layout */
+.ajax__tab_default .ajax__tab_header {white-space:nowrap;}
+.ajax__tab_default .ajax__tab_outer {display:-moz-inline-box;display:inline-block}
+.ajax__tab_default .ajax__tab_inner {display:-moz-inline-box;display:inline-block}
+.ajax__tab_default .ajax__tab_tab {margin-right:4px;overflow:hidden;text-align:center;cursor:pointer;display:-moz-inline-box;display:inline-block}
+
+/* xp small theme */
+.pp_dashboard_xp .ajax__tab_header {font-family:verdana,tahoma,helvetica;font-size:11px;background:url(../Images/tab-line.gif) repeat-x bottom;}
+.pp_dashboard_xp .ajax__tab_outer {background:url(../Images/tab-right.gif) no-repeat right;height:21px;}
+.pp_dashboard_xp .ajax__tab_inner {padding-left:3px;background:url(../Images/tab-left.gif) no-repeat;}
+.pp_dashboard_xp .ajax__tab_tab {height:13px;padding:4px;margin:0;background:url(../Images/tab.gif) repeat-x;}
+.pp_dashboard_xp .ajax__tab_hover .ajax__tab_outer {background:url(../Images/tab-hover-right.gif) no-repeat right;}
+.pp_dashboard_xp .ajax__tab_hover .ajax__tab_inner {background:url(../Images/tab-hover-left.gif) no-repeat;}
+.pp_dashboard_xp .ajax__tab_hover .ajax__tab_tab {background:url(../Iimages/tab-hover.gif) repeat-x;}
+.pp_dashboard_xp .ajax__tab_active .ajax__tab_outer {background:url(../Images/tab-active-right.gif) no-repeat right;}
+.pp_dashboard_xp .ajax__tab_active .ajax__tab_inner {background:url(../Images/tab-active-left.gif) no-repeat;}
+.pp_dashboard_xp .ajax__tab_active .ajax__tab_tab {background:url(../Images/tab-active.gif) repeat-x;}
+.pp_dashboard_xp .ajax__tab_body {font-family:verdana,tahoma,helvetica;font-size:xx-small;border:1px solid #999999;border-top:0;padding:8px;background-color:#ffffff;}
+
+/* xp normal theme */
+.pp_tabs_xp .ajax__tab_header {font-family:verdana,tahoma,helvetica;font-size:11px;background:url(../Images/tab-line.gif) repeat-x bottom;}
+.pp_tabs_xp .ajax__tab_outer {background:url(../Images/tab-right.gif) no-repeat right;height:21px;}
+.pp_tabs_xp .ajax__tab_inner {padding-left:3px;background:url(../Images/tab-left.gif) no-repeat;}
+.pp_tabs_xp .ajax__tab_tab {height:13px;padding:4px;margin:0;background:url(../Images/tab.gif) repeat-x;}
+.pp_tabs_xp .ajax__tab_hover .ajax__tab_outer {background:url(../Images/tab-hover-right.gif) no-repeat right;}
+.pp_tabs_xp .ajax__tab_hover .ajax__tab_inner {background:url(../Images/tab-hover-left.gif) no-repeat;}
+.pp_tabs_xp .ajax__tab_hover .ajax__tab_tab {background:url(../Images/tab-hover.gif) repeat-x;}
+.pp_tabs_xp .ajax__tab_active .ajax__tab_outer {background:url(../Images/tab-active-right.gif) no-repeat right;}
+.pp_tabs_xp .ajax__tab_active .ajax__tab_inner {background:url(../Images/tab-active-left.gif) no-repeat;}
+.pp_tabs_xp .ajax__tab_active .ajax__tab_tab {background:url(../Images/tab-active.gif) repeat-x;}
+.pp_tabs_xp .ajax__tab_body {font-family:Arial,Helvetica,sans-serif;font-size:12.5px;border:1px solid #999999;border-top:0;padding:8px;background-color:#ffffff;}
+
+
+/* scrolling */
+.ajax__scroll_horiz {overflow:auto}
+.ajax__scroll_vert {overflow:auto}
+.ajax__scroll_both {overflow:scroll}
+.ajax__scroll_auto {overflow:auto}
+
+body {
+background-color:#FFFFFF;
+font-family:Arial,Helvetica,sans-serif;
+font-size:12.5px;
+margin:0 auto;
+text-align:center;
+}
+
+#DivDashboardMain {
+background-color:#FFFFFF;
+border:1px solid #A8B2BB;
+margin:0 0 7px 0px;
+padding:5px;
+}
+
+.DashboardHeading {
+margin:50px 0 20px 20px;
+}
+
+#DivCentrePage {
+margin:0 auto;
+text-align:left;
+width:990px;
+}
+
+#login 
+{
+background-color: #006699; 
+color: white; 
+border-bottom: solid 1px #bfb8af; 
+border-left:  solid 1px #bfb8af; 
+border-top:  solid 1px #bfb8af; 
+border-right:  solid 1px #bfb8af;
+text-align: right; 
+font-size: 95%;
+margin: 0;
+padding: 5px;
+font-weight:bold;
+}
+
+#login a:visited, #login a:link {
+color:white;
+text-decoration:none;
+}
+
+#login a:hover {
+text-decoration:underline;
+}
+
+#DivNavBar {
+background-color:Gray;
+border-color:#CCCCCC #333333 #333333 #CCCCCC;
+border-style:solid;
+border-width:2px;
+color:white;
+font-size:110%;
+font-weight:bold;
+margin:0 0 7px 0;
+padding:7px;
+text-align:center;
+}
+
+#DivNavBar a:visited, #DivNavBar a:link {
+color:white;
+text-decoration:none;
+}
+
+#DivNavBar a:hover {
+text-decoration:underline;
+}
+
+.normalLink {
+color:#6699FF;
+font-weight:bold;
+margin:3px 0;
+text-decoration:none;
+}
+
+.normalLink a:visited, .normalLink a:link {
+color:white;
+text-decoration:none;
+}
+
+ul.NoBullet {
+  list-style-type: none
+  }

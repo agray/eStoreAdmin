@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="eStoreAdminMaster.master.cs" Inherits="eStoreAdminWeb.eStoreAdminMaster" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="eStoreAdminWeb" %>
+
+<%@ Register Src="~/Controls/MasterMenu.ascx" TagName="MasterMenu" TagPrefix="eStore" %>
+<%@ Register Src="~/Controls/PCScriptManager.ascx" TagName="ScriptManager" TagPrefix="pc" %>
+<%@ Register Src="~/Controls/PageGenerated.ascx" TagName="Generated" TagPrefix="Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%--<!DOCTYPE html >--%>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>eStore Admin</title>
+    <link href="../Icons/eStoreLogo_small.ico" rel="SHORTCUT ICON" type="image/x-icon" /> 
+    <link href="../Stylesheets/PP_style.css" rel="stylesheet" type="text/css" />
+    <link href="../Stylesheets/PP_tabs.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="tundra nojs">
+    <div id="DivCentrePage">
+        <form id="Form1" runat="server">
+            <pc:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>
+            <%--<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true"/>--%>
+            <div id="login" style="border: medium none; text-align: left; padding: 9px;">
+                <asp:LoginView ID="MasterLoginView" runat="server">
+                    <LoggedInTemplate>
+                        <span style="float: left;">
+	                        <asp:Image ID="Logo2" runat="server" 
+		                               ImageUrl="~/Images/System/eStoreLogoTransparent.png"
+		                               ImageAlign="Middle" />
+                        </span>
+                        <span style="float: right;">
+                            WELCOME&nbsp;<asp:LoginName ID="MasterLoginName" runat="server" /><br/>
+                            <asp:HyperLink ID="ChangePasswordHyperLink" runat="server"
+	                                       NavigateUrl="~/Authentication/ChangeMyPassword.aspx"
+	                                       Text="CHANGE PASSWORD"
+	                                       ForeColor="White"
+	                                       Font-Size="Smaller" /><br/>
+                                <asp:LoginStatus ID="MasterLoginStatus" runat="server"
+	                                             LogoutAction="Redirect" 
+	                                             LogoutPageUrl="~/Authentication/LoggedOut.aspx"
+	                                             ForeColor="White"
+	                                             Font-Size="Smaller"
+	                                             LogoutText="LOGOUT" />
+		                    
+		                </span>
+                     </LoggedInTemplate>
+                     <AnonymousTemplate>
+	                     Welcome Guest<br />
+	                     <asp:LoginStatus ID="LoginStatus1" runat="server" />
+	                     <br />
+                    </AnonymousTemplate>
+                </asp:LoginView>
+            </div>
+            <div id="DivNavBar">
+	            <eStore:MasterMenu ID="MasterTopMenu" runat="server" />
+            </div>
+            <div id="DivMain">
+                <asp:UpdatePanel ID="MasterUpdatePanel" runat="server">
+                    <ContentTemplate>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+            <div class="DivNavBarBottom">
+                <eStore:MasterMenu ID="MasterBottomMenu" runat="server" />
+            </div>
+        </form>
+        <Page:Generated ID="pageGenerated" runat="server" />
+    </div>
+</body>
+</html>

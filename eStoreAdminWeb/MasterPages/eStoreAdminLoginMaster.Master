@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="eStoreAdminLoginMaster.Master.cs" Inherits="eStoreAdminWeb.eStoreAdminLoginMaster" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Register Src="~/Controls/PageGenerated.ascx" TagName="Generated" TagPrefix="Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>PetsPlayground</title>
+    <link href="../Stylesheets/PP_style.css" rel="stylesheet" type="text/css" />
+    <link rel="SHORTCUT ICON" href="../Icons/eStoreLogo_small.ico" type="image/x-icon" />
+</head>
+<body leftmargin="0" topmargin="0">
+<form id="form1" runat="server">
+    <div id="DivCentrePage">
+            <div id="login">
+                <div style="text-align:left">
+                    <table width="100%">
+                        <tr>
+                            <td align="left" style="width:10%">
+                                <asp:Image ID="Logo2" runat="server" 
+                                           ImageUrl="~/Images/System/eStoreLogoTransparent.png"
+                                           ImageAlign="Middle"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="DivNavBar">
+                <%--<table>
+	                <tr>
+		                <td colspan="2">
+		                    Login
+		                </td>
+	                </tr>
+	            </table>--%>
+	         </div>
+            <div id="DivMain">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <Page:Generated ID="pageGenerated" runat="server" />
+    </div>
+</form>
+</body>
+</html>

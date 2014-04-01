@@ -1,0 +1,431 @@
+/* CSS Document */
+body {
+    background-color:#FFFFFF;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12.5px;
+    margin:0 auto;
+    text-align:center;
+}
+.linkButton {
+    background:transparent;
+    border:none;
+    font:10px verdana;
+    color:blue;
+    margin-top:3px;
+}
+.linkButton:hover {
+    text-decoration: underline;
+}
+.linkButton:active {
+    text-decoration: underline;
+}
+form {
+    margin:0;
+}
+div {
+    overflow:auto;
+} 
+.clear {
+    clear:both;
+}
+.label {
+    width:25%;
+}
+.CurrencyEntry {
+    width:50px;
+}
+.NumericEntry {
+    width:50px;
+}
+.TextEntry {
+    width:100%;
+}
+
+h1 {
+    color:#CC6633;
+    font-size:135%;
+    margin:5px 0;
+}
+h2 {
+    color:#6699FF;
+    font-size:115%;
+    margin:3px 0;
+}
+h3 {
+    color:#6699FF;
+    font-size:100%;
+    margin:2px 0;
+}
+.SubTitle {
+    color:#CC6633;
+    font-weight:lighter;
+}
+.LabelText {
+    font-size:95%;
+}
+h4 {
+    color:#6699FF;
+    font-size:85%;
+    margin:2px 0;
+}
+.HyperLinkLook {
+    color:Blue;
+    text-decoration:underline;
+}
+textarea {
+    font-family:Arial;
+}
+input {
+    font-family:Arial;
+    font-size:100%;
+}
+select {
+    font-family:Arial;
+    font-size:100%;
+    height: 21px;
+}
+fieldset {
+    -moz-border-radius-bottomleft:5pt;
+    -moz-border-radius-bottomright:5pt;
+    -moz-border-radius-topleft:5pt;
+    -moz-border-radius-topright:5pt;
+    margin:5px;
+}
+legend {
+    color:Blue;
+}
+hr {
+    background-color:#A3B3C0;
+    border:medium none;
+    color:#A3B3C0;
+    height:1px;
+}
+#login {
+    background-color: #006699;
+    color: white; 
+    border-bottom: solid 1px #bfb8af;
+    border-left: solid 1px #bfb8af;
+    border-top: solid 1px #bfb8af;
+    border-right: solid 1px #bfb8af;
+    text-align: right;
+    font-size: 95%;
+    margin: 0;
+    padding: 5px;
+    font-weight:bold;
+}
+#login a:visited, #login a:link {
+    color:white;
+    text-decoration:none;
+}
+#login a:hover {
+    text-decoration:underline;
+}
+.heading2Link {
+    color:#6699FF;
+    font-size:115%;
+    font-weight:bold;
+    margin:3px 0;
+    text-decoration:none;
+}
+.heading2Link a:visited, .heading2Link a:link {
+    color:white;
+    text-decoration:none;
+}
+.AddButton {
+    background: transparent url(../../images/AddNewIcon.gif) left no-repeat;
+    padding: 5px 0px 5px 25px;
+    color:gray;
+    text-decoration:none;
+}
+#DivCentrePage {
+    margin:0 auto;
+    text-align:left;
+    width:990px;
+    clear:both;
+}
+#DivBanner table {
+    margin:0;
+    padding:0;
+    width:100%;
+}
+#DivNavBar {
+    background-color:Gray;
+    border-color:#CCCCCC #333333 #333333 #CCCCCC;
+    border-style:solid;
+    border-width:2px;
+    color:white;
+    font-size:110%;
+    font-weight:bold;
+    margin:0 0 7px 0;
+    padding:7px;
+    text-align:center;
+}
+#DivNavBar a:visited, #DivNavBar a:link {
+    color:white;
+    text-decoration:none;
+}
+#DivNavBar a:hover {
+    text-decoration:underline;
+}
+.DivNavBarBottom {
+    margin:10px 0 0;
+}
+#DivMain {
+    background-color:#FFFFFF;
+    border:1px solid #A8B2BB;
+    margin:0 0 7px 0px;
+    padding:5px;
+    overflow:auto;
+}
+.DivSideBar ul {
+    line-height:14px;
+    list-style-type:none;
+    margin:1px 1px 1px 17px;
+    padding:0;
+    white-space:nowrap;
+}
+.DivSideBar table {
+    background-color:#FFFFFF;
+    border:1px solid #A8B2BB;
+    padding:5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+#DivSlogan {
+    background-image:url(images/SloganImageKids.jpg);
+    border:1px solid #A8B2BB;
+    height:250px;
+    margin:0 0 2px 5px;
+    width:808px;
+}
+#DivHomeMain {
+    float:left;
+    margin:0;
+    padding:0;
+    width:820px;
+}
+#DivHomeMain h2 {
+    background:#CC6644 none repeat scroll 0 0;
+    color:White;
+    margin:0 4px 0 7px;
+    padding:2px;
+    text-align:center;
+}
+.PPTable {
+    background-color:#E8E8E8;
+    border:2px solid #FFFFFF;
+    border-collapse:collapse;
+    color:#4444AA;
+}
+.PPTable thead td {
+    color:Gray;
+    font-weight:bold;
+    white-space:nowrap;
+}
+.PPTable tr td {
+    border:2px solid #FFFFFF;
+}
+.graytext {
+    color:gray;
+    font-size:10px;
+    font-family:"Tahoma";
+}
+
+.Departments {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.Department {
+    background-color:#FFFFFF;
+    border:1px solid #A8B2BB;
+    float:left;
+    height:180px;
+    margin:5px;
+    padding:4px;
+    text-align:center;
+    width:185px;
+}
+.Department.Edit {
+    width:285px;
+    font-size:0.8em;
+}
+
+.Department.Red,
+.Category.Red,
+.Product.Red {
+    border-color:Red;
+}
+
+.Department.Red.Edit,
+.Category.Red.Edit,
+.Product.Red.Edit {
+    font-size:0.8em;
+}
+
+.Department.Green,
+.Category.Green,
+.Product.Green {
+    border-color:green;
+}
+
+.Department.Green.Edit,
+.Category.Green.Edit,
+.Product.Green.Edit {
+    font-size:0.8em;
+}
+
+.DepartmentName {
+    color:#4444AA;
+    display:block;
+    font-weight:bold;
+    margin:5px 0;
+}
+.Categories {
+    margin:0;
+    padding:0;
+}
+.Category {
+    background-color:#FFFFFF;
+    border:1px solid #A8B2BB;
+    float:left;
+    height:200px;
+    margin:5px;
+    padding:4px;
+    text-align:center;
+    width:185px;
+    text-decoration:none;
+}
+.Category.Edit {
+    width:285px;
+    font-size:0.8em;
+}
+.CategoryName {
+    color:#4444AA;
+    display:block;
+    font-weight:bold;
+    margin:5px 0;
+}
+.CategoryPrice {
+    color:#4444AA;
+    display:block;
+    font-size:120%;
+    font-weight:bold;
+    margin:3px;
+    text-decoration:none;
+}
+.Product {
+    background-color:#FFFFFF;
+    border:1px solid #A8B2BB;
+    float:left;
+    height:180px;
+    margin:5px;
+    padding:4px;
+    text-align:center;
+    width:185px;
+    text-decoration:none;
+}
+.Product.Edit {
+    width:400px;
+    border:1px solid #A8B2BB;
+    font-size:0.8em;
+    text-align:left;
+}
+.ProductName {
+    color:#4444AA;
+    display:block;
+    font-weight:bold;
+    margin:5px 0;
+}
+.Price {
+    color:#4444AA;
+    display:block;
+    font-size:150%;
+    font-weight:bold;
+    margin:3px;
+    text-decoration:none;
+}
+.PriceDiscount {
+    color:#BB0000;
+    display:block;
+    font-size:200%;
+    font-weight:bold;
+    margin:3px;
+    text-decoration:none;
+}
+.PriceWas {
+    color:#4444AA;
+    display:block;
+    font-size:120%;
+    font-weight:bold;
+    margin:3px;
+    text-decoration:none;
+}
+.PriceNow, .PriceDeal {
+    color:#BB0000;
+    display:block;
+    font-size:150%;
+    font-weight:bold;
+    margin:3px;
+    text-decoration:none;
+    
+}
+ul.MiniProduct {
+    background-color:#FFFFFF;
+    margin:5px;
+    padding:4px;
+    text-align:center;
+}
+li.MiniProduct {
+    float:left;
+    height:46px;
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin:2px;
+    padding:0;
+    text-align:center;
+    width:45px;
+}
+.ProductOptions {
+    margin:5px 0;
+}
+.ProductFields {
+    margin:5px 0 0;
+}
+.ProductDescription {
+    color:#000000;
+}
+.ProductBookmarks a {
+    padding:5px;
+}
+.ProductBookmarks img {
+    border:0 none;
+    padding:0 2px 0 0;
+    vertical-align:middle;
+}
+.CheckOut th {
+    font-weight:bold;
+    text-align:right;
+}
+.CheckOutDone {
+    color:#CC8877;
+    font-weight:bold;
+}
+.CheckOutDoing {
+    color:#CC6633;
+    font-size:115%;
+    font-weight:bold;
+}
+.CheckOutNotDone {
+    color:#666666;
+    font-weight:bold;
+}
+
+#CurrencyDDL {
+    font-size:smaller; 
+    position: absolute;
+    top: 50px;
+    margin-left: 795px;
+}

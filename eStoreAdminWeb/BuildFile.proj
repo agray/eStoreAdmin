@@ -1,0 +1,204 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<MSBuildDir>C:\Program Files\MSBuild\</MSBuildDir>
+		<TPath>$(MSBuildDir)\ExtensionPack\MSBuild.ExtensionPack.tasks</TPath>
+		<TPath Condition="Exists('$(MSBuildDir)\ExtensionPack\MSBuild.ExtensionPack.tasks')">$(MSBuildDir)\ExtensionPack\MSBuild.ExtensionPack.tasks</TPath>
+		<TasksPath>D:\BuildTools\</TasksPath>
+		<SolutionFile>..\ImprovedStoreAdminCSharp.sln</SolutionFile>
+		<SolutionHomeDir>..\</SolutionHomeDir>
+		<DALProj>$(SolutionHomeDir)\eStoreAdminDAL</DALProj>
+		<BLLProj>$(SolutionHomeDir)\eStoreAdminBLL</BLLProj>
+		<WebProj>$(SolutionHomeDir)\eStoreAdminWeb</WebProj>
+		<TestsProj>$(SolutionHomeDir)\eStoreAdminTests</TestsProj>
+		<SeleniumProj>$(SolutionHomeDir)\SeleniumTests</SeleniumProj>
+		<AppPoolName>MSBuildTestAppPool</AppPoolName>
+		<WebSiteName>MSBuildTestWebApp</WebSiteName>
+		<WebSitePath>D:\hudson_builds\jobs\eStoreAdminCSharp\workspace\trunk\eStoreAdminWeb\</WebSitePath>
+		<WebSiteIP>127.0.0.1</WebSiteIP>
+		<WebSiteDefaultDocs>eStoreAdminLogin.aspx</WebSiteDefaultDocs>
+		<WebsiteLogFileDir>D:\Log\$(WebSiteName)\</WebsiteLogFileDir>
+		<DestDir>D:\BuildFiles\</DestDir>
+	</PropertyGroup>
+	
+	<Import Project="$(TasksPath)\Microsoft.Sdc.Common.tasks"/>
+	<Import Project="$(TPath)"/>
+	<!--<Import Project="$(TasksPath)\MSBuild.Community.Tasks.Targets"/>-->
+	
+	
+	<Target Name="Clean">
+		<CleanFolder Path="$(DALProj)\bin" Force="True"/>
+		<CleanFolder Path="$(DALProj)\obj" Force="True"/>
+		<CleanFolder Path="$(BLLProj)\bin" Force="True"/>
+		<CleanFolder Path="$(BLLProj)\obj" Force="True"/>
+		<CleanFolder Path="$(WebProj)\bin" Force="True"/>
+		<CleanFolder Path="$(WebProj)\obj" Force="True"/>
+		<CleanFolder Path="$(TestsProj)\bin" Force="True"/>
+		<CleanFolder Path="$(TestsProj)\obj" Force="True"/>
+		<CleanFolder Path="$(SeleniumProj)\bin" Force="True"/>
+		<CleanFolder Path="$(SeleniumProj)\obj" Force="True"/>
+		
+		<RemoveDir Directories="$(DALProj)\bin" />
+		<RemoveDir Directories="$(DALProj)\obj" />
+		<RemoveDir Directories="$(BLLProj)\bin" />
+		<RemoveDir Directories="$(BLLProj)\obj" />
+		<RemoveDir Directories="$(WebProj)\bin" />
+		<RemoveDir Directories="$(WebProj)\obj" />
+		<RemoveDir Directories="$(TestsProj)\bin" />
+		<RemoveDir Directories="$(TestsProj)\obj" />
+		<RemoveDir Directories="$(SeleniumProj)\bin" />
+		<RemoveDir Directories="$(SeleniumProj)\obj" />
+	</Target>
+	
+	
+	<Target Name="Build" DependsOnTargets="Clean">
+		<MSBuild Projects="$(SolutionFile)" Targets="Rebuild" />
+	</Target>
+	
+	<Target Name="DeleteFiles" DependsOnTargets="Build">
+		<ItemGroup>
+			<FilesToDelete Include="$(DestDir)\*" />
+		</ItemGroup>
+		
+		<Message Text="Deleting FilesToDelete" />
+		
+		<RemoveDir Directories="$(DestDir)\$(SourceDir)" />
+
+	</Target>
+	
+	<!-- Main task -->
+	<Target Name="CopyFiles" DependsOnTargets="DeleteFiles">
+		<ItemGroup>
+			<WebConfig Include="Web.config" />
+			<GlobalASAX Include="Global.asax" />
+			<ASPX_Files Include="**\*.aspx" />
+			<CSS_Files Include="**\*.css" />
+			<ICON_Files Include="**\*.ico" />
+      <XLS_Files Include="**\*.xls" />
+			<JS_Files Include="**\*.js" />
+			<Master_Files Include="**\*.Master" />
+			<Control_Files Include="**\*.ascx" />
+			<Image_Files Include="**\*.gif" />
+			<Skin_Files Include="**\*.skin" />
+			<DLL_Files Include="bin\**\*.dll" />
+		</ItemGroup>
+		
+		<Copy SourceFiles="@(WebConfig)" DestinationFiles="@(WebConfig->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(GlobalASAX)" DestinationFiles="@(GlobalASAX->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(ASPX_Files)" DestinationFiles="@(ASPX_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(CSS_Files)" DestinationFiles="@(CSS_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(ICON_Files)" DestinationFiles="@(ICON_Files->'$(DestDir)%(Identity)')" />
+    <Copy SourceFiles="@(XLS_Files)" DestinationFiles="@(XLS_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(JS_Files)" DestinationFiles="@(JS_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(Master_Files)" DestinationFiles="@(Master_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(Control_Files)" DestinationFiles="@(Control_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(Image_Files)" DestinationFiles="@(Image_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(Skin_Files)" DestinationFiles="@(Skin_Files->'$(DestDir)%(Identity)')" />
+		<Copy SourceFiles="@(DLL_Files)" DestinationFiles="@(DLL_Files->'$(DestDir)%(Identity)')" />
+	</Target>
+	
+	
+	<Target Name="DeployWebapp" DependsOnTargets="Build">
+		<CallTarget Targets="CleanIIS" />
+		<CallTarget Targets="BuildIIS" />
+		<!--<CallTarget Targets="CopyContent" />-->
+		<CallTarget Targets="StartSite" />
+	</Target>
+	
+	
+	<Target Name="CleanIIS">
+		<CallTarget Targets="DeleteWebSite" />
+		<CallTarget Targets="DeleteAppPool" />
+	</Target>
+	
+	
+	<Target Name="BuildIIS">
+		<CallTarget Targets="CreateAppPool" />
+		<CallTarget Targets="CreateWebSite" />
+	</Target>
+	
+		
+	<Target Name="CreateAppPool" >
+		<Web.AppPool.Exists AppPoolName="$(AppPoolName)">
+			<Output TaskParameter="DoesExist" PropertyName="AppPoolExists" />
+		</Web.AppPool.Exists>
+		
+		<Message Condition="'$(AppPoolExists)' == 'true'" Text="AppPool exists, no need to create" />
+		<Message Condition="'$(AppPoolExists)' == 'false'" Text="Creating AppPool" />
+		
+		<Web.AppPool.Create Condition="'$(AppPoolExists)' == 'false'" 
+					      AppPoolName="$(AppPoolName)"
+					      WorkerProcesses="1"
+					      RequestQueueLimit="4000"
+					      IdentityType="NetworkService"
+					      ContinueOnError="false"/>
+	</Target>
+	
+	
+	<Target Name="DeleteAppPool" >
+		<Web.AppPool.Exists AppPoolName="$(AppPoolName)">
+			<Output TaskParameter="DoesExist" PropertyName="AppPoolExists" />
+		</Web.AppPool.Exists>
+		
+		<Message Condition="'$(AppPoolExists)' == 'true'" Text="Deleting AppPool" />
+		<Message Condition="'$(AppPoolExists)' == 'false'" Text="AppPool doesn't exist, no need to delete" />
+		
+		
+		<MSBuild.ExtensionPack.Web.Iis6AppPool Condition="'$(AppPoolExists)' == 'true'" 
+								       TaskAction="Delete"
+								       Name="$(AppPoolName)"
+								       ContinueOnError="false"/>
+	</Target>
+	
+	
+	<Target Name="CreateWebSite" >
+		<Web.WebSite.Exists Description="$(WebSiteName)">
+			<Output TaskParameter="DoesExist" PropertyName="WebSiteExists" />
+		</Web.WebSite.Exists>
+		
+		<Message Condition="'$(WebSiteExists)' == 'true'" Text="Website exists, no need to create" />
+		<Message Condition="'$(WebSiteExists)' == 'false'" Text="Creating Website" />
+		
+		<Web.WebSite.Create Condition="'$(WebSiteExists)' == 'false'" 
+					       Description="$(WebSiteName)"
+					       Path="$(WebSitePath)"
+					       AppPoolId="$(AppPoolName)"
+					       IPAddress="$(WebSiteIP)"
+					       DefaultDocs="$(WebsiteDefaultDocs)"
+					       LogFileDir="$(WebsiteLogFileDir)"
+					       ContinueOnError="false"/>
+					       
+		<!--<MSBuild.ExtensionPack.Web.Iis6Website Condition="'$(WebSiteExists)' == 'false'" 
+									TaskAction="Create"
+									Name="$(WebSiteName)"
+									Properties="ServerBindings=:80;SecureBindings=:444;ServerAutoStart=True"
+									ContinueOnError="false"/>-->
+	</Target>
+	
+	
+	<Target Name="DeleteWebSite" >
+		<Web.WebSite.Exists Description="$(WebSiteName)">
+			<Output TaskParameter="DoesExist" PropertyName="WebSiteExists" />
+		</Web.WebSite.Exists>
+		
+		<Message Condition="'$(WebSiteExists)' == 'true'" Text="Deleting Website" />
+		<Message Condition="'$(WebSiteExists)' == 'false'" Text="Website doesn't exist, no need to delete" />
+		
+		<Web.WebSite.DeleteWebSite Condition="'$(WebSiteExists)' == 'true'" 
+							 Description="$(WebSiteName)"
+							 ContinueOnError="false"/>
+	</Target>
+
+	
+	<Target Name="StopSite" >
+		<Message Text="Stopping Site" />
+		<Web.WebSite.Stop Description="$(WebSiteName)"
+					    ContinueOnError="false"/>
+        </Target>
+	
+	
+	<Target Name="StartSite" >
+		<Message Text="Starting Site" />
+		<Web.WebSite.Start Description="$(WebSiteName)"
+					    ContinueOnError="false"/>
+        </Target>
+</Project>
