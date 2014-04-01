@@ -1,10 +1,10 @@
 # Readme
 
+https://agray@github.com/agray/estoreadmin.git
 
-https://apgray@bitbucket.org/apgray/estoreadmin.git
+  -  Overriding principles:  Don't Repeat Yourself.  Eliminate technical debt everywhere.  Keep maintainability as close to 10/10 as possible.  Refactor where necessary.
 
-  -  Overriding principles:  Don't Repeat Yourself.  Eliminate technical debt everywhere.  Keep maintainablity as close to 10/10 as possible.  Refactor where necessary.
-
+##RoadMap
   - Order Email:  Send email to manager users when order comes in based on user preferences.  Admin page for All, Daily, Weekly, DOW 
   - Entity Framework! Replace Object DataSources with Entity Datasources on CRUD pages.  Stick with Stored procs elsewhere
   - eStoreNPOI: Auto size columns
@@ -36,23 +36,13 @@ https://apgray@bitbucket.org/apgray/estoreadmin.git
   - Security: Obsfuscation
   - Editions:  Basic, Professional, Enterprise.  Define different capabilities in each and implement
   - Fix EditCustomer Databinding
-  - Combine eStore and eStoreAdmin into one Solution / one Repo.  Is this a good idea? Discuss.
+  - Combine eStore and eStoreAdmin into one Solution / one Repo.
   - Customer Account report Pass in Parameter
   - Fix Manage Orders GridView Pagination
   - Fix Online Customer in eStoreAdmin
   - Handle Authentication and Session Timeouts across site in a DRY way
   - HttpBrowserCapabilities Crawler.aspx
-  - Inventory Email Notifications.  Send admin and manager users an email when a product stock level is getting low.  
-  - [Peters of Kensington](http://www.petersofkensington.com.au/Home/)
-	- Customer Care
-	- Newsletter
-	- Master Page
-	- Product Search
-	- Print this page
-	- OrderHistory
-	- Gift Registry
-	- Bridal Offers
-	- Email confirmation (html).	
+  - Inventory Email Notifications.  Send admin and manager users an email when a product stock level is getting low.
   - Review ASPdotNETStorefront
   - Review [dashCommerce](https://github.com/dashcommerce/dashcommerce)
   - Review [nopCommerce](www.nopcommerce.com/)
