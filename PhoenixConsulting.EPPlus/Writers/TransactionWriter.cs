@@ -26,6 +26,12 @@
 using System.IO;
 using phoenixconsulting.epplus.Base;
 using OfficeOpenXml;
+using NLog;
+using eStoreAdminBLL;
+using eStoreAdminDAL;
+using NPOI.SS.UserModel;
+using NPOI.SS.Util;
+using com.phoenixconsulting.epplus.Base;
 
 namespace phoenixconsulting.epplus.writers {
     public class TransactionWriter : BaseWriter {

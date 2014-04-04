@@ -27,6 +27,7 @@ using System;
 using System.IO;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
+using NLog;
 
 namespace phoenixconsulting.epplus.readers {
     public class TestimonialReader : BaseReader {

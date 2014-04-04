@@ -34,8 +34,14 @@
     <Reference Include="EPPlus">
       <HintPath>..\packages\EPPlus.3.1.2\lib\net35\EPPlus.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.1.2.5\lib\net40\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,7 +78,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\eStoreAdminBLL\eStoreAdminBLL.csproj">
+      <Project>{95b7703a-54f2-43fc-8664-e648e51b86e6}</Project>
+      <Name>eStoreAdminBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eStoreAdminDAL\eStoreAdminDAL.csproj">
+      <Project>{9da6e9f7-855b-487a-b961-99a664bc765c}</Project>
+      <Name>eStoreAdminDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -25,6 +25,11 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
+using NPOI.SS.Util;
+using NLog;
+using NPOI.SS.UserModel;
+using eStoreAdminBLL;
+using eStoreAdminDAL;
 
 namespace phoenixconsulting.epplus.writers {
     public class ProductWriter : BaseWriter {
@@ -46,7 +51,7 @@ namespace phoenixconsulting.epplus.writers {
         private MemoryStream createSheetInMemory() {
             Logger logger = LogManager.GetLogger("TraceFileAndEventLogger");
             logger.Debug("Starting ProductWriter");
-             DAL.ProductDataTable productDataTable = (new ProductsBLL()).GetProducts();
+            DAL.ProductDataTable productDataTable = (new ProductsBLL()).GetProducts();
 
             ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
             IRow excelRow;

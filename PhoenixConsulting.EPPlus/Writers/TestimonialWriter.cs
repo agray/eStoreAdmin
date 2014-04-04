@@ -25,6 +25,11 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
+using NPOI.SS.Util;
+using NLog;
+using NPOI.SS.UserModel;
+using eStoreAdminDAL;
+using eStoreAdminBLL;
 
 namespace phoenixconsulting.epplus.writers {
     public class TestimonialWriter : BaseWriter {

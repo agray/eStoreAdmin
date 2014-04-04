@@ -26,10 +26,15 @@
 using System.IO;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
+using com.phoenixconsulting.epplus.Base;
+using NPOI.SS.UserModel;
+using NPOI.HSSF.UserModel;
+using NPOI.HSSF.Util;
+using NPOI.HPSF;
 
 namespace phoenixconsulting.epplus.Base {
-    public class BaseWriter {
-        protected ExcelWorkbook excelWorkbook;
+    public abstract class BaseWriter {
+        protected HSSFWorkbook hssfworkbook;
 
         public abstract string getFilename();
         public abstract MemoryStream write(string rootPath);
@@ -61,9 +66,9 @@ namespace phoenixconsulting.epplus.Base {
             hssfworkbook.SummaryInformation = si;
         }
 
-        protected void addBorder(ExcelRow excelRow, int cols) {
+        protected void addBorder(IRow excelRow, int cols) {
             // Style the cell with borders all around.
-            ExcelStyles styles = excelWorkbook.Styles;
+            ExcelStyles styles = hssfworkbook.Styles;
             styles.Borders.BorderBottom = ExcelBorderStyle.Thin;
             styles.BottomBorderColor = HSSFColor.BLACK.index;
             styles.BorderLeft = ExcelBorderStyle.Thin;
@@ -74,19 +79,19 @@ namespace phoenixconsulting.epplus.Base {
             styles.TopBorderColor = HSSFColor.BLACK.index;
 
             for(int i = 0; i < cols; i++) {
-                ExcelCell cell = excelRow.GetCell(i);
+                ICell cell = excelRow.GetCell(i);
                 cell.CellStyle = styles;
             }
         }
 
-        protected void setCellValueAndFormat(ExcelRow row, int colCount, object value, DataFormat dfrmt = ExcelDataFormat.NONE) {
+        protected void setCellValueAndFormat(IRow row, int colCount, object value, DataFormat dfrmt = DataFormat.NONE) {
             ExcelCellBase cell = row.CreateCell(colCount);
             string val = value.ToString();
 
             if(dfrmt.Equals(DataFormat.NONE)) {
                 cell.SetCellValue(val);
             } else {
-                IDataFormat format = workbook.CreateDataForm();
+                IDataFormat format = hssfworkbook.CreateDataForm();
                 ICellStyle cellStyle = ExcelWorkbook.CreateCellStyle();
                 double dbl;
 

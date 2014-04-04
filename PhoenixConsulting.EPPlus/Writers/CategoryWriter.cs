@@ -25,6 +25,11 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
+using NPOI.SS.UserModel;
+using NLog;
+using eStoreAdminBLL;
+using eStoreAdminDAL;
+using NPOI.SS.Util;
 
 namespace phoenixconsulting.npoi {
     public class CategoryWriter : BaseWriter {
