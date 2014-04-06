@@ -25,11 +25,10 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
-using NPOI.SS.Util;
 using NLog;
 using eStoreAdminDAL;
 using eStoreAdminBLL;
-using NPOI.SS.UserModel;
+using OfficeOpenXml;
 
 namespace phoenixconsulting.epplus.writers {
     public class ProductInventoryWriter : BaseWriter {
@@ -39,11 +38,11 @@ namespace phoenixconsulting.epplus.writers {
         private const string exportFilename = "ProductInventory.xls";
         private const string sheetTitle = "Product Inventory Extract";
 
-        public override string getFilename() {
+        public override string GetFilename() {
             return exportFilename;
         }
 
-        public override MemoryStream write(string rootPath) {
+        public override MemoryStream Write(string rootPath) {
             InitializeWorkbook(rootPath, template, sheetTitle);
             return createSheetInMemory();
         }
@@ -54,41 +53,35 @@ namespace phoenixconsulting.epplus.writers {
 
             DAL.ProductDataTable productDataTable = (new ProductsBLL()).GetProducts();
 
-            ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
-            IRow excelRow;
+            ExcelWorksheet sheet1 = package.Workbook.Worksheets[sheetName];
+            int lastRowNum;
 
             int rowCount = 1;
             int colCount = 0;
 
             foreach(DAL.ProductRow row in productDataTable.Rows) {
-                excelRow = sheet1.CreateRow(rowCount);
+                sheet1.InsertRow(sheet1.Dimension.End.Row, 1);
+                lastRowNum = sheet1.Dimension.End.Row;
                 colCount = 0;
 
-                setCellValueAndFormat(excelRow, colCount++, row["ID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["Name"]);
-                setCellValueAndFormat(excelRow, colCount++, row["UnitsInStock"]);
-                setCellValueAndFormat(excelRow, colCount++, row["UnitsOnOrder"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ReOrderLevel"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["Name"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["UnitsInStock"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["UnitsOnOrder"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ReOrderLevel"]);
 
-                addBorder(excelRow, colCount);
+                AddBorder(lastRowNum);
 
                 rowCount++;
             }
 
-            for(int col = 0; col < colCount; col++) {
-                sheet1.AutoSizeColumn(col);
-            }
-
-            sheet1.SetAutoFilter(getBoundingRange(rowCount, colCount));
+            sheet1.Cells[sheet1.Dimension.Address].AutoFitColumns();
+            sheet1.Cells[sheet1.Dimension.Address].AutoFilter = true;
 
             logger.Debug("Exported {0} product products", productDataTable.Rows.Count);
             logger.Debug("Completed ProductInventoryWriter.createSheetInMemory");
 
             return WriteToStream();
-        }
-
-        private CellRangeAddress getBoundingRange(int rows, int cols) {
-            return new CellRangeAddress(0, rows, 0, cols - 1);
         }
     }
 }

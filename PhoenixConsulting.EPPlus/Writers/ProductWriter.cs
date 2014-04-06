@@ -25,11 +25,10 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
-using NPOI.SS.Util;
 using NLog;
-using NPOI.SS.UserModel;
 using eStoreAdminBLL;
 using eStoreAdminDAL;
+using OfficeOpenXml;
 
 namespace phoenixconsulting.epplus.writers {
     public class ProductWriter : BaseWriter {
@@ -39,11 +38,11 @@ namespace phoenixconsulting.epplus.writers {
         private const string exportFilename = "Products.xls";
         private const string sheetTitle = "Product Extract";
 
-        public override string getFilename() {
+        public override string GetFilename() {
             return exportFilename;
         }
 
-        public override MemoryStream write(string rootPath) {
+        public override MemoryStream Write(string rootPath) {
             InitializeWorkbook(rootPath, template, sheetTitle);
             return createSheetInMemory();
         }
@@ -53,68 +52,62 @@ namespace phoenixconsulting.epplus.writers {
             logger.Debug("Starting ProductWriter");
             DAL.ProductDataTable productDataTable = (new ProductsBLL()).GetProducts();
 
-            ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
-            IRow excelRow;
+            ExcelWorksheet sheet1 = package.Workbook.Worksheets[sheetName];
+            int lastRowNum;
 
             int rowCount = 1;
             int colCount = 0;
 
             foreach(DAL.ProductRow row in productDataTable.Rows) {
-                excelRow = sheet1.CreateRow(rowCount);
+                sheet1.InsertRow(sheet1.Dimension.End.Row, 1);
+                lastRowNum = sheet1.Dimension.End.Row;
                 colCount = 0;
 
-                setCellValueAndFormat(excelRow, colCount++, row["ID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["DepID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["CatID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["SupplierID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BrandID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["Name"]);
-                setCellValueAndFormat(excelRow, colCount++, row["Description"]);
-                setCellValueAndFormat(excelRow, colCount++, row["UnitPrice"]);
-                setCellValueAndFormat(excelRow, colCount++, row["DiscountUnitPrice"]);
-                setCellValueAndFormat(excelRow, colCount++, row["WholesalePrice"]);
-                setCellValueAndFormat(excelRow, colCount++, row["QuantityPerUnit"]);
-                setCellValueAndFormat(excelRow, colCount++, row["Weight"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["DepID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["CatID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["SupplierID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BrandID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["Name"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["Description"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["UnitPrice"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["DiscountUnitPrice"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["WholesalePrice"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["QuantityPerUnit"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["Weight"]);
                 
                 if(row["Active"].ToString().Equals("1")) {
-                    setCellValueAndFormat(excelRow, colCount++, "Yes");
+                    SetCellValueAndFormat(lastRowNum, colCount++, "Yes");
                 } else {
-                    setCellValueAndFormat(excelRow, colCount++, "No");
+                    SetCellValueAndFormat(lastRowNum, colCount++, "No");
                 }
 
                 if(row["IsOnSale"].ToString().Equals("1")) {
-                    setCellValueAndFormat(excelRow, colCount++, "Yes");
+                    SetCellValueAndFormat(lastRowNum, colCount++, "Yes");
                 } else {
-                    setCellValueAndFormat(excelRow, colCount++, "No");
+                    SetCellValueAndFormat(lastRowNum, colCount++, "No");
                 }
 
-                setCellValueAndFormat(excelRow, colCount++, row["UnitsInStock"]);
-                setCellValueAndFormat(excelRow, colCount++, row["UnitsOnOrder"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ReOrderLevel"]);
-                setCellValueAndFormat(excelRow, colCount++, row["SEOTitle"]);
-                setCellValueAndFormat(excelRow, colCount++, row["SEOKeywords"]);
-                setCellValueAndFormat(excelRow, colCount++, row["SEODescription"]);
-                setCellValueAndFormat(excelRow, colCount++, row["SEOFriendlyNameURL"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["UnitsInStock"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["UnitsOnOrder"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ReOrderLevel"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["SEOTitle"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["SEOKeywords"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["SEODescription"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["SEOFriendlyNameURL"]);
 
-                addBorder(excelRow, colCount);
+                AddBorder(lastRowNum);
 
                 rowCount++;
             }
 
-            for(int col = 0; col < colCount; col++) {
-                sheet1.AutoSizeColumn(col);
-            }
-
-            sheet1.SetAutoFilter(getBoundingRange(rowCount, colCount));
+            sheet1.Cells[sheet1.Dimension.Address].AutoFitColumns();
+            sheet1.Cells[sheet1.Dimension.Address].AutoFilter = true;
 
             logger.Debug("Exported {0} products", productDataTable.Rows.Count);
             logger.Debug("Completed ProductWriter.createSheetInMemory");
 
             return WriteToStream();
-        }
-
-        private CellRangeAddress getBoundingRange(int rows, int cols) {
-            return new CellRangeAddress(0, rows, 0, cols - 1);
         }
     }
 }

@@ -28,6 +28,8 @@ using System.IO;
 using NLog;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
+using eStoreAdminBLL;
+using com.phoenixconsulting.epplus.validators;
 
 namespace phoenixconsulting.epplus.readers {
     public class LinkReader : BaseReader {
@@ -40,9 +42,9 @@ namespace phoenixconsulting.epplus.readers {
 
         private string linkID, linkURL, linkText, linkDescription, linkType;
 
-        public void read(Stream content) {
-            InitializeWorkbook(content);
-        }
+        //public void read(Stream content) {
+        //    InitializeWorkbook(content);
+        //}
         
         public void processFile(Stream fileContent) {    
             int validCount, invalidCount, updatedCount, insertedCount;
@@ -108,32 +110,28 @@ namespace phoenixconsulting.epplus.readers {
             return (!(l.PrimaryKeyExists(int.Parse(linkID))));
         }
 
-        private bool rowIsValid() {
-            linkID = getCellValueAsString(row.GetCell(0));
-            linkURL = getCellValueAsString(row.GetCell(1));
-            linkText = getCellValueAsString(row.GetCell(2));
-            linkDescription = getCellValueAsString(row.GetCell(3));
-            linkType = getCellValueAsString(row.GetCell(4));
+        //private bool rowIsValid() {
+        //    linkID = GetCellValueAsString(row.GetCell(0));
+        //    linkURL = GetCellValueAsString(row.GetCell(1));
+        //    linkText = GetCellValueAsString(row.GetCell(2));
+        //    linkDescription = GetCellValueAsString(row.GetCell(3));
+        //    linkType = GetCellValueAsString(row.GetCell(4));
 
-            try {
-                if(Validator.validateInt(linkID.ToString()) &&
-                   Validator.validateURL(linkURL) &&
-                   Validator.validateLinkType(linkType)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (ArgumentException){
-                return false;
-            }
-        }
+        //    try {
+        //        return Validator.ValidateInt(linkID.ToString()) &&
+        //               Validator.ValidateURL(linkURL) &&
+        //               Validator.ValidateLinkType(linkType);
+        //    } catch (ArgumentException){
+        //        return false;
+        //    }
+        //}
 
-        private void updateRow() {
+        private void UpdateRow() {
             LinkBLL l = new LinkBLL();
             l.UpdateLink(int.Parse(linkID), linkURL, linkText, linkDescription, linkType);
         }
 
-        private void insertRow() {
+        private void InsertRow() {
             LinkBLL l = new LinkBLL();
             l.AddLink(linkURL, linkText, linkDescription, linkType);
         }

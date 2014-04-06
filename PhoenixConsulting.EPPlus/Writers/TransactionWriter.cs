@@ -29,8 +29,6 @@ using OfficeOpenXml;
 using NLog;
 using eStoreAdminBLL;
 using eStoreAdminDAL;
-using NPOI.SS.UserModel;
-using NPOI.SS.Util;
 using com.phoenixconsulting.epplus.Base;
 
 namespace phoenixconsulting.epplus.writers {
@@ -41,11 +39,11 @@ namespace phoenixconsulting.epplus.writers {
         private const string exportFilename = "Transactions.xls";
         private const string sheetTitle = "Transaction Extract";
 
-        public override string getFilename() {
+        public override string GetFilename() {
             return exportFilename;
         }
 
-        public override MemoryStream write(string rootPath) {
+        public override MemoryStream Write(string rootPath) {
             InitializeWorkbook(rootPath, template, sheetTitle);
             return createSheetInMemory();
         }
@@ -55,79 +53,74 @@ namespace phoenixconsulting.epplus.writers {
             logger.Debug("Starting TransactionWriter");
 
             DAL.OrderDataTable orderDataTable = (new OrdersBLL()).GetTransactions();
-            
-            ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
+
+            ExcelWorksheet sheet1 = package.Workbook.Worksheets[sheetName];
+            int lastRowNum;
 
             int rowCount = 2;
             int colCount = 0;
 
             foreach(DAL.OrderRow row in orderDataTable.Rows) {
-                IRow excelRow = sheet1.CreateRow(rowCount);
+                sheet1.InsertRow(sheet1.Dimension.End.Row, 1);
+                lastRowNum = sheet1.Dimension.End.Row;
                 colCount = 0;
 
-                setCellValueAndFormat(excelRow, colCount++, row["ID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["EmailAddress"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingFirstName"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingLastName"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingAddress"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingSuburbCity"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingStateProvinceRegion"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingZipPostcode"]);
-                setCellValueAndFormat(excelRow, colCount++, row["BillingCountry"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingFirstName"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingLastName"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingAddress"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingSuburbCity"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingStateProvinceRegion"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingZipPostcode"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingCountry"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingMode"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShippingCost"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["CCApprovalStatus"]);
-                setCellValueAndFormat(excelRow, colCount++, row["ShipDate"]);
-                setCellValueAndFormat(excelRow, colCount++, row["OrderDate"]);
-                setCellValueAndFormat(excelRow, colCount++, row["Comments"]);
-                setCellValueAndFormat(excelRow, colCount++, row["GiftTag"]);
-                setCellValueAndFormat(excelRow, colCount++, row["TxnID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["SettlementDate"]);
-                setCellValueAndFormat(excelRow, colCount++, row["IsRefunded"]);
-                setCellValueAndFormat(excelRow, colCount++, row["RefundPONum"]);
-                setCellValueAndFormat(excelRow, colCount++, row["TotalCost"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["OrderTotal"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_Ack"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_CorrelationID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_TimeStamp"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_FeeAmount"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_PaymentStatus"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_ReasonCode"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_PaymentDate"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_NetOfFee"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_RefundTransactionID"]);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_FeeRefundAmount"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_GrossRefundAmount"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_NetRefundAmount"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["PayPal_TotalRefundedAmount"], DataFormat.CURRENCY);
-                setCellValueAndFormat(excelRow, colCount++, row["UserID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["EmailAddress"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingFirstName"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingLastName"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingAddress"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingSuburbCity"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingStateProvinceRegion"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingZipPostcode"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["BillingCountry"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingFirstName"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingLastName"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingAddress"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingSuburbCity"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingStateProvinceRegion"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingZipPostcode"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingCountry"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingMode"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShippingCost"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["CCApprovalStatus"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["ShipDate"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["OrderDate"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["Comments"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["GiftTag"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["TxnID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["SettlementDate"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["IsRefunded"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["RefundPONum"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["TotalCost"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["OrderTotal"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_Ack"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_CorrelationID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_TimeStamp"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_FeeAmount"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_PaymentStatus"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_ReasonCode"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_PaymentDate"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_NetOfFee"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_RefundTransactionID"]);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_FeeRefundAmount"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_GrossRefundAmount"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_NetRefundAmount"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["PayPal_TotalRefundedAmount"], DataFormat.CURRENCY);
+                SetCellValueAndFormat(lastRowNum, colCount++, row["UserID"]);
                 
-                addBorder(excelRow, colCount);
+                AddBorder(lastRowNum);
 
                 rowCount++;
             }
 
-            for(int col = 0; col < colCount; col++) {
-                sheet1.AutoSizeColumn(col, true);
-            }
-
-            sheet1.SetAutoFilter(getBoundingRange(rowCount, colCount));
+            sheet1.Cells[sheet1.Dimension.Address].AutoFitColumns();
+            sheet1.Cells[sheet1.Dimension.Address].AutoFilter = true;
 
             logger.Debug("Exported {0} transactions", orderDataTable.Rows.Count);
             logger.Debug("Completed TransactionWriter.createSheetInMemory");
 
             return WriteToStream();
-        }
-
-        private ExcelCellAddress getBoundingRange(int rows, int cols) {
-            return new CellRangeAddress(1, rows, 0, cols - 1);
         }
     }
 }

@@ -23,12 +23,12 @@
  * THE SOFTWARE.
  */
 #endregion
-using System;
 using phoenixconsulting.common.navigation;
+using System;
 
 namespace phoenixconsulting.common.basepages {
     public class DashboardBasePage : BasePage {
-        protected void Page_PreInit(object sender, EventArgs e) {
+        protected override void Page_PreInit(object sender, EventArgs e) {
             MasterPageFile = Pages.DASHBOARD_MASTER;
         }
     }

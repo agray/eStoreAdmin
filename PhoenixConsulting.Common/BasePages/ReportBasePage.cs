@@ -23,17 +23,17 @@
  * THE SOFTWARE.
  */
 #endregion
-using System;
-using System.Data;
 using CrystalDecisions.CrystalReports.Engine;
 using phoenixconsulting.common.handlers;
 using phoenixconsulting.common.navigation;
+using System;
+using System.Data;
 
 namespace phoenixconsulting.common.basepages {
     public class ReportBasePage : BasePage {
         protected ReportDocument cr;
 
-        protected void Page_PreInit(object sender, EventArgs e) {
+        protected override void Page_PreInit(object sender, EventArgs e) {
             MasterPageFile = Pages.REPORT_MASTER;
         }
 

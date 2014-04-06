@@ -29,6 +29,7 @@ using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
 using NLog;
 using com.phoenixconsulting.epplus.validators;
+using eStoreAdminBLL;
 
 namespace phoenixconsulting.epplus.readers {
     public class SupplierReader : BaseReader {
@@ -108,39 +109,35 @@ namespace phoenixconsulting.epplus.readers {
             return (!(s.PrimaryKeyExists(int.Parse(supplierID))));
         }
 
-        private bool rowIsValid() {
-            supplierID = getCellValueAsString(row.GetCell(0));
-            companyName = getCellValueAsString(row.GetCell(1));
-            contactName = getCellValueAsString(row.GetCell(2));
-            address = getCellValueAsString(row.GetCell(3));
-            citySuburb = getCellValueAsString(row.GetCell(4));
-            stateProvinceRegion = getCellValueAsString(row.GetCell(5));
-            zipPostcode = getCellValueAsString(row.GetCell(6));
-            country = getCellValueAsString(row.GetCell(7));
-            businessPhone = getCellValueAsString(row.GetCell(8));
-            mobilePhone = getCellValueAsString(row.GetCell(9));
-            emailAddress = getCellValueAsString(row.GetCell(10));
+        //private bool rowIsValid() {
+        //    supplierID = GetCellValueAsString(row.GetCell(0));
+        //    companyName = GetCellValueAsString(row.GetCell(1));
+        //    contactName = GetCellValueAsString(row.GetCell(2));
+        //    address = GetCellValueAsString(row.GetCell(3));
+        //    citySuburb = GetCellValueAsString(row.GetCell(4));
+        //    stateProvinceRegion = GetCellValueAsString(row.GetCell(5));
+        //    zipPostcode = GetCellValueAsString(row.GetCell(6));
+        //    country = GetCellValueAsString(row.GetCell(7));
+        //    businessPhone = GetCellValueAsString(row.GetCell(8));
+        //    mobilePhone = GetCellValueAsString(row.GetCell(9));
+        //    emailAddress = GetCellValueAsString(row.GetCell(10));
 
-            try {
-                if(Validator.validateInt(supplierID.ToString()) &&
-                   Validator.validateAlpha(companyName) &&
-                   Validator.validateAlpha(contactName) &&
-                   Validator.validateAlpha(address) &&
-                   Validator.validateAlpha(citySuburb) &&
-                   Validator.validateAlpha(stateProvinceRegion) &&
-                   Validator.validateDouble(zipPostcode.ToString()) &&
-                   Validator.validateAlpha(country) &&
-                   Validator.validateDouble(businessPhone) &&
-                   Validator.validateDouble(mobilePhone) &&
-                   Validator.validateEmail(emailAddress)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (ArgumentException){
-                return false;
-            }
-        }
+        //    try {
+        //        return Validator.ValidateInt(supplierID.ToString()) &&
+        //               Validator.ValidateAlpha(companyName) &&
+        //               Validator.ValidateAlpha(contactName) &&
+        //               Validator.ValidateAlpha(address) &&
+        //               Validator.ValidateAlpha(citySuburb) &&
+        //               Validator.ValidateAlpha(stateProvinceRegion) &&
+        //               Validator.ValidateDouble(zipPostcode.ToString()) &&
+        //               Validator.ValidateAlpha(country) &&
+        //               Validator.ValidateDouble(businessPhone) &&
+        //               Validator.ValidateDouble(mobilePhone) &&
+        //               Validator.ValidateEmail(emailAddress);
+        //    } catch (ArgumentException){
+        //        return false;
+        //    }
+        //}
 
         private void updateRow() {
             SuppliersBLL s = new SuppliersBLL();

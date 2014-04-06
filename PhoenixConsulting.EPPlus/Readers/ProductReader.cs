@@ -114,57 +114,53 @@ namespace phoenixconsulting.epplus.readers {
                     p.ForeignKeysExist(int.Parse(depID), int.Parse(catID), int.Parse(supplierID), int.Parse(brandID))));
         }
 
-        private bool rowIsValid() {
-            prodID = getCellValueAsString(row.GetCell(0));
-            depID = getCellValueAsString(row.GetCell(1));
-            catID = getCellValueAsString(row.GetCell(2));
-            brandID = getCellValueAsString(row.GetCell(3));
-            supplierID = getCellValueAsString(row.GetCell(4));
-            productName = getCellValueAsString(row.GetCell(5));
-            description = getCellValueAsString(row.GetCell(6));
-            unitPrice = getCellValueAsString(row.GetCell(7));
-            discountPrice = getCellValueAsString(row.GetCell(8));
-            wholesalePrice = getCellValueAsString(row.GetCell(9));
-            quantityPerUnit = getCellValueAsString(row.GetCell(10));
-            weight = getCellValueAsString(row.GetCell(11));
-            isActive = getCellValueAsString(row.GetCell(12));
-            isOnSale = getCellValueAsString(row.GetCell(13));
-            unitsInStock = getCellValueAsString(row.GetCell(14));
-            unitsOnOrder = getCellValueAsString(row.GetCell(15));
-            reorderLevel = getCellValueAsString(row.GetCell(16));
-            seoTitle = getCellValueAsString(row.GetCell(17));
-            seoKeywords = getCellValueAsString(row.GetCell(18));
-            seoDescription = getCellValueAsString(row.GetCell(19));
-            seoFriendlyName = getCellValueAsString(row.GetCell(20));
+        //private bool rowIsValid() {
+        //    prodID = GetCellValueAsString(row.GetCell(0));
+        //    depID = GetCellValueAsString(row.GetCell(1));
+        //    catID = GetCellValueAsString(row.GetCell(2));
+        //    brandID = GetCellValueAsString(row.GetCell(3));
+        //    supplierID = GetCellValueAsString(row.GetCell(4));
+        //    productName = GetCellValueAsString(row.GetCell(5));
+        //    description = GetCellValueAsString(row.GetCell(6));
+        //    unitPrice = GetCellValueAsString(row.GetCell(7));
+        //    discountPrice = GetCellValueAsString(row.GetCell(8));
+        //    wholesalePrice = GetCellValueAsString(row.GetCell(9));
+        //    quantityPerUnit = GetCellValueAsString(row.GetCell(10));
+        //    weight = GetCellValueAsString(row.GetCell(11));
+        //    isActive = GetCellValueAsString(row.GetCell(12));
+        //    isOnSale = GetCellValueAsString(row.GetCell(13));
+        //    unitsInStock = GetCellValueAsString(row.GetCell(14));
+        //    unitsOnOrder = GetCellValueAsString(row.GetCell(15));
+        //    reorderLevel = GetCellValueAsString(row.GetCell(16));
+        //    seoTitle = GetCellValueAsString(row.GetCell(17));
+        //    seoKeywords = GetCellValueAsString(row.GetCell(18));
+        //    seoDescription = GetCellValueAsString(row.GetCell(19));
+        //    seoFriendlyName = GetCellValueAsString(row.GetCell(20));
 
-            try {
-                if(Validator.validateInt(prodID) &&
-                   Validator.validateInt(depID) &&
-                   Validator.validateInt(catID) &&
-                   Validator.validateInt(brandID) &&
-                   Validator.validateInt(supplierID) &&
-                   Validator.validateDouble(unitPrice) &&
-                   Validator.validateDouble(discountPrice) &&
-                   Validator.validateDouble(wholesalePrice) &&
-                   Validator.validateInt(quantityPerUnit) &&
-                   Validator.validateDouble(weight) &&
-                   (isActive.Equals("Yes") || isActive.Equals("No")) &&
-                   (isOnSale.Equals("Yes") || isOnSale.Equals("No")) &&
-                   Validator.validateInt(unitsInStock) &&
-                   Validator.validateInt(unitsOnOrder) &&
-                   Validator.validateInt(reorderLevel) &&
-                   Validator.validateAlpha(seoTitle) &&
-                   Validator.validateAlpha(seoKeywords) &&
-                   Validator.validateAlpha(seoDescription) &&
-                   Validator.validateAlpha(seoFriendlyName)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (ArgumentException){
-                return false;
-            }
-        }
+        //    try {
+        //        return Validator.ValidateInt(prodID) &&
+        //               Validator.ValidateInt(depID) &&
+        //               Validator.ValidateInt(catID) &&
+        //               Validator.ValidateInt(brandID) &&
+        //               Validator.ValidateInt(supplierID) &&
+        //               Validator.ValidateDouble(unitPrice) &&
+        //               Validator.ValidateDouble(discountPrice) &&
+        //               Validator.ValidateDouble(wholesalePrice) &&
+        //               Validator.ValidateInt(quantityPerUnit) &&
+        //               Validator.ValidateDouble(weight) &&
+        //               (isActive.Equals("Yes") || isActive.Equals("No")) &&
+        //               (isOnSale.Equals("Yes") || isOnSale.Equals("No")) &&
+        //               Validator.ValidateInt(unitsInStock) &&
+        //               Validator.ValidateInt(unitsOnOrder) &&
+        //               Validator.ValidateInt(reorderLevel) &&
+        //               Validator.ValidateAlpha(seoTitle) &&
+        //               Validator.ValidateAlpha(seoKeywords) &&
+        //               Validator.ValidateAlpha(seoDescription) &&
+        //               Validator.ValidateAlpha(seoFriendlyName);
+        //    } catch (ArgumentException) {
+        //        return false;
+        //    }
+        //}
 
         private void updateRow() {
             ProductsBLL p = new ProductsBLL();
