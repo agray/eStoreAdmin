@@ -26,7 +26,7 @@ namespace eStoreAdminBLL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHEONIX\\PHEONIX;Initial Catalog=eStore;User ID=eStoreAdminUser;Passwo" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=(local);Initial Catalog=eStore;User ID=eStoreAdminUser;Passwo" +
             "rd=bond007")]
         public string connString {
             get {

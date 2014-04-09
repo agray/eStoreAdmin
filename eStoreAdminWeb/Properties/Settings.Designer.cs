@@ -34,7 +34,7 @@ namespace eStoreAdminWeb.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHEONIX\\PHEONIX;Initial Catalog=eStore;User ID=sa;Password=bond007")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=(local);Initial Catalog=eStore;User ID=sa;Password=bond007")]
         public string connString {
             get {
                 return ((string)(this["connString"]));
