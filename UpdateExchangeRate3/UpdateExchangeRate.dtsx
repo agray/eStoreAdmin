@@ -1,986 +1,283 @@
-<?xml version="1.0"?><DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:ExecutableType="SSIS.Package.2">
-<DTS:Property DTS:Name="PackageFormatVersion">3</DTS:Property>
-<DTS:Property DTS:Name="VersionComments"></DTS:Property>
-<DTS:Property DTS:Name="CreatorName">PHEONIX\andrewg</DTS:Property>
-<DTS:Property DTS:Name="CreatorComputerName">PHEONIX</DTS:Property>
-<DTS:Property DTS:Name="CreationDate" DTS:DataType="7">7/8/2010 6:50:39 PM</DTS:Property>
-<DTS:Property DTS:Name="PackageType">5</DTS:Property>
-<DTS:Property DTS:Name="ProtectionLevel">1</DTS:Property>
-<DTS:Property DTS:Name="MaxConcurrentExecutables">-1</DTS:Property>
-<DTS:Property DTS:Name="PackagePriorityClass">0</DTS:Property>
-<DTS:Property DTS:Name="VersionMajor">1</DTS:Property>
-<DTS:Property DTS:Name="VersionMinor">0</DTS:Property>
-<DTS:Property DTS:Name="VersionBuild">17</DTS:Property>
-<DTS:Property DTS:Name="VersionGUID">{F5302FC3-9D1A-4382-B04F-890BAAFA3DA7}</DTS:Property>
-<DTS:Property DTS:Name="EnableConfig">0</DTS:Property>
-<DTS:Property DTS:Name="CheckpointFileName"></DTS:Property>
-<DTS:Property DTS:Name="SaveCheckpoints">0</DTS:Property>
-<DTS:Property DTS:Name="CheckpointUsage">0</DTS:Property>
-<DTS:Property DTS:Name="SuppressConfigurationWarnings">0</DTS:Property>
-<DTS:ConnectionManager>
-<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">PHEONIX\PHEONIX.eStore.sa</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{937146B2-617E-414A-85E7-5904AABE3E36}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName">OLEDB</DTS:Property><DTS:ObjectData><DTS:ConnectionManager>
-<DTS:Property DTS:Name="Retain">0</DTS:Property><DTS:Password DTS:Name="Password" Sensitive="1" Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm6I2K9Eki0eiDWFagm1VPgAAAAAIAAAARABUAFMAAAADZgAAqAAAABAAAACzRb1QmK0mRBkEWDlMW7XQAAAAAASAAACgAAAAEAAAAMJxZi+6nqQgo+2DipCLZ0kQAAAAB/EUZzpiOIaV3gzQIA+YKRQAAACnBzccwBW+fvkOHO9E8QP4oOlUrA</DTS:Password>
-<DTS:Property DTS:Name="ConnectionString">Data Source=PHEONIX\PHEONIX;User ID=sa;Initial Catalog=eStore;Provider=SQLNCLI10.1;Application Name=SSIS-UpdateExchangeRate-{937146B2-617E-414A-85E7-5904AABE3E36}PHEONIX\PHEONIX.eStore.sa;Auto Translate=False;</DTS:Property></DTS:ConnectionManager></DTS:ObjectData></DTS:ConnectionManager>
-<DTS:Property DTS:Name="LastModifiedProductVersion">10.0.4000.0</DTS:Property>
-<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
-<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
-<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
-<DTS:Property DTS:Name="Disabled">0</DTS:Property>
-<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
-<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
-<DTS:Property DTS:Name="LocaleID">3081</DTS:Property>
-<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
-<DTS:Property DTS:Name="DelayValidation">0</DTS:Property>
-<DTS:Variable>
-<DTS:Property DTS:Name="Expression"></DTS:Property>
-<DTS:Property DTS:Name="EvaluateAsExpression">0</DTS:Property>
-<DTS:Property DTS:Name="Namespace">User</DTS:Property>
-<DTS:Property DTS:Name="ReadOnly">0</DTS:Property>
-<DTS:Property DTS:Name="RaiseChangedEvent">0</DTS:Property>
-<DTS:Property DTS:Name="IncludeInDebugDump">6789</DTS:Property><DTS:VariableValue DTS:DataSubType="ManagedSerializable" DTS:DataType="13"><SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-<SOAP-ENV:Body>
-<xsd:anyType id="ref-1">
-</xsd:anyType>
-</SOAP-ENV:Body>
-</SOAP-ENV:Envelope></DTS:VariableValue>
-<DTS:Property DTS:Name="ObjectName">objCurrencyRows</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{67C028CE-398F-499E-81D5-158B9719804D}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:Variable>
-<DTS:Variable>
-<DTS:Property DTS:Name="Expression"></DTS:Property>
-<DTS:Property DTS:Name="EvaluateAsExpression">0</DTS:Property>
-<DTS:Property DTS:Name="Namespace">User</DTS:Property>
-<DTS:Property DTS:Name="ReadOnly">0</DTS:Property>
-<DTS:Property DTS:Name="RaiseChangedEvent">0</DTS:Property>
-<DTS:Property DTS:Name="IncludeInDebugDump">2345</DTS:Property><DTS:VariableValue DTS:DataType="8"></DTS:VariableValue>
-<DTS:Property DTS:Name="ObjectName">Value</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{2B3E54CE-3B67-4CC0-8C84-5311E91D0352}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:Variable>
-<DTS:LoggingOptions>
-<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
-<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
-<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
-<DTS:Executable DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" DTS:ThreadHint="0">
-<DTS:Property DTS:Name="ExecutionLocation">0</DTS:Property>
-<DTS:Property DTS:Name="ExecutionAddress"></DTS:Property>
-<DTS:Property DTS:Name="TaskContact">Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1</DTS:Property>
-<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
-<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
-<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
-<DTS:Property DTS:Name="Disabled">0</DTS:Property>
-<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
-<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
-<DTS:Property DTS:Name="LocaleID">-1</DTS:Property>
-<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
-<DTS:Property DTS:Name="DelayValidation">-1</DTS:Property>
-<DTS:LoggingOptions>
-<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
-<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
-<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
-<DTS:Property DTS:Name="ObjectName">Get Currencies</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{FEA7D784-4825-4B61-84EA-A47DD44E2251}</DTS:Property>
-<DTS:Property DTS:Name="Description">Get Currencies from Currency table</DTS:Property>
-<DTS:Property DTS:Name="CreationName">Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</DTS:Property>
-<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property><DTS:ObjectData><SQLTask:SqlTaskData SQLTask:Connection="{937146B2-617E-414A-85E7-5904AABE3E36}" SQLTask:TimeOut="0" SQLTask:IsStoredProc="False" SQLTask:BypassPrepare="False" SQLTask:SqlStmtSourceType="DirectInput" SQLTask:SqlStatementSource="SELECT Value FROM Currency WHERE Value &lt;&gt; 'AUD'" SQLTask:CodePage="1252" SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask"><SQLTask:ResultBinding SQLTask:ResultName="0" SQLTask:DtsVariableName="User::objCurrencyRows"/></SQLTask:SqlTaskData></DTS:ObjectData></DTS:Executable>
-<DTS:Executable DTS:ExecutableType="STOCK:FOREACHLOOP">
-<DTS:ForEachEnumerator>
-<DTS:Property DTS:Name="ObjectName">{C81FF784-FE2D-4C84-A6B3-55046DE9CBDE}</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{C81FF784-FE2D-4C84-A6B3-55046DE9CBDE}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName">Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</DTS:Property><DTS:ObjectData><FEEADO EnumType="EnumerateRowsInFirstTable" VarName="User::objCurrencyRows"/></DTS:ObjectData></DTS:ForEachEnumerator>
-<DTS:Property DTS:Name="MaxConcurrent">1</DTS:Property>
-<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
-<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
-<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
-<DTS:Property DTS:Name="Disabled">0</DTS:Property>
-<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
-<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
-<DTS:Property DTS:Name="LocaleID">-1</DTS:Property>
-<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
-<DTS:Property DTS:Name="DelayValidation">-1</DTS:Property>
-<DTS:LoggingOptions>
-<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
-<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
-<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
-<DTS:Executable DTS:ExecutableType="SSIS.Pipeline.2">
-<DTS:Property DTS:Name="ExecutionLocation">0</DTS:Property>
-<DTS:Property DTS:Name="ExecutionAddress"></DTS:Property>
-<DTS:Property DTS:Name="TaskContact">Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1</DTS:Property>
-<DTS:Property DTS:Name="ForceExecValue">0</DTS:Property>
-<DTS:Property DTS:Name="ExecValue" DTS:DataType="3">0</DTS:Property>
-<DTS:Property DTS:Name="ForceExecutionResult">-1</DTS:Property>
-<DTS:Property DTS:Name="Disabled">0</DTS:Property>
-<DTS:Property DTS:Name="FailPackageOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="FailParentOnFailure">0</DTS:Property>
-<DTS:Property DTS:Name="MaxErrorCount">1</DTS:Property>
-<DTS:Property DTS:Name="ISOLevel">1048576</DTS:Property>
-<DTS:Property DTS:Name="LocaleID">-1</DTS:Property>
-<DTS:Property DTS:Name="TransactionOption">1</DTS:Property>
-<DTS:Property DTS:Name="DelayValidation">-1</DTS:Property>
-<DTS:LoggingOptions>
-<DTS:Property DTS:Name="LoggingMode">0</DTS:Property>
-<DTS:Property DTS:Name="FilterKind">1</DTS:Property>
-<DTS:Property DTS:Name="EventFilter" DTS:DataType="8"></DTS:Property></DTS:LoggingOptions>
-<DTS:Property DTS:Name="ObjectName">Data Flow Task</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}</DTS:Property>
-<DTS:Property DTS:Name="Description">Data Flow Task</DTS:Property>
-<DTS:Property DTS:Name="CreationName">SSIS.Pipeline.2</DTS:Property>
-<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property><DTS:ObjectData><pipeline id="0" name="pipelineXml" description="pipelineXml" defaultBufferMaxRows="10000" engineThreads="10" defaultBufferSize="10485760" BLOBTempStoragePath="" bufferTempStoragePath="" runInOptimizedMode="true">
-<components>
-<component id="10" name="WSCall" componentClassID="{2E42D45B-F83C-400F-8D77-61DDE6A7DF29}" description="Executes a custom script." localeId="-1" usesDispositions="false" validateExternalMetadata="True" version="4" pipelineVersion="0" contactInfo="Executes a custom script.;Microsoft Corporation; Microsoft SqlServer v10; © 2007 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
-<properties>
-<property id="14" name="SourceCode" dataType="System.String" state="cdata" isArray="true" description="Stores the source code of the component" typeConverter="" UITypeEditor="" containsID="false" expressionType="None"><arrayElements arrayElementCount="34"><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www\reference.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//     Runtime Version:2.0.50727.3607
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-// 
-// This source code was auto-generated by Microsoft.VSDesigner, Version 2.0.50727.3607.
-// 
-#pragma warning disable 1591
-
-namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.net.webservicex.www {
-    using System.Diagnostics;
-    using System.Web.Services;
-    using System.ComponentModel;
-    using System.Web.Services.Protocols;
-    using System;
-    using System.Xml.Serialization;
-    
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.3053")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="CurrencyConvertorSoap", Namespace="http://www.webserviceX.NET/")]
-    public partial class CurrencyConvertor : System.Web.Services.Protocols.SoapHttpClientProtocol {
-        
-        private System.Threading.SendOrPostCallback ConversionRateOperationCompleted;
-        
-        private bool useDefaultCredentialsSetExplicitly;
-        
-        /// <remarks/>
-        public CurrencyConvertor() {
-            this.Url = global::SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings.Default.SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www_CurrencyConvertor;
-            if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
-                this.UseDefaultCredentials = true;
-                this.useDefaultCredentialsSetExplicitly = false;
-            }
-            else {
-                this.useDefaultCredentialsSetExplicitly = true;
-            }
-        }
-        
-        public new string Url {
-            get {
-                return base.Url;
-            }
-            set {
-                if ((((this.IsLocalFileSystemWebService(base.Url) == true) 
-                            && (this.useDefaultCredentialsSetExplicitly == false)) 
-                            && (this.IsLocalFileSystemWebService(value) == false))) {
-                    base.UseDefaultCredentials = false;
-                }
-                base.Url = value;
-            }
-        }
-        
-        public new bool UseDefaultCredentials {
-            get {
-                return base.UseDefaultCredentials;
-            }
-            set {
-                base.UseDefaultCredentials = value;
-                this.useDefaultCredentialsSetExplicitly = true;
-            }
-        }
-        
-        /// <remarks/>
-        public event ConversionRateCompletedEventHandler ConversionRateCompleted;
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.webserviceX.NET/ConversionRate", RequestNamespace="http://www.webserviceX.NET/", ResponseNamespace="http://www.webserviceX.NET/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public double ConversionRate(Currency FromCurrency, Currency ToCurrency) {
-            object[] results = this.Invoke("ConversionRate", new object[] {
-                        FromCurrency,
-                        ToCurrency});
-            return ((double)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ConversionRateAsync(Currency FromCurrency, Currency ToCurrency) {
-            this.ConversionRateAsync(FromCurrency, ToCurrency, null);
-        }
-        
-        /// <remarks/>
-        public void ConversionRateAsync(Currency FromCurrency, Currency ToCurrency, object userState) {
-            if ((this.ConversionRateOperationCompleted == null)) {
-                this.ConversionRateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnConversionRateOperationCompleted);
-            }
-            this.InvokeAsync("ConversionRate", new object[] {
-                        FromCurrency,
-                        ToCurrency}, this.ConversionRateOperationCompleted, userState);
-        }
-        
-        private void OnConversionRateOperationCompleted(object arg) {
-            if ((this.ConversionRateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ConversionRateCompleted(this, new ConversionRateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        public new void CancelAsync(object userState) {
-            base.CancelAsync(userState);
-        }
-        
-        private bool IsLocalFileSystemWebService(string url) {
-            if (((url == null) 
-                        || (url == string.Empty))) {
-                return false;
-            }
-            System.Uri wsUri = new System.Uri(url);
-            if (((wsUri.Port >= 1024) 
-                        && (string.Compare(wsUri.Host, "localHost", System.StringComparison.OrdinalIgnoreCase) == 0))) {
-                return true;
-            }
-            return false;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.3082")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.webserviceX.NET/")]
-    public enum Currency {
-        
-        /// <remarks/>
-        AFA,
-        
-        /// <remarks/>
-        ALL,
-        
-        /// <remarks/>
-        DZD,
-        
-        /// <remarks/>
-        ARS,
-        
-        /// <remarks/>
-        AWG,
-        
-        /// <remarks/>
-        AUD,
-        
-        /// <remarks/>
-        BSD,
-        
-        /// <remarks/>
-        BHD,
-        
-        /// <remarks/>
-        BDT,
-        
-        /// <remarks/>
-        BBD,
-        
-        /// <remarks/>
-        BZD,
-        
-        /// <remarks/>
-        BMD,
-        
-        /// <remarks/>
-        BTN,
-        
-        /// <remarks/>
-        BOB,
-        
-        /// <remarks/>
-        BWP,
-        
-        /// <remarks/>
-        BRL,
-        
-        /// <remarks/>
-        GBP,
-        
-        /// <remarks/>
-        BND,
-        
-        /// <remarks/>
-        BIF,
-        
-        /// <remarks/>
-        XOF,
-        
-        /// <remarks/>
-        XAF,
-        
-        /// <remarks/>
-        KHR,
-        
-        /// <remarks/>
-        CAD,
-        
-        /// <remarks/>
-        CVE,
-        
-        /// <remarks/>
-        KYD,
-        
-        /// <remarks/>
-        CLP,
-        
-        /// <remarks/>
-        CNY,
-        
-        /// <remarks/>
-        COP,
-        
-        /// <remarks/>
-        KMF,
-        
-        /// <remarks/>
-        CRC,
-        
-        /// <remarks/>
-        HRK,
-        
-        /// <remarks/>
-        CUP,
-        
-        /// <remarks/>
-        CYP,
-        
-        /// <remarks/>
-        CZK,
-        
-        /// <remarks/>
-        DKK,
-        
-        /// <remarks/>
-        DJF,
-        
-        /// <remarks/>
-        DOP,
-        
-        /// <remarks/>
-        XCD,
-        
-        /// <remarks/>
-        EGP,
-        
-        /// <remarks/>
-        SVC,
-        
-        /// <remarks/>
-        EEK,
-        
-        /// <remarks/>
-        ETB,
-        
-        /// <remarks/>
-        EUR,
-        
-        /// <remarks/>
-        FKP,
-        
-        /// <remarks/>
-        GMD,
-        
-        /// <remarks/>
-        GHC,
-        
-        /// <remarks/>
-        GIP,
-        
-        /// <remarks/>
-        XAU,
-        
-        /// <remarks/>
-        GTQ,
-        
-        /// <remarks/>
-        GNF,
-        
-        /// <remarks/>
-        GYD,
-        
-        /// <remarks/>
-        HTG,
-        
-        /// <remarks/>
-        HNL,
-        
-        /// <remarks/>
-        HKD,
-        
-        /// <remarks/>
-        HUF,
-        
-        /// <remarks/>
-        ISK,
-        
-        /// <remarks/>
-        INR,
-        
-        /// <remarks/>
-        IDR,
-        
-        /// <remarks/>
-        IQD,
-        
-        /// <remarks/>
-        ILS,
-        
-        /// <remarks/>
-        JMD,
-        
-        /// <remarks/>
-        JPY,
-        
-        /// <remarks/>
-        JOD,
-        
-        /// <remarks/>
-        KZT,
-        
-        /// <remarks/>
-        KES,
-        
-        /// <remarks/>
-        KRW,
-        
-        /// <remarks/>
-        KWD,
-        
-        /// <remarks/>
-        LAK,
-        
-        /// <remarks/>
-        LVL,
-        
-        /// <remarks/>
-        LBP,
-        
-        /// <remarks/>
-        LSL,
-        
-        /// <remarks/>
-        LRD,
-        
-        /// <remarks/>
-        LYD,
-        
-        /// <remarks/>
-        LTL,
-        
-        /// <remarks/>
-        MOP,
-        
-        /// <remarks/>
-        MKD,
-        
-        /// <remarks/>
-        MGF,
-        
-        /// <remarks/>
-        MWK,
-        
-        /// <remarks/>
-        MYR,
-        
-        /// <remarks/>
-        MVR,
-        
-        /// <remarks/>
-        MTL,
-        
-        /// <remarks/>
-        MRO,
-        
-        /// <remarks/>
-        MUR,
-        
-        /// <remarks/>
-        MXN,
-        
-        /// <remarks/>
-        MDL,
-        
-        /// <remarks/>
-        MNT,
-        
-        /// <remarks/>
-        MAD,
-        
-        /// <remarks/>
-        MZM,
-        
-        /// <remarks/>
-        MMK,
-        
-        /// <remarks/>
-        NAD,
-        
-        /// <remarks/>
-        NPR,
-        
-        /// <remarks/>
-        ANG,
-        
-        /// <remarks/>
-        NZD,
-        
-        /// <remarks/>
-        NIO,
-        
-        /// <remarks/>
-        NGN,
-        
-        /// <remarks/>
-        KPW,
-        
-        /// <remarks/>
-        NOK,
-        
-        /// <remarks/>
-        OMR,
-        
-        /// <remarks/>
-        XPF,
-        
-        /// <remarks/>
-        PKR,
-        
-        /// <remarks/>
-        XPD,
-        
-        /// <remarks/>
-        PAB,
-        
-        /// <remarks/>
-        PGK,
-        
-        /// <remarks/>
-        PYG,
-        
-        /// <remarks/>
-        PEN,
-        
-        /// <remarks/>
-        PHP,
-        
-        /// <remarks/>
-        XPT,
-        
-        /// <remarks/>
-        PLN,
-        
-        /// <remarks/>
-        QAR,
-        
-        /// <remarks/>
-        ROL,
-        
-        /// <remarks/>
-        RUB,
-        
-        /// <remarks/>
-        WST,
-        
-        /// <remarks/>
-        STD,
-        
-        /// <remarks/>
-        SAR,
-        
-        /// <remarks/>
-        SCR,
-        
-        /// <remarks/>
-        SLL,
-        
-        /// <remarks/>
-        XAG,
-        
-        /// <remarks/>
-        SGD,
-        
-        /// <remarks/>
-        SKK,
-        
-        /// <remarks/>
-        SIT,
-        
-        /// <remarks/>
-        SBD,
-        
-        /// <remarks/>
-        SOS,
-        
-        /// <remarks/>
-        ZAR,
-        
-        /// <remarks/>
-        LKR,
-        
-        /// <remarks/>
-        SHP,
-        
-        /// <remarks/>
-        SDD,
-        
-        /// <remarks/>
-        SRG,
-        
-        /// <remarks/>
-        SZL,
-        
-        /// <remarks/>
-        SEK,
-        
-        /// <remarks/>
-        CHF,
-        
-        /// <remarks/>
-        SYP,
-        
-        /// <remarks/>
-        TWD,
-        
-        /// <remarks/>
-        TZS,
-        
-        /// <remarks/>
-        THB,
-        
-        /// <remarks/>
-        TOP,
-        
-        /// <remarks/>
-        TTD,
-        
-        /// <remarks/>
-        TND,
-        
-        /// <remarks/>
-        TRL,
-        
-        /// <remarks/>
-        USD,
-        
-        /// <remarks/>
-        AED,
-        
-        /// <remarks/>
-        UGX,
-        
-        /// <remarks/>
-        UAH,
-        
-        /// <remarks/>
-        UYU,
-        
-        /// <remarks/>
-        VUV,
-        
-        /// <remarks/>
-        VEB,
-        
-        /// <remarks/>
-        VND,
-        
-        /// <remarks/>
-        YER,
-        
-        /// <remarks/>
-        YUM,
-        
-        /// <remarks/>
-        ZMK,
-        
-        /// <remarks/>
-        ZWD,
-        
-        /// <remarks/>
-        TRY,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.3053")]
-    public delegate void ConversionRateCompletedEventHandler(object sender, ConversionRateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.3053")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ConversionRateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ConversionRateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public double Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((double)(this.results[0]));
-            }
-        }
-    }
-}
-
-#pragma warning restore 1591]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\main.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[/* Microsoft SQL Server Integration Services Script Component
-*  Write scripts using Microsoft Visual C# 2008.
-*  ScriptMain is the entry point class of the script.*/
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
-using SC_08a78dde95ab41f58d813691aad5f38f.csproj.net.webservicex.www1;
-
-[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
-public class ScriptMain : UserComponent
-{
-
-    public override void PreExecute()
-    {
-        base.PreExecute();
-        /*
-          Add your code here for preprocessing or remove if not needed
-        */
-    }
-
-    public override void PostExecute()
-    {
-        base.PostExecute();
-        /*
-          Add your code here for postprocessing or remove if not needed
-          You can set read/write variables here, for example:
-          Variables.MyIntVar = 100
-        */
-    }
-
-    public override void CreateNewOutputRows()
-    {
-        string response = "";
-        Currency inputCurrency = getCurrency(Variables.Value);
-        response = GetExchangeRate(inputCurrency);
-        processResponse(response, inputCurrency);
-    }
-
-    private string GetExchangeRate(Currency ToCurrency)
-    {
-        double conversionRate = 0;
-        CurrencyConvertor currConvertor = new CurrencyConvertor();
-
-        conversionRate = currConvertor.ConversionRate(Currency.AUD, ToCurrency);
-
-        //Add Margin of Safety to keep customers happy
-        conversionRate = conversionRate * 1.01;
-
-        return conversionRate.ToString();
-    }
-
-    private void processResponse(string resp, Currency toCurrency)
-    {
-        Output0Buffer.AddRow();
-        Output0Buffer.CurrencyValue = toCurrency.ToString();
-        Output0Buffer.ConversionRate = Convert.ToDouble(resp);
-    }
-
-    private Currency getCurrency(string inputValue)
-    {
-        return (Currency)Enum.Parse(typeof(Currency), inputValue, true);
-    }
-}
-]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\properties\resources.resx]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-</root>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\properties\settings.designer.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//     Runtime Version:2.0.50727.3615
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
-    
-    
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "9.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webservicex.net/CurrencyConvertor.asmx")]
-        public string SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www_CurrencyConvertor {
-            get {
-                return ((string)(this["SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www_CurrencyConvertor"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webservicex.net/CurrencyConvertor.asmx")]
-        public string SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor {
-            get {
-                return ((string)(this["SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor" +
-                    ""]));
-            }
-        }
-    }
-}
-]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\sc_08a78dde95ab41f58d813691aad5f38f.csproj]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/8/2010 6:50:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="apg-laptop"
+  DTS:CreatorName="apg-laptop\andrewg"
+  DTS:DTSID="{855AF05D-820D-4311-8031-55076F8FF72E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2299.1"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="UpdateExchangeRate"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{988B34B4-D01A-4C01-9C6B-0E32846F7F2C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[APG-LAPTOP.eStore.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5C787287-1F42-48E9-B94F-DBE82B30811B}"
+      DTS:ObjectName="APG-LAPTOP.eStore.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=APG-LAPTOP;User ID=sa;Initial Catalog=eStore;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAmuv416yitESKbq2OHEF6jwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADy9L4CnUX42tsfvcEslBZWIL6VHQn4E+jKynJTZIReFAAAAAAOgAAAAAIAACAAAADxyzOrOugVpExfyB39T9xf8gneMc0jQjesWt+udFFZLBAAAACCAylzcV7P4YknLV32t+ztQAAAAHxBKLOt1KRqsXiFMEHo+A1kkXd9rwTG6A6CvBVlkPEakmJ+SdtEJof+wUVkGZQEw8WETEE3vSpl26zwxknppnw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{67C028CE-398F-499E-81D5-158B9719804D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="objCurrencyRows">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B3E54CE-3B67-4CC0-8C84-5311E91D0352}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Value">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Get Currencies"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
+      DTS:Description="Get Currencies from Currency table"
+      DTS:DTSID="{FEA7D784-4825-4B61-84EA-A47DD44E2251}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Currencies"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5C787287-1F42-48E9-B94F-DBE82B30811B}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="SELECT Value FROM Currency WHERE Value &lt;&gt; 'AUD'"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::objCurrencyRows" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loop Through Currencies"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:DelayValidation="True"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{01BFFDD5-7A0B-4DC8-AD84-A3E6907EEDDC}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loop Through Currencies">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{C81FF784-FE2D-4C84-A6B3-55046DE9CBDE}"
+        DTS:ObjectName="{C81FF784-FE2D-4C84-A6B3-55046DE9CBDE}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::objCurrencyRows" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop Through Currencies\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              BLOBTempStoragePath=""
+              bufferTempStoragePath=""
+              version="1">
+              <components>
+                <component
+                  refId="Package\Loop Through Currencies\Data Flow Task\Update Currency"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Executes an SQL command for each row in a dataset."
+                  name="Update Currency"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec dbo.uspCurrencyUpdateExchangeRate ?,?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[APG-LAPTOP.eStore.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[APG-LAPTOP.eStore.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input].Columns[CurrencyValue]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CurrencyValue"
+                          externalMetadataColumnId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input].ExternalColumns[@Value]"
+                          lineageId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0].Columns[CurrencyValue]" />
+                        <inputColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input].Columns[ConversionRate]"
+                          cachedDataType="r8"
+                          cachedName="ConversionRate"
+                          externalMetadataColumnId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input].ExternalColumns[@ExchangeRate]"
+                          lineageId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0].Columns[ConversionRate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input].ExternalColumns[@Value]"
+                          codePage="1252"
+                          dataType="str"
+                          length="3"
+                          name="@Value">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input].ExternalColumns[@ExchangeRate]"
+                          dataType="r8"
+                          name="@ExchangeRate">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Currencies\Data Flow Task\WSCall"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Executes a custom script.;Microsoft Corporation; Microsoft SqlServer v10; © 2007 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Executes a custom script."
+                  name="WSCall"
+                  version="9">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="48">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.webservicex.net/CurrencyConvertor.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[sc_08a78dde95ab41f58d813691aad5f38f.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- This section defines project-level properties.
 
        Configuration - Specifies whether the default configuration is Release or Debug.
@@ -992,7 +289,7 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
        AssemblyName - Name of the output assembly.
   -->
   <PropertyGroup>
-    <ProjectTypeGuids>{A860303F-1F3F-4691-B57E-529FC101A107};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
@@ -1000,6 +297,9 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
     <RootNamespace>SC_08a78dde95ab41f58d813691aad5f38f.csproj</RootNamespace>
     <AssemblyName>SC_08a78dde95ab41f58d813691aad5f38f.csproj</AssemblyName>
     <ProjectGuid>{48489F53-69C4-46AE-AAC1-6BF7D38D10AD}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <!-- This section defines properties that are set when the "Debug" configuration is
        selected.
@@ -1054,10 +354,18 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <!-- This section defines the user source files that are part of the
        project.
@@ -1095,6 +403,7 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="web references\net.webservicex.www1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1135,27 +444,245 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
   <!-- This section defines VSTA properties that describe the host-changable project properties. -->
   <ProjectExtensions>
     <VisualStudio>
-      <FlavorProperties GUID="{A860303F-1F3F-4691-B57E-529FC101A107}">
-        <ProjectProperties HostName="VSTAHostName" HostPackage="{C1B21C64-9E6F-4923-A89D-9F958503C1CE}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
         <Host Name="SSIS_ScriptComponent" IconIndex="0" />
         <ProjectClient>
-          <HostIdentifier>SSIS_ScriptComponent</HostIdentifier>
+          <HostIdentifier>SSIS_SC120</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-</Project>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\properties\settings.settings]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www_CurrencyConvertor" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://www.webservicex.net/CurrencyConvertor.asmx</Value>
-    </Setting>
-    <Setting Name="SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://www.webservicex.net/CurrencyConvertor.asmx</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www\currencyconvertor.wsdl]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+</Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//     Runtime Version:4.0.30319.34014
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
+    
+    
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webservicex.net/CurrencyConvertor.asmx")]
+        public string SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor {
+            get {
+                return ((string)(this["SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor" +
+                    ""]));
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>sc_08a78dde95ab41f58d813691aad5f38f</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>sc_08a78dde95ab41f58d813691aad5f38f</msb:DisplayName>
+		<msb:ProjectId>{31507834-3289-4591-B311-CC23378F6354}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="sc_08a78dde95ab41f58d813691aad5f38f.csproj"/>
+		<msb:File Include="web references\net.webservicex.www1\CurrencyConvertor.disco"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="web references\net.webservicex.www1\CurrencyConvertor.wsdl"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="web references\net.webservicex.www1\Reference.cs"/>
+		<msb:File Include="app.config"/>
+		<msb:File Include="web references\net.webservicex.www1\Reference.map"/>
+		<msb:File Include="Settings.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[web references\net.webservicex.www1\CurrencyConvertor.disco]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://www.webservicex.net/CurrencyConvertor.asmx?wsdl" docRef="http://www.webservicex.net/CurrencyConvertor.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://www.webservicex.net/CurrencyConvertor.asmx" xmlns:q1="http://www.webserviceX.NET/" binding="q1:CurrencyConvertorSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://www.webservicex.net/CurrencyConvertor.asmx" xmlns:q2="http://www.webserviceX.NET/" binding="q2:CurrencyConvertorSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_08a78dde95ab41f58d813691aad5f38f.csproj")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("PHEONIX")]
+[assembly: AssemblyProduct("SC_08a78dde95ab41f58d813691aad5f38f.csproj")]
+[assembly: AssemblyCopyright("Copyright @ PHEONIX 2010")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public Output0Buffer Output0Buffer;
+
+    public virtual void FinishOutputs()
+    {
+    }
+
+    private void MarkOutputsFinished()
+    {
+
+        if (null != Output0Buffer)
+        {
+            Output0Buffer.SetEndOfRowset();
+            Output0Buffer = null;
+        }
+
+    }
+
+    public override void PrimeOutput(int Outputs, int[] OutputIDs, PipelineBuffer[] Buffers, OutputNameMap OutputMap)
+    {
+       for(int Idx = 0; Idx < Outputs; Idx++)
+       {
+            if(OutputIDs[Idx] == GetOutputID(OutputMap, @"Output 0"))
+            {
+                Output0Buffer = new Output0Buffer(Buffers[Idx], GetColumnIndexes(OutputIDs[Idx]), OutputMap);
+            }
+        }
+
+        CreateNewOutputRows();
+
+        FinishOutputs();
+        MarkOutputsFinished();
+
+    }
+
+    public virtual void CreateNewOutputRows()
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public IDTSConnectionManager100 Connection
+    {
+        get
+        {
+            return ParentComponent.ComponentMetaData.RuntimeConnectionCollection.GetRuntimeConnectionByName(@"Connection").ConnectionManager;
+        }
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public String Value
+    {
+        get
+        {
+            return (String)(ParentComponent.ReadOnlyVariables["Value"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[web references\net.webservicex.www1\CurrencyConvertor.wsdl]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.webserviceX.NET/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET/">
@@ -1435,35 +962,13 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
       <http:address location="http://www.webservicex.net/CurrencyConvertor.asmx" />
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\properties\assemblyinfo.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("SC_08a78dde95ab41f58d813691aad5f38f.csproj")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PHEONIX")]
-[assembly: AssemblyProduct("SC_08a78dde95ab41f58d813691aad5f38f.csproj")]
-[assembly: AssemblyCopyright("Copyright @ PHEONIX 2010")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]
-]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\properties\resources.designer.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+</wsdl:definitions>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
 //
@@ -1538,26 +1043,135 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties
         }
     }
 }
-]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\app.config]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-    <configSections>
-        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
-            <section name="SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
-        </sectionGroup>
-    </configSections>
-    <applicationSettings>
-        <SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings>
-            <setting name="SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www_CurrencyConvertor"
-                serializeAs="String">
-                <value>http://www.webservicex.net/CurrencyConvertor.asmx</value>
-            </setting>
-            <setting name="SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor"
-                serializeAs="String">
-                <value>http://www.webservicex.net/CurrencyConvertor.asmx</value>
-            </setting>
-        </SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings>
-    </applicationSettings>
-</configuration>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\bufferwrapper.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
 *  Microsoft SQL Server Integration Services buffer wrappers
 *  This module defines classes for accessing data flow buffers
 *  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
@@ -1572,8 +1186,8 @@ using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 public class Output0Buffer: ScriptBuffer
 
 {
-    public Output0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes)
-        : base(Buffer, BufferColumnIndexes)
+    public Output0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
     {
     }
 
@@ -1637,108 +1251,13 @@ public class Output0Buffer: ScriptBuffer
     }
 
 }
-]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www\reference.map]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.webservicex.net/CurrencyConvertor.asmx?wsdl" filename="CurrencyConvertor.wsdl" />
-  </Results>
-</DiscoveryClientResultsFile>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\componentwrapper.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services component wrapper
-*  This module defines the base class for your component
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
-
-public class UserComponent: ScriptComponent
-{
-    public Connections Connections;
-    public Variables Variables;
-    public UserComponent()
-    {
-        Connections = new Connections(this);
-        Variables = new Variables(this);
-    }
-
-    public Output0Buffer Output0Buffer;
-
-    public virtual void FinishOutputs()
-    {
-    }
-
-    private void MarkOutputsFinished()
-    {
-
-        if (null != Output0Buffer)
-        {
-            Output0Buffer.SetEndOfRowset();
-            Output0Buffer = null;
-        }
-
-    }
-
-    public override void PrimeOutput(int Outputs, int[] OutputIDs, PipelineBuffer[] Buffers)
-    {
-       for(int Idx = 0; Idx < Outputs; Idx++)
-       {
-            if(OutputIDs[Idx] == 13)
-            {
-                Output0Buffer = new Output0Buffer(Buffers[Idx], GetColumnIndexes(OutputIDs[Idx]));
-            }
-        }
-
-        CreateNewOutputRows();
-
-        FinishOutputs();
-        MarkOutputsFinished();
-
-    }
-
-    public virtual void CreateNewOutputRows()
-    {
-    }
-
-}
-
-public class Connections
-{
-    ScriptComponent ParentComponent;
-
-    public Connections(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-}
-
-public class Variables
-{
-    ScriptComponent ParentComponent;
-
-    public Variables(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-    public String Value
-    {
-        get
-        {
-            return (String)(ParentComponent.ReadOnlyVariables["Value"].Value);
-        }
-    }
-
-}
-]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www1\reference.map]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.webservicex.net/CurrencyConvertor.asmx?wsdl" filename="CurrencyConvertor.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://www.webservicex.net/CurrencyConvertor.asmx?disco" filename="CurrencyConvertor.disco" />
-  </Results>
-</DiscoveryClientResultsFile>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www1\reference.cs]]></arrayElement><arrayElement dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[web references\net.webservicex.www1\Reference.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
 //     Runtime Version:2.0.50727.3615
@@ -2349,882 +1868,347 @@ namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.net.webservicex.www1 {
     }
 }
 
-#pragma warning restore 1591]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www1\currencyconvertor.disco]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://www.webservicex.net/CurrencyConvertor.asmx?wsdl" docRef="http://www.webservicex.net/CurrencyConvertor.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://www.webservicex.net/CurrencyConvertor.asmx" xmlns:q1="http://www.webserviceX.NET/" binding="q1:CurrencyConvertorSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://www.webservicex.net/CurrencyConvertor.asmx" xmlns:q2="http://www.webserviceX.NET/" binding="q2:CurrencyConvertorSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>]]></arrayElement><arrayElement dataType="System.String"><![CDATA[\web references\net.webservicex.www1\currencyconvertor.wsdl]]></arrayElement><arrayElement dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.webserviceX.NET/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET/">
-      <s:element name="ConversionRate">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="FromCurrency" type="tns:Currency" />
-            <s:element minOccurs="1" maxOccurs="1" name="ToCurrency" type="tns:Currency" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:simpleType name="Currency">
-        <s:restriction base="s:string">
-          <s:enumeration value="AFA" />
-          <s:enumeration value="ALL" />
-          <s:enumeration value="DZD" />
-          <s:enumeration value="ARS" />
-          <s:enumeration value="AWG" />
-          <s:enumeration value="AUD" />
-          <s:enumeration value="BSD" />
-          <s:enumeration value="BHD" />
-          <s:enumeration value="BDT" />
-          <s:enumeration value="BBD" />
-          <s:enumeration value="BZD" />
-          <s:enumeration value="BMD" />
-          <s:enumeration value="BTN" />
-          <s:enumeration value="BOB" />
-          <s:enumeration value="BWP" />
-          <s:enumeration value="BRL" />
-          <s:enumeration value="GBP" />
-          <s:enumeration value="BND" />
-          <s:enumeration value="BIF" />
-          <s:enumeration value="XOF" />
-          <s:enumeration value="XAF" />
-          <s:enumeration value="KHR" />
-          <s:enumeration value="CAD" />
-          <s:enumeration value="CVE" />
-          <s:enumeration value="KYD" />
-          <s:enumeration value="CLP" />
-          <s:enumeration value="CNY" />
-          <s:enumeration value="COP" />
-          <s:enumeration value="KMF" />
-          <s:enumeration value="CRC" />
-          <s:enumeration value="HRK" />
-          <s:enumeration value="CUP" />
-          <s:enumeration value="CYP" />
-          <s:enumeration value="CZK" />
-          <s:enumeration value="DKK" />
-          <s:enumeration value="DJF" />
-          <s:enumeration value="DOP" />
-          <s:enumeration value="XCD" />
-          <s:enumeration value="EGP" />
-          <s:enumeration value="SVC" />
-          <s:enumeration value="EEK" />
-          <s:enumeration value="ETB" />
-          <s:enumeration value="EUR" />
-          <s:enumeration value="FKP" />
-          <s:enumeration value="GMD" />
-          <s:enumeration value="GHC" />
-          <s:enumeration value="GIP" />
-          <s:enumeration value="XAU" />
-          <s:enumeration value="GTQ" />
-          <s:enumeration value="GNF" />
-          <s:enumeration value="GYD" />
-          <s:enumeration value="HTG" />
-          <s:enumeration value="HNL" />
-          <s:enumeration value="HKD" />
-          <s:enumeration value="HUF" />
-          <s:enumeration value="ISK" />
-          <s:enumeration value="INR" />
-          <s:enumeration value="IDR" />
-          <s:enumeration value="IQD" />
-          <s:enumeration value="ILS" />
-          <s:enumeration value="JMD" />
-          <s:enumeration value="JPY" />
-          <s:enumeration value="JOD" />
-          <s:enumeration value="KZT" />
-          <s:enumeration value="KES" />
-          <s:enumeration value="KRW" />
-          <s:enumeration value="KWD" />
-          <s:enumeration value="LAK" />
-          <s:enumeration value="LVL" />
-          <s:enumeration value="LBP" />
-          <s:enumeration value="LSL" />
-          <s:enumeration value="LRD" />
-          <s:enumeration value="LYD" />
-          <s:enumeration value="LTL" />
-          <s:enumeration value="MOP" />
-          <s:enumeration value="MKD" />
-          <s:enumeration value="MGF" />
-          <s:enumeration value="MWK" />
-          <s:enumeration value="MYR" />
-          <s:enumeration value="MVR" />
-          <s:enumeration value="MTL" />
-          <s:enumeration value="MRO" />
-          <s:enumeration value="MUR" />
-          <s:enumeration value="MXN" />
-          <s:enumeration value="MDL" />
-          <s:enumeration value="MNT" />
-          <s:enumeration value="MAD" />
-          <s:enumeration value="MZM" />
-          <s:enumeration value="MMK" />
-          <s:enumeration value="NAD" />
-          <s:enumeration value="NPR" />
-          <s:enumeration value="ANG" />
-          <s:enumeration value="NZD" />
-          <s:enumeration value="NIO" />
-          <s:enumeration value="NGN" />
-          <s:enumeration value="KPW" />
-          <s:enumeration value="NOK" />
-          <s:enumeration value="OMR" />
-          <s:enumeration value="XPF" />
-          <s:enumeration value="PKR" />
-          <s:enumeration value="XPD" />
-          <s:enumeration value="PAB" />
-          <s:enumeration value="PGK" />
-          <s:enumeration value="PYG" />
-          <s:enumeration value="PEN" />
-          <s:enumeration value="PHP" />
-          <s:enumeration value="XPT" />
-          <s:enumeration value="PLN" />
-          <s:enumeration value="QAR" />
-          <s:enumeration value="ROL" />
-          <s:enumeration value="RUB" />
-          <s:enumeration value="WST" />
-          <s:enumeration value="STD" />
-          <s:enumeration value="SAR" />
-          <s:enumeration value="SCR" />
-          <s:enumeration value="SLL" />
-          <s:enumeration value="XAG" />
-          <s:enumeration value="SGD" />
-          <s:enumeration value="SKK" />
-          <s:enumeration value="SIT" />
-          <s:enumeration value="SBD" />
-          <s:enumeration value="SOS" />
-          <s:enumeration value="ZAR" />
-          <s:enumeration value="LKR" />
-          <s:enumeration value="SHP" />
-          <s:enumeration value="SDD" />
-          <s:enumeration value="SRG" />
-          <s:enumeration value="SZL" />
-          <s:enumeration value="SEK" />
-          <s:enumeration value="CHF" />
-          <s:enumeration value="SYP" />
-          <s:enumeration value="TWD" />
-          <s:enumeration value="TZS" />
-          <s:enumeration value="THB" />
-          <s:enumeration value="TOP" />
-          <s:enumeration value="TTD" />
-          <s:enumeration value="TND" />
-          <s:enumeration value="TRL" />
-          <s:enumeration value="USD" />
-          <s:enumeration value="AED" />
-          <s:enumeration value="UGX" />
-          <s:enumeration value="UAH" />
-          <s:enumeration value="UYU" />
-          <s:enumeration value="VUV" />
-          <s:enumeration value="VEB" />
-          <s:enumeration value="VND" />
-          <s:enumeration value="YER" />
-          <s:enumeration value="YUM" />
-          <s:enumeration value="ZMK" />
-          <s:enumeration value="ZWD" />
-          <s:enumeration value="TRY" />
-        </s:restriction>
-      </s:simpleType>
-      <s:element name="ConversionRateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ConversionRateResult" type="s:double" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="double" type="s:double" />
-    </s:schema>
-  </wsdl:types>
-  <wsdl:message name="ConversionRateSoapIn">
-    <wsdl:part name="parameters" element="tns:ConversionRate" />
-  </wsdl:message>
-  <wsdl:message name="ConversionRateSoapOut">
-    <wsdl:part name="parameters" element="tns:ConversionRateResponse" />
-  </wsdl:message>
-  <wsdl:message name="ConversionRateHttpGetIn">
-    <wsdl:part name="FromCurrency" type="s:string" />
-    <wsdl:part name="ToCurrency" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="ConversionRateHttpGetOut">
-    <wsdl:part name="Body" element="tns:double" />
-  </wsdl:message>
-  <wsdl:message name="ConversionRateHttpPostIn">
-    <wsdl:part name="FromCurrency" type="s:string" />
-    <wsdl:part name="ToCurrency" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="ConversionRateHttpPostOut">
-    <wsdl:part name="Body" element="tns:double" />
-  </wsdl:message>
-  <wsdl:portType name="CurrencyConvertorSoap">
-    <wsdl:operation name="ConversionRate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;br&gt;&lt;b&gt;Get conversion rate from one currency to another currency &lt;b&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;&lt;font color='#000080' size='1' face='Verdana'&gt;&lt;u&gt;Differenct currency Code and Names around the world&lt;/u&gt;&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;font face='Verdana' size='1'&gt;AFA-Afghanistan Afghani&lt;br&gt;ALL-Albanian Lek&lt;br&gt;DZD-Algerian Dinar&lt;br&gt;ARS-Argentine Peso&lt;br&gt;AWG-Aruba Florin&lt;br&gt;AUD-Australian Dollar&lt;br&gt;BSD-Bahamian Dollar&lt;br&gt;BHD-Bahraini Dinar&lt;br&gt;BDT-Bangladesh Taka&lt;br&gt;BBD-Barbados Dollar&lt;br&gt;BZD-Belize Dollar&lt;br&gt;BMD-Bermuda Dollar&lt;br&gt;BTN-Bhutan Ngultrum&lt;br&gt;BOB-Bolivian Boliviano&lt;br&gt;BWP-Botswana Pula&lt;br&gt;BRL-Brazilian Real&lt;br&gt;GBP-British Pound&lt;br&gt;BND-Brunei Dollar&lt;br&gt;BIF-Burundi Franc&lt;br&gt;XOF-CFA Franc (BCEAO)&lt;br&gt;XAF-CFA Franc (BEAC)&lt;br&gt;KHR-Cambodia Riel&lt;br&gt;CAD-Canadian Dollar&lt;br&gt;CVE-Cape Verde Escudo&lt;br&gt;KYD-Cayman Islands Dollar&lt;br&gt;CLP-Chilean Peso&lt;br&gt;CNY-Chinese Yuan&lt;br&gt;COP-Colombian Peso&lt;br&gt;KMF-Comoros Franc&lt;br&gt;CRC-Costa Rica Colon&lt;br&gt;HRK-Croatian Kuna&lt;br&gt;CUP-Cuban Peso&lt;br&gt;CYP-Cyprus Pound&lt;br&gt;CZK-Czech Koruna&lt;br&gt;DKK-Danish Krone&lt;br&gt;DJF-Dijibouti Franc&lt;br&gt;DOP-Dominican Peso&lt;br&gt;XCD-East Caribbean Dollar&lt;br&gt;EGP-Egyptian Pound&lt;br&gt;SVC-El Salvador Colon&lt;br&gt;EEK-Estonian Kroon&lt;br&gt;ETB-Ethiopian Birr&lt;br&gt;EUR-Euro&lt;br&gt;FKP-Falkland Islands Pound&lt;br&gt;GMD-Gambian Dalasi&lt;br&gt;GHC-Ghanian Cedi&lt;br&gt;GIP-Gibraltar Pound&lt;br&gt;XAU-Gold Ounces&lt;br&gt;GTQ-Guatemala Quetzal&lt;br&gt;GNF-Guinea Franc&lt;br&gt;GYD-Guyana Dollar&lt;br&gt;HTG-Haiti Gourde&lt;br&gt;HNL-Honduras Lempira&lt;br&gt;HKD-Hong Kong Dollar&lt;br&gt;HUF-Hungarian Forint&lt;br&gt;ISK-Iceland Krona&lt;br&gt;INR-Indian Rupee&lt;br&gt;IDR-Indonesian Rupiah&lt;br&gt;IQD-Iraqi Dinar&lt;br&gt;ILS-Israeli Shekel&lt;br&gt;JMD-Jamaican Dollar&lt;br&gt;JPY-Japanese Yen&lt;br&gt;JOD-Jordanian Dinar&lt;br&gt;KZT-Kazakhstan Tenge&lt;br&gt;KES-Kenyan Shilling&lt;br&gt;KRW-Korean Won&lt;br&gt;KWD-Kuwaiti Dinar&lt;br&gt;LAK-Lao Kip&lt;br&gt;LVL-Latvian Lat&lt;br&gt;LBP-Lebanese Pound&lt;br&gt;LSL-Lesotho Loti&lt;br&gt;LRD-Liberian Dollar&lt;br&gt;LYD-Libyan Dinar&lt;br&gt;LTL-Lithuanian Lita&lt;br&gt;MOP-Macau Pataca&lt;br&gt;MKD-Macedonian Denar&lt;br&gt;MGF-Malagasy Franc&lt;br&gt;MWK-Malawi Kwacha&lt;br&gt;MYR-Malaysian Ringgit&lt;br&gt;MVR-Maldives Rufiyaa&lt;br&gt;MTL-Maltese Lira&lt;br&gt;MRO-Mauritania Ougulya&lt;br&gt;MUR-Mauritius Rupee&lt;br&gt;MXN-Mexican Peso&lt;br&gt;MDL-Moldovan Leu&lt;br&gt;MNT-Mongolian Tugrik&lt;br&gt;MAD-Moroccan Dirham&lt;br&gt;MZM-Mozambique Metical&lt;br&gt;MMK-Myanmar Kyat&lt;br&gt;NAD-Namibian Dollar&lt;br&gt;NPR-Nepalese Rupee&lt;br&gt;ANG-Neth Antilles Guilder&lt;br&gt;NZD-New Zealand Dollar&lt;br&gt;NIO-Nicaragua Cordoba&lt;br&gt;NGN-Nigerian Naira&lt;br&gt;KPW-North Korean Won&lt;br&gt;NOK-Norwegian Krone&lt;br&gt;OMR-Omani Rial&lt;br&gt;XPF-Pacific Franc&lt;br&gt;PKR-Pakistani Rupee&lt;br&gt;XPD-Palladium Ounces&lt;br&gt;PAB-Panama Balboa&lt;br&gt;PGK-Papua New Guinea Kina&lt;br&gt;PYG-Paraguayan Guarani&lt;br&gt;PEN-Peruvian Nuevo Sol&lt;br&gt;PHP-Philippine Peso&lt;br&gt;XPT-Platinum Ounces&lt;br&gt;PLN-Polish Zloty&lt;br&gt;QAR-Qatar Rial&lt;br&gt;ROL-Romanian Leu&lt;br&gt;RUB-Russian Rouble&lt;br&gt;WST-Samoa Tala&lt;br&gt;STD-Sao Tome Dobra&lt;br&gt;SAR-Saudi Arabian Riyal&lt;br&gt;SCR-Seychelles Rupee&lt;br&gt;SLL-Sierra Leone Leone&lt;br&gt;XAG-Silver Ounces&lt;br&gt;SGD-Singapore Dollar&lt;br&gt;SKK-Slovak Koruna&lt;br&gt;SIT-Slovenian Tolar&lt;br&gt;SBD-Solomon Islands Dollar&lt;br&gt;SOS-Somali Shilling&lt;br&gt;ZAR-South African Rand&lt;br&gt;LKR-Sri Lanka Rupee&lt;br&gt;SHP-St Helena Pound&lt;br&gt;SDD-Sudanese Dinar&lt;br&gt;SRG-Surinam Guilder&lt;br&gt;SZL-Swaziland Lilageni&lt;br&gt;SEK-Swedish Krona&lt;br&gt;TRY-Turkey Lira&lt;br&gt;CHF-Swiss Franc&lt;br&gt;SYP-Syrian Pound&lt;br&gt;TWD-Taiwan Dollar&lt;br&gt;TZS-Tanzanian Shilling&lt;br&gt;THB-Thai Baht&lt;br&gt;TOP-Tonga Pa'anga&lt;br&gt;TTD-Trinidad&amp;amp;amp;Tobago Dollar&lt;br&gt;TND-Tunisian Dinar&lt;br&gt;TRL-Turkish Lira&lt;br&gt;USD-U.S. Dollar&lt;br&gt;AED-UAE Dirham&lt;br&gt;UGX-Ugandan Shilling&lt;br&gt;UAH-Ukraine Hryvnia&lt;br&gt;UYU-Uruguayan New Peso&lt;br&gt;VUV-Vanuatu Vatu&lt;br&gt;VEB-Venezuelan Bolivar&lt;br&gt;VND-Vietnam Dong&lt;br&gt;YER-Yemen Riyal&lt;br&gt;YUM-Yugoslav Dinar&lt;br&gt;ZMK-Zambian Kwacha&lt;br&gt;ZWD-Zimbabwe Dollar&lt;/font&gt;&lt;/p&gt;&lt;/blockquote&gt;</wsdl:documentation>
-      <wsdl:input message="tns:ConversionRateSoapIn" />
-      <wsdl:output message="tns:ConversionRateSoapOut" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="CurrencyConvertorHttpGet">
-    <wsdl:operation name="ConversionRate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;br&gt;&lt;b&gt;Get conversion rate from one currency to another currency &lt;b&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;&lt;font color='#000080' size='1' face='Verdana'&gt;&lt;u&gt;Differenct currency Code and Names around the world&lt;/u&gt;&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;font face='Verdana' size='1'&gt;AFA-Afghanistan Afghani&lt;br&gt;ALL-Albanian Lek&lt;br&gt;DZD-Algerian Dinar&lt;br&gt;ARS-Argentine Peso&lt;br&gt;AWG-Aruba Florin&lt;br&gt;AUD-Australian Dollar&lt;br&gt;BSD-Bahamian Dollar&lt;br&gt;BHD-Bahraini Dinar&lt;br&gt;BDT-Bangladesh Taka&lt;br&gt;BBD-Barbados Dollar&lt;br&gt;BZD-Belize Dollar&lt;br&gt;BMD-Bermuda Dollar&lt;br&gt;BTN-Bhutan Ngultrum&lt;br&gt;BOB-Bolivian Boliviano&lt;br&gt;BWP-Botswana Pula&lt;br&gt;BRL-Brazilian Real&lt;br&gt;GBP-British Pound&lt;br&gt;BND-Brunei Dollar&lt;br&gt;BIF-Burundi Franc&lt;br&gt;XOF-CFA Franc (BCEAO)&lt;br&gt;XAF-CFA Franc (BEAC)&lt;br&gt;KHR-Cambodia Riel&lt;br&gt;CAD-Canadian Dollar&lt;br&gt;CVE-Cape Verde Escudo&lt;br&gt;KYD-Cayman Islands Dollar&lt;br&gt;CLP-Chilean Peso&lt;br&gt;CNY-Chinese Yuan&lt;br&gt;COP-Colombian Peso&lt;br&gt;KMF-Comoros Franc&lt;br&gt;CRC-Costa Rica Colon&lt;br&gt;HRK-Croatian Kuna&lt;br&gt;CUP-Cuban Peso&lt;br&gt;CYP-Cyprus Pound&lt;br&gt;CZK-Czech Koruna&lt;br&gt;DKK-Danish Krone&lt;br&gt;DJF-Dijibouti Franc&lt;br&gt;DOP-Dominican Peso&lt;br&gt;XCD-East Caribbean Dollar&lt;br&gt;EGP-Egyptian Pound&lt;br&gt;SVC-El Salvador Colon&lt;br&gt;EEK-Estonian Kroon&lt;br&gt;ETB-Ethiopian Birr&lt;br&gt;EUR-Euro&lt;br&gt;FKP-Falkland Islands Pound&lt;br&gt;GMD-Gambian Dalasi&lt;br&gt;GHC-Ghanian Cedi&lt;br&gt;GIP-Gibraltar Pound&lt;br&gt;XAU-Gold Ounces&lt;br&gt;GTQ-Guatemala Quetzal&lt;br&gt;GNF-Guinea Franc&lt;br&gt;GYD-Guyana Dollar&lt;br&gt;HTG-Haiti Gourde&lt;br&gt;HNL-Honduras Lempira&lt;br&gt;HKD-Hong Kong Dollar&lt;br&gt;HUF-Hungarian Forint&lt;br&gt;ISK-Iceland Krona&lt;br&gt;INR-Indian Rupee&lt;br&gt;IDR-Indonesian Rupiah&lt;br&gt;IQD-Iraqi Dinar&lt;br&gt;ILS-Israeli Shekel&lt;br&gt;JMD-Jamaican Dollar&lt;br&gt;JPY-Japanese Yen&lt;br&gt;JOD-Jordanian Dinar&lt;br&gt;KZT-Kazakhstan Tenge&lt;br&gt;KES-Kenyan Shilling&lt;br&gt;KRW-Korean Won&lt;br&gt;KWD-Kuwaiti Dinar&lt;br&gt;LAK-Lao Kip&lt;br&gt;LVL-Latvian Lat&lt;br&gt;LBP-Lebanese Pound&lt;br&gt;LSL-Lesotho Loti&lt;br&gt;LRD-Liberian Dollar&lt;br&gt;LYD-Libyan Dinar&lt;br&gt;LTL-Lithuanian Lita&lt;br&gt;MOP-Macau Pataca&lt;br&gt;MKD-Macedonian Denar&lt;br&gt;MGF-Malagasy Franc&lt;br&gt;MWK-Malawi Kwacha&lt;br&gt;MYR-Malaysian Ringgit&lt;br&gt;MVR-Maldives Rufiyaa&lt;br&gt;MTL-Maltese Lira&lt;br&gt;MRO-Mauritania Ougulya&lt;br&gt;MUR-Mauritius Rupee&lt;br&gt;MXN-Mexican Peso&lt;br&gt;MDL-Moldovan Leu&lt;br&gt;MNT-Mongolian Tugrik&lt;br&gt;MAD-Moroccan Dirham&lt;br&gt;MZM-Mozambique Metical&lt;br&gt;MMK-Myanmar Kyat&lt;br&gt;NAD-Namibian Dollar&lt;br&gt;NPR-Nepalese Rupee&lt;br&gt;ANG-Neth Antilles Guilder&lt;br&gt;NZD-New Zealand Dollar&lt;br&gt;NIO-Nicaragua Cordoba&lt;br&gt;NGN-Nigerian Naira&lt;br&gt;KPW-North Korean Won&lt;br&gt;NOK-Norwegian Krone&lt;br&gt;OMR-Omani Rial&lt;br&gt;XPF-Pacific Franc&lt;br&gt;PKR-Pakistani Rupee&lt;br&gt;XPD-Palladium Ounces&lt;br&gt;PAB-Panama Balboa&lt;br&gt;PGK-Papua New Guinea Kina&lt;br&gt;PYG-Paraguayan Guarani&lt;br&gt;PEN-Peruvian Nuevo Sol&lt;br&gt;PHP-Philippine Peso&lt;br&gt;XPT-Platinum Ounces&lt;br&gt;PLN-Polish Zloty&lt;br&gt;QAR-Qatar Rial&lt;br&gt;ROL-Romanian Leu&lt;br&gt;RUB-Russian Rouble&lt;br&gt;WST-Samoa Tala&lt;br&gt;STD-Sao Tome Dobra&lt;br&gt;SAR-Saudi Arabian Riyal&lt;br&gt;SCR-Seychelles Rupee&lt;br&gt;SLL-Sierra Leone Leone&lt;br&gt;XAG-Silver Ounces&lt;br&gt;SGD-Singapore Dollar&lt;br&gt;SKK-Slovak Koruna&lt;br&gt;SIT-Slovenian Tolar&lt;br&gt;SBD-Solomon Islands Dollar&lt;br&gt;SOS-Somali Shilling&lt;br&gt;ZAR-South African Rand&lt;br&gt;LKR-Sri Lanka Rupee&lt;br&gt;SHP-St Helena Pound&lt;br&gt;SDD-Sudanese Dinar&lt;br&gt;SRG-Surinam Guilder&lt;br&gt;SZL-Swaziland Lilageni&lt;br&gt;SEK-Swedish Krona&lt;br&gt;TRY-Turkey Lira&lt;br&gt;CHF-Swiss Franc&lt;br&gt;SYP-Syrian Pound&lt;br&gt;TWD-Taiwan Dollar&lt;br&gt;TZS-Tanzanian Shilling&lt;br&gt;THB-Thai Baht&lt;br&gt;TOP-Tonga Pa'anga&lt;br&gt;TTD-Trinidad&amp;amp;amp;Tobago Dollar&lt;br&gt;TND-Tunisian Dinar&lt;br&gt;TRL-Turkish Lira&lt;br&gt;USD-U.S. Dollar&lt;br&gt;AED-UAE Dirham&lt;br&gt;UGX-Ugandan Shilling&lt;br&gt;UAH-Ukraine Hryvnia&lt;br&gt;UYU-Uruguayan New Peso&lt;br&gt;VUV-Vanuatu Vatu&lt;br&gt;VEB-Venezuelan Bolivar&lt;br&gt;VND-Vietnam Dong&lt;br&gt;YER-Yemen Riyal&lt;br&gt;YUM-Yugoslav Dinar&lt;br&gt;ZMK-Zambian Kwacha&lt;br&gt;ZWD-Zimbabwe Dollar&lt;/font&gt;&lt;/p&gt;&lt;/blockquote&gt;</wsdl:documentation>
-      <wsdl:input message="tns:ConversionRateHttpGetIn" />
-      <wsdl:output message="tns:ConversionRateHttpGetOut" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="CurrencyConvertorHttpPost">
-    <wsdl:operation name="ConversionRate">
-      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;br&gt;&lt;b&gt;Get conversion rate from one currency to another currency &lt;b&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;&lt;font color='#000080' size='1' face='Verdana'&gt;&lt;u&gt;Differenct currency Code and Names around the world&lt;/u&gt;&lt;/font&gt;&lt;/b&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;font face='Verdana' size='1'&gt;AFA-Afghanistan Afghani&lt;br&gt;ALL-Albanian Lek&lt;br&gt;DZD-Algerian Dinar&lt;br&gt;ARS-Argentine Peso&lt;br&gt;AWG-Aruba Florin&lt;br&gt;AUD-Australian Dollar&lt;br&gt;BSD-Bahamian Dollar&lt;br&gt;BHD-Bahraini Dinar&lt;br&gt;BDT-Bangladesh Taka&lt;br&gt;BBD-Barbados Dollar&lt;br&gt;BZD-Belize Dollar&lt;br&gt;BMD-Bermuda Dollar&lt;br&gt;BTN-Bhutan Ngultrum&lt;br&gt;BOB-Bolivian Boliviano&lt;br&gt;BWP-Botswana Pula&lt;br&gt;BRL-Brazilian Real&lt;br&gt;GBP-British Pound&lt;br&gt;BND-Brunei Dollar&lt;br&gt;BIF-Burundi Franc&lt;br&gt;XOF-CFA Franc (BCEAO)&lt;br&gt;XAF-CFA Franc (BEAC)&lt;br&gt;KHR-Cambodia Riel&lt;br&gt;CAD-Canadian Dollar&lt;br&gt;CVE-Cape Verde Escudo&lt;br&gt;KYD-Cayman Islands Dollar&lt;br&gt;CLP-Chilean Peso&lt;br&gt;CNY-Chinese Yuan&lt;br&gt;COP-Colombian Peso&lt;br&gt;KMF-Comoros Franc&lt;br&gt;CRC-Costa Rica Colon&lt;br&gt;HRK-Croatian Kuna&lt;br&gt;CUP-Cuban Peso&lt;br&gt;CYP-Cyprus Pound&lt;br&gt;CZK-Czech Koruna&lt;br&gt;DKK-Danish Krone&lt;br&gt;DJF-Dijibouti Franc&lt;br&gt;DOP-Dominican Peso&lt;br&gt;XCD-East Caribbean Dollar&lt;br&gt;EGP-Egyptian Pound&lt;br&gt;SVC-El Salvador Colon&lt;br&gt;EEK-Estonian Kroon&lt;br&gt;ETB-Ethiopian Birr&lt;br&gt;EUR-Euro&lt;br&gt;FKP-Falkland Islands Pound&lt;br&gt;GMD-Gambian Dalasi&lt;br&gt;GHC-Ghanian Cedi&lt;br&gt;GIP-Gibraltar Pound&lt;br&gt;XAU-Gold Ounces&lt;br&gt;GTQ-Guatemala Quetzal&lt;br&gt;GNF-Guinea Franc&lt;br&gt;GYD-Guyana Dollar&lt;br&gt;HTG-Haiti Gourde&lt;br&gt;HNL-Honduras Lempira&lt;br&gt;HKD-Hong Kong Dollar&lt;br&gt;HUF-Hungarian Forint&lt;br&gt;ISK-Iceland Krona&lt;br&gt;INR-Indian Rupee&lt;br&gt;IDR-Indonesian Rupiah&lt;br&gt;IQD-Iraqi Dinar&lt;br&gt;ILS-Israeli Shekel&lt;br&gt;JMD-Jamaican Dollar&lt;br&gt;JPY-Japanese Yen&lt;br&gt;JOD-Jordanian Dinar&lt;br&gt;KZT-Kazakhstan Tenge&lt;br&gt;KES-Kenyan Shilling&lt;br&gt;KRW-Korean Won&lt;br&gt;KWD-Kuwaiti Dinar&lt;br&gt;LAK-Lao Kip&lt;br&gt;LVL-Latvian Lat&lt;br&gt;LBP-Lebanese Pound&lt;br&gt;LSL-Lesotho Loti&lt;br&gt;LRD-Liberian Dollar&lt;br&gt;LYD-Libyan Dinar&lt;br&gt;LTL-Lithuanian Lita&lt;br&gt;MOP-Macau Pataca&lt;br&gt;MKD-Macedonian Denar&lt;br&gt;MGF-Malagasy Franc&lt;br&gt;MWK-Malawi Kwacha&lt;br&gt;MYR-Malaysian Ringgit&lt;br&gt;MVR-Maldives Rufiyaa&lt;br&gt;MTL-Maltese Lira&lt;br&gt;MRO-Mauritania Ougulya&lt;br&gt;MUR-Mauritius Rupee&lt;br&gt;MXN-Mexican Peso&lt;br&gt;MDL-Moldovan Leu&lt;br&gt;MNT-Mongolian Tugrik&lt;br&gt;MAD-Moroccan Dirham&lt;br&gt;MZM-Mozambique Metical&lt;br&gt;MMK-Myanmar Kyat&lt;br&gt;NAD-Namibian Dollar&lt;br&gt;NPR-Nepalese Rupee&lt;br&gt;ANG-Neth Antilles Guilder&lt;br&gt;NZD-New Zealand Dollar&lt;br&gt;NIO-Nicaragua Cordoba&lt;br&gt;NGN-Nigerian Naira&lt;br&gt;KPW-North Korean Won&lt;br&gt;NOK-Norwegian Krone&lt;br&gt;OMR-Omani Rial&lt;br&gt;XPF-Pacific Franc&lt;br&gt;PKR-Pakistani Rupee&lt;br&gt;XPD-Palladium Ounces&lt;br&gt;PAB-Panama Balboa&lt;br&gt;PGK-Papua New Guinea Kina&lt;br&gt;PYG-Paraguayan Guarani&lt;br&gt;PEN-Peruvian Nuevo Sol&lt;br&gt;PHP-Philippine Peso&lt;br&gt;XPT-Platinum Ounces&lt;br&gt;PLN-Polish Zloty&lt;br&gt;QAR-Qatar Rial&lt;br&gt;ROL-Romanian Leu&lt;br&gt;RUB-Russian Rouble&lt;br&gt;WST-Samoa Tala&lt;br&gt;STD-Sao Tome Dobra&lt;br&gt;SAR-Saudi Arabian Riyal&lt;br&gt;SCR-Seychelles Rupee&lt;br&gt;SLL-Sierra Leone Leone&lt;br&gt;XAG-Silver Ounces&lt;br&gt;SGD-Singapore Dollar&lt;br&gt;SKK-Slovak Koruna&lt;br&gt;SIT-Slovenian Tolar&lt;br&gt;SBD-Solomon Islands Dollar&lt;br&gt;SOS-Somali Shilling&lt;br&gt;ZAR-South African Rand&lt;br&gt;LKR-Sri Lanka Rupee&lt;br&gt;SHP-St Helena Pound&lt;br&gt;SDD-Sudanese Dinar&lt;br&gt;SRG-Surinam Guilder&lt;br&gt;SZL-Swaziland Lilageni&lt;br&gt;SEK-Swedish Krona&lt;br&gt;TRY-Turkey Lira&lt;br&gt;CHF-Swiss Franc&lt;br&gt;SYP-Syrian Pound&lt;br&gt;TWD-Taiwan Dollar&lt;br&gt;TZS-Tanzanian Shilling&lt;br&gt;THB-Thai Baht&lt;br&gt;TOP-Tonga Pa'anga&lt;br&gt;TTD-Trinidad&amp;amp;amp;Tobago Dollar&lt;br&gt;TND-Tunisian Dinar&lt;br&gt;TRL-Turkish Lira&lt;br&gt;USD-U.S. Dollar&lt;br&gt;AED-UAE Dirham&lt;br&gt;UGX-Ugandan Shilling&lt;br&gt;UAH-Ukraine Hryvnia&lt;br&gt;UYU-Uruguayan New Peso&lt;br&gt;VUV-Vanuatu Vatu&lt;br&gt;VEB-Venezuelan Bolivar&lt;br&gt;VND-Vietnam Dong&lt;br&gt;YER-Yemen Riyal&lt;br&gt;YUM-Yugoslav Dinar&lt;br&gt;ZMK-Zambian Kwacha&lt;br&gt;ZWD-Zimbabwe Dollar&lt;/font&gt;&lt;/p&gt;&lt;/blockquote&gt;</wsdl:documentation>
-      <wsdl:input message="tns:ConversionRateHttpPostIn" />
-      <wsdl:output message="tns:ConversionRateHttpPostOut" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:binding name="CurrencyConvertorSoap" type="tns:CurrencyConvertorSoap">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="ConversionRate">
-      <soap:operation soapAction="http://www.webserviceX.NET/ConversionRate" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="CurrencyConvertorSoap12" type="tns:CurrencyConvertorSoap">
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="ConversionRate">
-      <soap12:operation soapAction="http://www.webserviceX.NET/ConversionRate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="CurrencyConvertorHttpGet" type="tns:CurrencyConvertorHttpGet">
-    <http:binding verb="GET" />
-    <wsdl:operation name="ConversionRate">
-      <http:operation location="/ConversionRate" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="CurrencyConvertorHttpPost" type="tns:CurrencyConvertorHttpPost">
-    <http:binding verb="POST" />
-    <wsdl:operation name="ConversionRate">
-      <http:operation location="/ConversionRate" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:mimeXml part="Body" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:service name="CurrencyConvertor">
-    <wsdl:port name="CurrencyConvertorSoap" binding="tns:CurrencyConvertorSoap">
-      <soap:address location="http://www.webservicex.net/CurrencyConvertor.asmx" />
-    </wsdl:port>
-    <wsdl:port name="CurrencyConvertorSoap12" binding="tns:CurrencyConvertorSoap12">
-      <soap12:address location="http://www.webservicex.net/CurrencyConvertor.asmx" />
-    </wsdl:port>
-    <wsdl:port name="CurrencyConvertorHttpGet" binding="tns:CurrencyConvertorHttpGet">
-      <http:address location="http://www.webservicex.net/CurrencyConvertor.asmx" />
-    </wsdl:port>
-    <wsdl:port name="CurrencyConvertorHttpPost" binding="tns:CurrencyConvertorHttpPost">
-      <http:address location="http://www.webservicex.net/CurrencyConvertor.asmx" />
-    </wsdl:port>
-  </wsdl:service>
-</wsdl:definitions>]]></arrayElement></arrayElements></property>
-<property id="15" name="BinaryCode" dataType="System.String" state="cdata" isArray="true" description="Stores the binary representation of the component" typeConverter="" UITypeEditor="" containsID="false" expressionType="None"><arrayElements arrayElementCount="2"><arrayElement dataType="System.String"><![CDATA[\bin\release\sc_08a78dde95ab41f58d813691aad5f38f.csproj.dll]]></arrayElement><arrayElement dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAI30VU0AAAAAAAAAAOAAAiELAQgAADYAAAAIAAAAAAAAzlQA
-AAAgAAAAYAAAAABAAAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACgAAAAAgAAAAAAAAMAQIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAIBUAABLAAAAAGAAAIgEAAAAAAAAAAAAAAAAAAAA
-AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA1DQAAAAgAAAANgAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAIgEAAAAYAAAAAYAAAA4AAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAIAAAAACAAAAPgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACw
-VAAAAAAAAEgAAAACAAUA0CUAALAuAAABAAAAAAAAABglAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKAwAAAoCAnMNAAAGfQEAAAQCAnMOAAAGfQIAAAQqBipu
-AnsDAAAELBICewMAAARvGwAABgIUfQMAAAQqAAATMAUAPQAAAAEAABEWCisiBAaUHw0zFwIFBpoC
-BAaUKA0AAApzFQAABn0DAAAEBhdYCgYDMtoCbwUAAAYCbwIAAAYCKAMAAAYqBioeAigPAAAKKh4C
-KBAAAAoqABMwAwApAAAAAgAAEXIBAABwCgICewIAAARvDwAABigLAAAGCwIHKAkAAAYKAgYHKAoA
-AAYqAAAAEzADAC0AAAADAAARIwAAAAAAAAAACnMhAAAGCwcbA28oAAAGCgYjKVyPwvUo8D9aChIA
-KBEAAAoqzgJ7AwAABG8aAAAGAnsDAAAEBIwKAAACbxIAAApvFgAABgJ7AwAABAMoEwAACm8YAAAG
-Kl7QCgAAAigUAAAKAxcoFQAACqUKAAACKh4CKAEAAAYqOgIoFgAACgIDfQQAAAQqOgIoFgAACgID
-fQUAAAQqggJ7BQAABG8XAAAKcgMAAHBvGAAACm8ZAAAKdCIAAAEqGn4GAAAEKkYCcg8AAHBvHAAA
-CnQiAAABKkYCcrIAAHBvHAAACnQiAAABKlZzEwAABigdAAAKdAYAAAKABgAABCoeAigeAAAKKiYC
-AwQoIwAACiomAhYDKCQAAAoqWgMsCAIWKCUAAAoqclcBAHBzJgAACno6AhcDjBwAAAEoJAAACipa
-AywIAhcoJQAACipyVwEAcHMmAAAKeh4CKCcAAAoqHgIoKAAACioeAigpAAAKKh4CKBYAAAoqAAAT
-MAMALQAAAAQAABF+BwAABC0gcvQBAHDQCAAAAigUAAAKbyoAAApzKwAACgoGgAcAAAR+BwAABCoa
-fggAAAQqHgKACAAABCruAigwAAAKAigQAAAGbxIAAAYoIwAABgICKCIAAAYoLQAABiwPAhcoJQAA
-BgIWfQoAAAQqAhd9CgAABCoeAigxAAAKKroCAigxAAAKKC0AAAYsGAJ7CgAABC0QAgMoLQAABi0H
-AhYoMgAACgIDKDMAAAoqHgIoNAAACio+AgMoMgAACgIXfQoAAAQqYgICewsAAAQDKDUAAAp0CwAA
-An0LAAAEKmICAnsLAAAEAyg2AAAKdAsAAAJ9CwAABCoAAAATMAUALwAAAAUAABECcnQCAHAYjQIA
-AAELBxYDjAoAAAKiBxcEjAoAAAKiByg4AAAKCgYWmqUcAAABKioCAwQUKCoAAAYqAAATMAUARwAA
-AAYAABECewkAAAQtEgIC/gYrAAAGczkAAAp9CQAABAJydAIAcBiNAgAAAQoGFgOMCgAAAqIGFwSM
-CgAAAqIGAnsJAAAEBSg6AAAKKgATMAcAOQAAAAcAABECewsAAAQsMAN0NQAAAQoCewsAAAQCBm87
-AAAKBm88AAAKBm89AAAKBm8+AAAKczIAAAZvLwAABioiAgMoPwAACioAABMwAwA9AAAACAAAEQMs
-DQN+QAAACihBAAAKLAIWKgNzQgAACgoGb0MAAAogAAQAADIVBm9EAAAKcpICAHAbKEUAAAotAhcq
-FipKAgQFDgQoSAAACgIDfaQAAAQqUgIoSQAACgJ7pAAABBaapRwAAAEqAAAAAAAAALQAAADOyu++
-AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNp
-b249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRl
-MDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFE
-ULQAAABCU0pCAQABAAAAAAAMAAAAdjIuMC41MDcyNwAAAAAFAGwAAAC8EQAAI34AACgSAAA0EQAA
-I1N0cmluZ3MAAAAAXCMAAKgCAAAjVVMABCYAABAAAAAjR1VJRAAAABQmAACcCAAAI0Jsb2IAAAAA
-AAAAAgAAAVcdtgEJAQAAAPoBMwAWAAABAAAAOgAAAAwAAACkAAAAMwAAACsAAABJAAAAlwAAACIA
-AAAIAAAAAQAAAAEAAAAGAAAADQAAABIAAAABAAAABwAAAAEAAAAAAAoAAQAAAAAABgCdAXwBCgC9
-AbYBDgDZAcQBBgDxAXwBEgAwAhICCgBHArYBCgBMArYBDgB0Al4CFgDVAnwBCgCsBZsFCgDdBcgF
-CgA+Bi0GCgAQCrYBCgAdCrYBCgBJCrYBCgA8CyoLCgBTCyoLCgBwCyoLCgCPCyoLCgCoCyoLCgDB
-CyoLCgDcCyoLCgD3CyoLCgAQDCoLCgBJDCkMCgBpDCkMBgDDDHwBCgDqDLYBCgD6DLYBCgALDbYB
-CgAQDbYBGgCFDV0NGgCsDV0NCgDFDbYBCgDMDSkMDgD/DecNDgAWDsQBDgA3DsQBCgBsDlkODgCJ
-DsQBDgChDsQBDgCwDsQBCgDeDrYBCgD4DioLDgAOD14CDgAnD14CCgA8D1kODgBZD14CEgBzD/4B
-EgCODxICCgCgD7YBEgC4DxICEgDgDxICEgArEBICDgBTELYBCgBpELYBCgCCELYBHgC8EKMQAAAA
-AAEAAAAAAAEAAQABABAAOQAAAAUAAQABAAEAEABHAAAACAAEAAYAAQAQAFIAAAAJAAQADQABABAA
-XgAAAAkABQAOAAABEABoAHEADQAGABAAAQAQAKcAAAARAAcAFQAAABAAtQBxAAkABwAdAAEAEAC/
-ANEAFQAJACEAASEAABEB0QAZAAwALgABAQAAGgHRAB0ApAAuAAEAEAA+AdEAIQCkADIABgBSABwA
-BgBeACAABgCnACgAAQBHA0kAAQBHA0kAEQBnA1sAEQC8BYwAEQDpBZAAAQBRBq4AAQByBrIAAQDZ
-BrUABgalB+IAVoCtB+UAVoCxB+UAVoC1B+UAVoC5B+UAVoC9B+UAVoDBB+UAVoDFB+UAVoDJB+UA
-VoDNB+UAVoDRB+UAVoDVB+UAVoDZB+UAVoDdB+UAVoDhB+UAVoDlB+UAVoDpB+UAVoDtB+UAVoDx
-B+UAVoD1B+UAVoD5B+UAVoD9B+UAVoABCOUAVoAFCOUAVoAJCOUAVoANCOUAVoARCOUAVoAVCOUA
-VoAZCOUAVoAdCOUAVoAhCOUAVoAlCOUAVoApCOUAVoAtCOUAVoAxCOUAVoA1COUAVoA5COUAVoA9
-COUAVoBBCOUAVoBFCOUAVoBJCOUAVoBNCOUAVoBRCOUAVoBVCOUAVoBZCOUAVoBdCOUAVoBhCOUA
-VoBlCOUAVoBpCOUAVoBtCOUAVoBxCOUAVoB1COUAVoB5COUAVoB9COUAVoCBCOUAVoCFCOUAVoCJ
-COUAVoCNCOUAVoCRCOUAVoCVCOUAVoCZCOUAVoCdCOUAVoChCOUAVoClCOUAVoCpCOUAVoCtCOUA
-VoCxCOUAVoC1COUAVoC5COUAVoC9COUAVoDBCOUAVoDFCOUAVoDJCOUAVoDNCOUAVoDRCOUAVoDV
-COUAVoDZCOUAVoDdCOUAVoDhCOUAVoDlCOUAVoDpCOUAVoDtCOUAVoDxCOUAVoD1COUAVoD5COUA
-VoD9COUAVoABCeUAVoAFCeUAVoAJCeUAVoANCeUAVoARCeUAVoAVCeUAVoAZCeUAVoAdCeUAVoAh
-CeUAVoAlCeUAVoApCeUAVoAtCeUAVoAxCeUAVoA1CeUAVoA5CeUAVoA9CeUAVoBBCeUAVoBFCeUA
-VoBJCeUAVoBNCeUAVoBRCeUAVoBVCeUAVoBZCeUAVoBdCeUAVoBhCeUAVoBlCeUAVoBpCeUAVoBt
-CeUAVoBxCeUAVoB1CeUAVoB5CeUAVoB9CeUAVoCBCeUAVoCFCeUAVoCJCeUAVoCNCeUAVoCRCeUA
-VoCVCeUAVoCZCeUAVoCdCeUAVoChCeUAVoClCeUAVoCpCeUAVoCtCeUAVoCxCeUAVoC1CeUAVoC5
-CeUAVoC9CeUAVoDBCeUAVoDFCeUAVoDJCeUAVoDNCeUAVoDRCeUAVoDVCeUAVoDZCeUAVoDdCeUA
-VoDhCeUAVoDlCeUAVoDpCeUAVoDtCeUAVoDxCeUAVoD1CeUAVoD5CeUAVoD9CeUAVoABCuUAVoAF
-CuUAAQBBCvoDUCAAAAAAhhiMAiQAAQBwIAAAAADGAZICJAABAHIgAAAAAIEAoAIkAAEAkCAAAAAA
-xgDkAiwAAQDZIAAAAADGAfACJAAEANsgAAAAAMYABAMkAAQA4yAAAAAAxgAPAyQABADsIAAAAADG
-APACJAAEACQhAAAAAIEAGwM2AAQAXSEAAAAAgQArAzwABQCRIQAAAACBADsDQwAHAKkhAAAAAIYY
-jAIkAAgAsSEAAAAAhhiMAk0ACADAIQAAAACGGIwCTQAJAM8hAAAAAIYIVwNTAAoA8CEAAAAAlgh3
-A18ACgD3IQAAAACGCIMDUwAKAAkiAAAAAIYI2ANTAAoAMSIAAAAAhhiMAiQACgAbIgAAAACRGCMO
-sAQKADkiAAAAAIYYjAJpAAoAQyIAAAAAhgjZBHEADABNIgAAAACGCOsEdgANAGQiAAAAAIYIBAV7
-AA4AcyIAAAAAhggXBXYADwCKIgAAAACGADEFJAAQAJIiAAAAAIYAOAUkABAAmiIAAAAAhgBHBYAA
-EACiIgAAAACDGIwCJAAQAKwiAAAAAJMI+QWUABAA5SIAAAAAkwgNBpkAEADsIgAAAACTCBkGngAQ
-APQiAAAAAIYYjAIkABEAMCMAAAAAhgiVBlMAEQA4IwAAAACGCJ0GcQARAGcjAAAAAIYIpQaAABIA
-byMAAAAAhgi/BnYAEgB/IwAAIACGCPEGuQATAJgjAAAgAIYIDQe5ABQAtCMAAAAAhgB2Bb8AFQDv
-IwAAAACGACwHxwAXAPwjAAAAAIYALAfPABkAUCQAAAAAgQBAB9gAHACVJAAAAACGAGMH2AAdAKAk
-AAAAAIEAbwfdAB4AAAAAAAMAhhiMAtwDHwAAAAAAAwDGAQkK4gMhAAAAAAADAMYBKwrpAyMAAAAA
-AAMAxgE3CvQDJwDpJAAAAACDGIwC/gMoAPwkAAAAAIYIUwoIBCwAAAABAGUKAAACAG0KAAADAHcK
-AAABAH8KAAABAIoKAAACAI8KAAABAJoKAAABAKUKAAABAKUKAAABAK8KAAACALYKAAABAMoKAAAB
-AMoKAAABAMoKAAABAMoKAAABAMoKAAABAMoKAAABAMoKAAABAMoKAAABAMoKAAABANAKAAACAH8K
-AAABANAKAAACAH8KAAABANAKAAACAH8KAAADAN0KAAABAOcKAAABAN0KAAABAOsKAAABAO8KAAAC
-APYKAAABAP0KAAACAAQLAAABAP0KAAACAAQLAAADAAYLAAAEAO8KAAABAA8LAAABAEEKAAACABYL
-AAADACALAAAEAN0KgQCMAnEAiQCMAnEAkQCMAnEAmQCMAnEAoQCMAnEAqQCMAnEAsQCMAnEAuQCM
-AnEAwQCMAnEAyQCMAgwE0QCMAiQACQCMAiQACQCyDBEE2QCMAiQACQAEAyQACQAPAyQA4QDxDFMA
-EQDxDFMA6QACDScE8QAiDSwEMQA0DTMEEQCMAiQACQCWDTsEAQG8DUEECQFXA0gEGQGMAiQAIQGM
-AkwEKQG8DasEKQEqDrQEGQCMAiQAMQGMAiQAOQGMAiQAQQGMAr0EUQGMAnEAIQCMAmkAIQDNDgQF
-IQDWDgwEWQGMAnEAIQAxBSQAIQA4BSQAIQBHBYAA8QABDwoFUQCMAhAFaQGMAh0FeQGMAiQAgQGM
-AnEAiQGMAiQAKQCMAiQAkQGVBlMAkQG/BnYAkQGdBnEAkQGlBoAAmQGpD6kFmQGxD6kFoQGMAnEA
-KQAJCnUHYQCMAtwDKQDUD4QHqQH5D5MHQQAFEJgHQQAPEIAAQQAdEEgEsQFjB9gAEQFBEKMHEQFH
-EKYHuQGMAnEAuQFXEKwHuQFgEFMAEQF6ELAHyQGMAiQA0QGMAiQAQQCMAgsIQQDNECQACAA0AOkA
-CAA4AO4ACAA8APMACABAAPgACABEAP0ACABIAAIBCABMAAcBCABQAAwBCABUABEBCABYABYBCABc
-ABsBCABgACABCABkACUBCABoACoBCABsAC8BCABwADQBCAB0ADkBCAB4AD4BCAB8AEMBCACAAEgB
-CACEAE0BCACIAFIBCACMAFcBCACQAFwBCACUAGEBCACYAGYBCACcAGsBCACgAHABCACkAHUBCACo
-AHoBCACsAH8BCACwAIQBCAC0AIkBCAC4AI4BCAC8AJMBCADAAJgBCADEAJ0BCADIAKIBCADMAKcB
-CADQAKwBCADUALEBCADYALYBCADcALsBCADgAMABCADkAMUBCADoAMoBCADsAM8BCADwANQBCAD0
-ANkBCAD4AN4BCAD8AOMBCAAAAegBCAAEAe0BCAAIAfIBCAAMAfcBCAAQAfwBCAAUAQECCAAYAQYC
-CAAcAQsCCAAgARACCAAkARUCCAAoARoCCAAsAR8CCAAwASQCCAA0ASkCCAA4AS4CCAA8ATMCCABA
-ATgCCABEAT0CCABIAUICCABMAUcCCABQAUwCCABUAVECCABYAVYCCABcAVsCCABgAWACCABkAWUC
-CABoAWoCCABsAW8CCABwAXQCCAB0AXkCCAB4AX4CCAB8AYMCCACAAYgCCACEAY0CCACIAZICCACM
-AZcCCACQAZwCCACUAaECCACYAaYCCACcAasCCACgAbACCACkAbUCCACoAboCCACsAb8CCACwAcQC
-CAC0AckCCAC4Ac4CCAC8AdMCCADAAdgCCADEAd0CCADIAeICCADMAecCCADQAewCCADUAfECCADY
-AfYCCADcAfsCCADgAQADCADkAQUDCADoAQoDCADsAQ8DCADwARQDCAD0ARkDCAD4AR4DCAD8ASMD
-CAAAAigDCAAEAi0DCAAIAjIDCAAMAjcDCAAQAjwDCAAUAkEDCAAYAkYDCAAcAksDCAAgAlADCAAk
-AlUDCAAoAloDCAAsAl8DCAAwAmQDCAA0AmkDCAA4Am4DCAA8AnMDCABAAngDCABEAn0DCABIAoID
-CABMAocDCABQAowDCABUApEDCABYApYDCABcApsDCABgAqADCABkAqUDCABoAqoDCABsAq8DCABw
-ArQDCAB0ArkDCAB4Ar4DCAB8AsMDCACAAsgDCACEAs0DCACIAtIDCACMAtcDLgA7AEMILgBbAH0I
-LgBTAHQILgALABMILgATAEMILgAbAEMILgAjAEkILgArABMILgAzAFYIYwBzAO4AaQADAe4AaQAL
-AcQEaQATAc0EaQD7AO4AiQATAc0EiQADAe4AiQALAcQEiQD7AO4AwwDTAO4AwwDbAFIEAwEDAe4A
-IwFzAVUFIwFrAe4AIwF7AV8FIwHbAC0FKQFjASQFQwE7At4HQwHbAL8HSQFjASQFYwHbAC0FgwFz
-AVUFgwHbAC0FgwFrAe4AAAW7AbUFFwQbBCEEGAV9B44HnQe5BwkAAQAAANkGLAAFAAEABgACAAcA
-BQAIAAkACQALAAwADQAAAGEDVwAAAC4EZAAAADYEVwAAAIcEVwAAAFMFVwAAAGEFhAAAAHYFiAAA
-AIUFhAAAAKwFpAAAACUGqQAAAIsHVwAAAI8HhAAAAF4KiAAIACYAAgAQACcAAgACAA8AAwACABAA
-BQACABEABwACABIACQABABYACwABABcADQABABgADwABABkAEQACAB4AEwACAB8AFQABACAAFQAB
-ACMAFwACACIAFwABACUAGQACACQAGQACADMAGwAEgAAAAQAAANwP3mAAAAAAAACHDAAACgAAAAAA
-AAAAAAAAAQBfAQAAAAACAAAAAAAAAAAAAAAKAK0BAAAAAAIAAAAAAAAAAAAAAAoAtgEAAAAAAgAA
-AAAAAAAAAAAAEwD+AQAAAAAKAAAAAAAAAAAAAAABALQCAAAAAAoAAAAAAAAAAAAAAAEAOg0AAAAA
-AgAAAAAAAAAAAAAACgCYEAAAAAAAAAAAAQAAAOcQAAAAAAAAADxNb2R1bGU+AFNDXzA4YTc4ZGRl
-OTVhYjQxZjU4ZDgxMzY5MWFhZDVmMzhmLmNzcHJvai5kbGwAVXNlckNvbXBvbmVudABTY3JpcHRN
-YWluAENvbm5lY3Rpb25zAFZhcmlhYmxlcwBTZXR0aW5ncwBTQ18wOGE3OGRkZTk1YWI0MWY1OGQ4
-MTM2OTFhYWQ1ZjM4Zi5jc3Byb2ouUHJvcGVydGllcwBPdXRwdXQwQnVmZmVyAFJlc291cmNlcwBD
-dXJyZW5jeUNvbnZlcnRvcgBTQ18wOGE3OGRkZTk1YWI0MWY1OGQ4MTM2OTFhYWQ1ZjM4Zi5jc3By
-b2oubmV0LndlYnNlcnZpY2V4Lnd3dzEAQ3VycmVuY3kAQ29udmVyc2lvblJhdGVDb21wbGV0ZWRF
-dmVudEhhbmRsZXIAQ29udmVyc2lvblJhdGVDb21wbGV0ZWRFdmVudEFyZ3MATWljcm9zb2Z0LlNx
-bFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBTY3JpcHRD
-b21wb25lbnQAbXNjb3JsaWIAU3lzdGVtAE9iamVjdABTeXN0ZW0uQ29uZmlndXJhdGlvbgBBcHBs
-aWNhdGlvblNldHRpbmdzQmFzZQBTY3JpcHRCdWZmZXIAU3lzdGVtLldlYi5TZXJ2aWNlcwBTeXN0
-ZW0uV2ViLlNlcnZpY2VzLlByb3RvY29scwBTb2FwSHR0cENsaWVudFByb3RvY29sAEVudW0ATXVs
-dGljYXN0RGVsZWdhdGUAU3lzdGVtLkNvbXBvbmVudE1vZGVsAEFzeW5jQ29tcGxldGVkRXZlbnRB
-cmdzAC5jdG9yAEZpbmlzaE91dHB1dHMATWFya091dHB1dHNGaW5pc2hlZABNaWNyb3NvZnQuU3Fs
-U2VydmVyLlBpcGVsaW5lSG9zdABQaXBlbGluZUJ1ZmZlcgBQcmltZU91dHB1dABDcmVhdGVOZXdP
-dXRwdXRSb3dzAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAR2V0RXhjaGFuZ2VSYXRlAHByb2Nlc3NS
-ZXNwb25zZQBnZXRDdXJyZW5jeQBQYXJlbnRDb21wb25lbnQAZ2V0X1ZhbHVlAFZhbHVlAGRlZmF1
-bHRJbnN0YW5jZQBnZXRfRGVmYXVsdABnZXRfU0NfMDhhNzhkZGU5NWFiNDFmNThkODEzNjkxYWFk
-NWYzOGZfY3Nwcm9qX25ldF93ZWJzZXJ2aWNleF93d3dfQ3VycmVuY3lDb252ZXJ0b3IAZ2V0X1ND
-XzA4YTc4ZGRlOTVhYjQxZjU4ZDgxMzY5MWFhZDVmMzhmX2NzcHJval9uZXRfd2Vic2VydmljZXhf
-d3d3MV9DdXJyZW5jeUNvbnZlcnRvcgBEZWZhdWx0AFNDXzA4YTc4ZGRlOTVhYjQxZjU4ZDgxMzY5
-MWFhZDVmMzhmX2NzcHJval9uZXRfd2Vic2VydmljZXhfd3d3X0N1cnJlbmN5Q29udmVydG9yAFND
-XzA4YTc4ZGRlOTVhYjQxZjU4ZDgxMzY5MWFhZDVmMzhmX2NzcHJval9uZXRfd2Vic2VydmljZXhf
-d3d3MV9DdXJyZW5jeUNvbnZlcnRvcgBzZXRfQ3VycmVuY3lWYWx1ZQBzZXRfQ3VycmVuY3lWYWx1
-ZV9Jc051bGwAc2V0X0NvbnZlcnNpb25SYXRlAHNldF9Db252ZXJzaW9uUmF0ZV9Jc051bGwAQWRk
-Um93AFNldEVuZE9mUm93c2V0AEVuZE9mUm93c2V0AEN1cnJlbmN5VmFsdWUAQ3VycmVuY3lWYWx1
-ZV9Jc051bGwAQ29udmVyc2lvblJhdGUAQ29udmVyc2lvblJhdGVfSXNOdWxsAFN5c3RlbS5SZXNv
-dXJjZXMAUmVzb3VyY2VNYW5hZ2VyAHJlc291cmNlTWFuAFN5c3RlbS5HbG9iYWxpemF0aW9uAEN1
-bHR1cmVJbmZvAHJlc291cmNlQ3VsdHVyZQBnZXRfUmVzb3VyY2VNYW5hZ2VyAGdldF9DdWx0dXJl
-AHNldF9DdWx0dXJlAEN1bHR1cmUAU3lzdGVtLlRocmVhZGluZwBTZW5kT3JQb3N0Q2FsbGJhY2sA
-Q29udmVyc2lvblJhdGVPcGVyYXRpb25Db21wbGV0ZWQAdXNlRGVmYXVsdENyZWRlbnRpYWxzU2V0
-RXhwbGljaXRseQBnZXRfVXJsAHNldF9VcmwAZ2V0X1VzZURlZmF1bHRDcmVkZW50aWFscwBzZXRf
-VXNlRGVmYXVsdENyZWRlbnRpYWxzAENvbnZlcnNpb25SYXRlQ29tcGxldGVkAGFkZF9Db252ZXJz
-aW9uUmF0ZUNvbXBsZXRlZAByZW1vdmVfQ29udmVyc2lvblJhdGVDb21wbGV0ZWQAQ29udmVyc2lv
-blJhdGVBc3luYwBPbkNvbnZlcnNpb25SYXRlT3BlcmF0aW9uQ29tcGxldGVkAENhbmNlbEFzeW5j
-AElzTG9jYWxGaWxlU3lzdGVtV2ViU2VydmljZQBVcmwAVXNlRGVmYXVsdENyZWRlbnRpYWxzAHZh
-bHVlX18AQUZBAEFMTABEWkQAQVJTAEFXRwBBVUQAQlNEAEJIRABCRFQAQkJEAEJaRABCTUQAQlRO
-AEJPQgBCV1AAQlJMAEdCUABCTkQAQklGAFhPRgBYQUYAS0hSAENBRABDVkUAS1lEAENMUABDTlkA
-Q09QAEtNRgBDUkMASFJLAENVUABDWVAAQ1pLAERLSwBESkYARE9QAFhDRABFR1AAU1ZDAEVFSwBF
-VEIARVVSAEZLUABHTUQAR0hDAEdJUABYQVUAR1RRAEdORgBHWUQASFRHAEhOTABIS0QASFVGAElT
-SwBJTlIASURSAElRRABJTFMASk1EAEpQWQBKT0QAS1pUAEtFUwBLUlcAS1dEAExBSwBMVkwATEJQ
-AExTTABMUkQATFlEAExUTABNT1AATUtEAE1HRgBNV0sATVlSAE1WUgBNVEwATVJPAE1VUgBNWE4A
-TURMAE1OVABNQUQATVpNAE1NSwBOQUQATlBSAEFORwBOWkQATklPAE5HTgBLUFcATk9LAE9NUgBY
-UEYAUEtSAFhQRABQQUIAUEdLAFBZRwBQRU4AUEhQAFhQVABQTE4AUUFSAFJPTABSVUIAV1NUAFNU
-RABTQVIAU0NSAFNMTABYQUcAU0dEAFNLSwBTSVQAU0JEAFNPUwBaQVIATEtSAFNIUABTREQAU1JH
-AFNaTABTRUsAQ0hGAFNZUABUV0QAVFpTAFRIQgBUT1AAVFREAFRORABUUkwAVVNEAEFFRABVR1gA
-VUFIAFVZVQBWVVYAVkVCAFZORABZRVIAWVVNAFpNSwBaV0QAVFJZAEludm9rZQBJQXN5bmNSZXN1
-bHQAQXN5bmNDYWxsYmFjawBCZWdpbkludm9rZQBFbmRJbnZva2UAcmVzdWx0cwBFeGNlcHRpb24A
-Z2V0X1Jlc3VsdABSZXN1bHQAT3V0cHV0cwBPdXRwdXRJRHMAQnVmZmVycwBUb0N1cnJlbmN5AHJl
-c3AAdG9DdXJyZW5jeQBpbnB1dFZhbHVlAENvbXBvbmVudABCdWZmZXIAQnVmZmVyQ29sdW1uSW5k
-ZXhlcwB2YWx1ZQBGcm9tQ3VycmVuY3kAdXNlclN0YXRlAGFyZwB1cmwAb2JqZWN0AG1ldGhvZABz
-ZW5kZXIAZQBjYWxsYmFjawByZXN1bHQAZXhjZXB0aW9uAGNhbmNlbGxlZABTeXN0ZW0uUmVmbGVj
-dGlvbgBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUA
-QXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBB
-c3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAQXNzZW1i
-bHlUcmFkZW1hcmtBdHRyaWJ1dGUAQXNzZW1ibHlDdWx0dXJlQXR0cmlidXRlAEFzc2VtYmx5VmVy
-c2lvbkF0dHJpYnV0ZQBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAENvbXBpbGF0aW9u
-UmVsYXhhdGlvbnNBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAU0NfMDhh
-NzhkZGU5NWFiNDFmNThkODEzNjkxYWFkNWYzOGYuY3Nwcm9qAEdldENvbHVtbkluZGV4ZXMAU1NJ
-U1NjcmlwdENvbXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUARG91YmxlAFRvU3RyaW5nAENvbnZl
-cnQAVG9Eb3VibGUAVHlwZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBQYXJz
-ZQBNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1J1bnRpbWVXcmFwAE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
-RHRzLlJ1bnRpbWUuV3JhcHBlcgBJRFRTVmFyaWFibGVzMTAwAGdldF9SZWFkT25seVZhcmlhYmxl
-cwBJRFRTVmFyaWFibGUxMDAAZ2V0X0l0ZW0AU3RyaW5nAENvbXBpbGVyR2VuZXJhdGVkQXR0cmli
-dXRlAFN5c3RlbS5Db2RlRG9tLkNvbXBpbGVyAEdlbmVyYXRlZENvZGVBdHRyaWJ1dGUAU2V0dGlu
-Z3NCYXNlAC5jY3RvcgBTeW5jaHJvbml6ZWQAQXBwbGljYXRpb25TY29wZWRTZXR0aW5nQXR0cmli
-dXRlAFN5c3RlbS5EaWFnbm9zdGljcwBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAFNwZWNp
-YWxTZXR0aW5nQXR0cmlidXRlAFNwZWNpYWxTZXR0aW5nAERlZmF1bHRTZXR0aW5nVmFsdWVBdHRy
-aWJ1dGUAc2V0X0l0ZW0AU2V0TnVsbABJbnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAEFzc2VtYmx5
-AGdldF9Bc3NlbWJseQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlU3Rh
-dGUARGVidWdnZXJTdGVwVGhyb3VnaEF0dHJpYnV0ZQBEZXNpZ25lckNhdGVnb3J5QXR0cmlidXRl
-AFdlYlNlcnZpY2VCaW5kaW5nQXR0cmlidXRlAFdlYkNsaWVudFByb3RvY29sAERlbGVnYXRlAENv
-bWJpbmUAUmVtb3ZlAFNvYXBEb2N1bWVudE1ldGhvZEF0dHJpYnV0ZQBJbnZva2VBc3luYwBJbnZv
-a2VDb21wbGV0ZWRFdmVudEFyZ3MAZ2V0X1Jlc3VsdHMAZ2V0X0Vycm9yAGdldF9DYW5jZWxsZWQA
-Z2V0X1VzZXJTdGF0ZQBIdHRwV2ViQ2xpZW50UHJvdG9jb2wARW1wdHkAb3BfRXF1YWxpdHkAVXJp
-AGdldF9Qb3J0AGdldF9Ib3N0AFN0cmluZ0NvbXBhcmlzb24AQ29tcGFyZQBTZXJpYWxpemFibGVB
-dHRyaWJ1dGUAU3lzdGVtLlhtbABTeXN0ZW0uWG1sLlNlcmlhbGl6YXRpb24AWG1sVHlwZUF0dHJp
-YnV0ZQBSYWlzZUV4Y2VwdGlvbklmTmVjZXNzYXJ5AFNDXzA4YTc4ZGRlOTVhYjQxZjU4ZDgxMzY5
-MWFhZDVmMzhmLmNzcHJvai5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMAAAAAAAEAC1YA
-YQBsAHUAZQAAgKFTAEMAXwAwADgAYQA3ADgAZABkAGUAOQA1AGEAYgA0ADEAZgA1ADgAZAA4ADEA
-MwA2ADkAMQBhAGEAZAA1AGYAMwA4AGYAXwBjAHMAcAByAG8AagBfAG4AZQB0AF8AdwBlAGIAcwBl
-AHIAdgBpAGMAZQB4AF8AdwB3AHcAXwBDAHUAcgByAGUAbgBjAHkAQwBvAG4AdgBlAHIAdABvAHIA
-AICjUwBDAF8AMAA4AGEANwA4AGQAZABlADkANQBhAGIANAAxAGYANQA4AGQAOAAxADMANgA5ADEA
-YQBhAGQANQBmADMAOABmAF8AYwBzAHAAcgBvAGoAXwBuAGUAdABfAHcAZQBiAHMAZQByAHYAaQBj
-AGUAeABfAHcAdwB3ADEAXwBDAHUAcgByAGUAbgBjAHkAQwBvAG4AdgBlAHIAdABvAHIAAICbSQBz
-AE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAA
-dABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0
-AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAB/UwBDAF8AMAA4AGEANwA4AGQA
-ZABlADkANQBhAGIANAAxAGYANQA4AGQAOAAxADMANgA5ADEAYQBhAGQANQBmADMAOABmAC4AYwBz
-AHAAcgBvAGoALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAB1DAG8A
-bgB2AGUAcgBzAGkAbwBuAFIAYQB0AGUAABNsAG8AYwBhAGwASABvAHMAdAAAAAAcCcWRwpSuToX2
-H9oRkRW1AAiJhF3NgIDMkQi3elxWGTTgiQiwP19/EdUKOgMGEhADBhIUAyAAAQMGEhwJIAMBCB0I
-HRIlBSABDhEoBiACAQ4RKAUgAREoDgMGEgUFIAEBEgUDIAAOAygADgMGEhgEAAASGAQIABIYByAC
-ARIlHQgEIAEBDgQgAQECBCABAQ0DIAACAygAAgMoAA0DBhIpAwYSLQQAABIpBAAAEi0FAAEBEi0E
-CAASKQQIABItAwYSMQIGAgMGEiwFIAEBEiwHIAINESgRKAcgAgERKBEoCCADAREoESgcBCABARwE
-IAECDgIGCAMGESgEAAAAAAQBAAAABAIAAAAEAwAAAAQEAAAABAUAAAAEBgAAAAQHAAAABAgAAAAE
-CQAAAAQKAAAABAsAAAAEDAAAAAQNAAAABA4AAAAEDwAAAAQQAAAABBEAAAAEEgAAAAQTAAAABBQA
-AAAEFQAAAAQWAAAABBcAAAAEGAAAAAQZAAAABBoAAAAEGwAAAAQcAAAABB0AAAAEHgAAAAQfAAAA
-BCAAAAAEIQAAAAQiAAAABCMAAAAEJAAAAAQlAAAABCYAAAAEJwAAAAQoAAAABCkAAAAEKgAAAAQr
-AAAABCwAAAAELQAAAAQuAAAABC8AAAAEMAAAAAQxAAAABDIAAAAEMwAAAAQ0AAAABDUAAAAENgAA
-AAQ3AAAABDgAAAAEOQAAAAQ6AAAABDsAAAAEPAAAAAQ9AAAABD4AAAAEPwAAAARAAAAABEEAAAAE
-QgAAAARDAAAABEQAAAAERQAAAARGAAAABEcAAAAESAAAAARJAAAABEoAAAAESwAAAARMAAAABE0A
-AAAETgAAAARPAAAABFAAAAAEUQAAAARSAAAABFMAAAAEVAAAAARVAAAABFYAAAAEVwAAAARYAAAA
-BFkAAAAEWgAAAARbAAAABFwAAAAEXQAAAAReAAAABF8AAAAEYAAAAARhAAAABGIAAAAEYwAAAARk
-AAAABGUAAAAEZgAAAARnAAAABGgAAAAEaQAAAARqAAAABGsAAAAEbAAAAARtAAAABG4AAAAEbwAA
-AARwAAAABHEAAAAEcgAAAARzAAAABHQAAAAEdQAAAAR2AAAABHcAAAAEeAAAAAR5AAAABHoAAAAE
-ewAAAAR8AAAABH0AAAAEfgAAAAR/AAAABIAAAAAEgQAAAASCAAAABIMAAAAEhAAAAASFAAAABIYA
-AAAEhwAAAASIAAAABIkAAAAEigAAAASLAAAABIwAAAAEjQAAAASOAAAABI8AAAAEkAAAAASRAAAA
-BJIAAAAEkwAAAASUAAAABJUAAAAElgAAAAUgAgEcGAYgAgEcEjAKIAQSNRwSMBI5HAUgAQESNQMG
-HRwJIAQBHRwSPQIcAyAADQQgAQEIBSABHQgIAwcBCAUHAg4RKAUHAg0SJAQAAQ0OBgABEnkRfQcA
-AxwSeQ4CBSAAEoCBBiABEoCFHAMgABwFIAIBDg5YAQBLTWljcm9zb2Z0LlZpc3VhbFN0dWRpby5F
-ZGl0b3JzLlNldHRpbmdzRGVzaWduZXIuU2V0dGluZ3NTaW5nbGVGaWxlR2VuZXJhdG9yBzkuMC4w
-LjAAAAQgARwOAwAAAQgAARKAlRKAlQYgAQERgKUIAQABAAAAAAA2AQAxaHR0cDovL3d3dy53ZWJz
-ZXJ2aWNleC5uZXQvQ3VycmVuY3lDb252ZXJ0b3IuYXNteAAABSACAQgcBSAAEoCxByACAQ4SgLEE
-BwESKQYgAQERgLkIAQACAAAAAAAnAQATU3lzdGVtLldlYi5TZXJ2aWNlcw4yLjAuNTA3MjcuMzA1
-MwAACQEABGNvZGUAAEkBAAIAVA4ETmFtZRVDdXJyZW5jeUNvbnZlcnRvclNvYXBUDglOYW1lc3Bh
-Y2UbaHR0cDovL3d3dy53ZWJzZXJ2aWNlWC5ORVQvCwACEoDNEoDNEoDNgb4BAClodHRwOi8vd3d3
-LndlYnNlcnZpY2VYLk5FVC9Db252ZXJzaW9uUmF0ZQQAVA4QUmVxdWVzdE5hbWVzcGFjZRtodHRw
-Oi8vd3d3LndlYnNlcnZpY2VYLk5FVC9UDhFSZXNwb25zZU5hbWVzcGFjZRtodHRwOi8vd3d3Lndl
-YnNlcnZpY2VYLk5FVC9UVYCGU3lzdGVtLldlYi5TZXJ2aWNlcy5EZXNjcmlwdGlvbi5Tb2FwQmlu
-ZGluZ1VzZSwgU3lzdGVtLldlYi5TZXJ2aWNlcywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5l
-dXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EDVXNlAgAAAFRVgIhTeXN0ZW0u
-V2ViLlNlcnZpY2VzLlByb3RvY29scy5Tb2FwUGFyYW1ldGVyU3R5bGUsIFN5c3RlbS5XZWIuU2Vy
-dmljZXMsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1i
-MDNmNWY3ZjExZDUwYTNhDlBhcmFtZXRlclN0eWxlAgAAAAcgAh0cDh0cBgcCHRwdHAkgBAEOHRwS
-MRwEBwEdHAQgAB0cBCAAEj0FBwESgNUCBg4FAAICDg4DIAAICAADCA4OEYDhBQcBEoDdHgEAClN5
-c3RlbS5YbWwOMi4wLjUwNzI3LjMwODIAACwBAAEAVA4JTmFtZXNwYWNlG2h0dHA6Ly93d3cud2Vi
-c2VydmljZVguTkVULwcgAwESPQIcLwEAKlNDXzA4YTc4ZGRlOTVhYjQxZjU4ZDgxMzY5MWFhZDVm
-MzhmLmNzcHJvagAABQEAAAAADAEAB1BIRU9OSVgAAB0BABhDb3B5cmlnaHQgQCBQSEVPTklYIDIw
-MTAAAAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwGoVAAAAAAAAAAAAAC+
-VAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsFQAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUu
-ZGxsAAAAAAD/JQAgQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAABgAAIAAAAAA
-AAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYYAAAMAQAAAAAAAAA
-AAAAMAQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAABAN5g
-3A8AAAEA3mDcDz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkAbABl
-AEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACwBJADAAABAFMA
-dAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAGwDAAABADAAMAAwADAAMAA0AGIAMAAAADAACAAB
-AEMAbwBtAHAAYQBuAHkATgBhAG0AZQAAAAAAUABIAEUATwBOAEkAWAAAAIAAKwABAEYAaQBsAGUA
-RABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAEMAXwAwADgAYQA3ADgAZABkAGUAOQA1AGEAYgA0
-ADEAZgA1ADgAZAA4ADEAMwA2ADkAMQBhAGEAZAA1AGYAMwA4AGYALgBjAHMAcAByAG8AagAAAAAA
-QAAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADQAMAA2ADAALgAyADQANwA5
-ADgAAAAAAIAALwABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AMAA4AGEANwA4AGQA
-ZABlADkANQBhAGIANAAxAGYANQA4AGQAOAAxADMANgA5ADEAYQBhAGQANQBmADMAOABmAC4AYwBz
-AHAAcgBvAGoALgBkAGwAbAAAAAAAWAAZAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAA
-QwBvAHAAeQByAGkAZwBoAHQAIABAACAAUABIAEUATwBOAEkAWAAgADIAMAAxADAAAAAAAIgALwAB
-AE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwAwADgAYQA3ADgAZABkAGUA
-OQA1AGEAYgA0ADEAZgA1ADgAZAA4ADEAMwA2ADkAMQBhAGEAZAA1AGYAMwA4AGYALgBjAHMAcABy
-AG8AagAuAGQAbABsAAAAAAB4ACsAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADAA
-OABhADcAOABkAGQAZQA5ADUAYQBiADQAMQBmADUAOABkADgAMQAzADYAOQAxAGEAYQBkADUAZgAz
-ADgAZgAuAGMAcwBwAHIAbwBqAAAAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4A
-AAAxAC4AMAAuADQAMAA2ADAALgAyADQANwA5ADgAAAAAAEgADwABAEEAcwBzAGUAbQBiAGwAeQAg
-AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADQAMAA2ADAALgAyADQANwA5ADgAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAADAAAANA0AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement></arrayElements></property>
-<property id="16" name="VSTAProjectName" dataType="System.String" state="default" isArray="false" description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package." typeConverter="NOTBROWSABLE" UITypeEditor="" containsID="false" expressionType="None">SC_08a78dde95ab41f58d813691aad5f38f</property>
-<property id="17" name="ScriptLanguage" dataType="System.String" state="default" isArray="false" description="Specifies the programming language used by the script." typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages, Microsoft.SqlServer.VSTAScriptingLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" UITypeEditor="" containsID="false" expressionType="None">CSharp</property>
-<property id="18" name="ReadOnlyVariables" dataType="System.String" state="default" isArray="false" description="Specifies a comma-separated list of read-only variables." typeConverter="" UITypeEditor="Microsoft.SqlServer.Dts.Pipeline.ScriptUIVariablePickerDlg, Microsoft.SqlServer.TxScript, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" containsID="false" expressionType="None">User::Value</property>
-<property id="19" name="ReadWriteVariables" dataType="System.String" state="default" isArray="false" description="Specifies a comma-separated list of read/write variables." typeConverter="" UITypeEditor="Microsoft.SqlServer.Dts.Pipeline.ScriptUIVariablePickerDlg, Microsoft.SqlServer.TxScript, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" containsID="false" expressionType="None"></property>
-<property id="20" name="BreakpointCollection" dataType="System.String" state="default" isArray="true" description="List of breakpoints present on the script." typeConverter="NOTBROWSABLE" UITypeEditor="" containsID="false" expressionType="None"><arrayElements arrayElementCount="0"/></property>
-<property id="21" name="UserComponentTypeName" dataType="System.String" state="default" isArray="false" description="" typeConverter="" UITypeEditor="" containsID="false" expressionType="None">Microsoft.SqlServer.Dts.Pipeline.ScriptComponentHost, Microsoft.SqlServer.TxScript, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property></properties>
-<outputs>
-<output id="13" name="Output 0" description="" exclusionGroup="0" synchronousInputId="0" deleteOutputOnPathDetached="false" hasSideEffects="true" dangling="false" isErrorOut="false" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
-<outputColumn id="24" name="CurrencyValue" description="" lineageId="24" precision="0" scale="0" length="50" dataType="str" codePage="1252" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
-<outputColumn id="23" name="ConversionRate" description="" lineageId="23" precision="0" scale="0" length="0" dataType="r8" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="0" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/></outputColumns><externalMetadataColumns isUsed="False"/></output>
-</outputs>
-</component>
-<component id="25" name="Update Currency" componentClassID="{8E61C8F6-C91D-43B6-97EB-3423C06571CC}" description="Executes an SQL command for each row in a dataset." localeId="-1" usesDispositions="true" validateExternalMetadata="True" version="2" pipelineVersion="0" contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
-<properties>
-<property id="26" name="CommandTimeout" dataType="System.Int32" state="default" isArray="false" description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">0</property>
-<property id="27" name="SqlCommand" dataType="System.String" state="default" isArray="false" description="The SQL command to be executed." typeConverter="" UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" containsID="false" expressionType="Notify">exec dbo.uspCurrencyUpdateExchangeRate ?,?</property>
-<property id="28" name="DefaultCodePage" dataType="System.Int32" state="default" isArray="false" description="Specifies the column code page to use when code page information is unavailable from the data source." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">1252</property></properties>
-<connections>
-<connection id="29" name="OleDbConnection" description="The OLE DB runtime connection used to access the database." connectionManagerID="{937146B2-617E-414A-85E7-5904AABE3E36}"/></connections>
-<inputs>
-<input id="30" name="OLE DB Command Input" description="" hasSideEffects="true" dangling="false" errorOrTruncationOperation="Command Execution" errorRowDisposition="FailComponent" truncationRowDisposition="NotUsed"><inputColumns>
-<inputColumn id="40" name="" description="" lineageId="24" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="36" mappedColumnId="0"/>
-<inputColumn id="41" name="" description="" lineageId="23" usageType="readOnly" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="38" mappedColumnId="0"/>
-</inputColumns><externalMetadataColumns isUsed="True">
-<externalMetadataColumn id="36" name="@Value" description="" precision="0" scale="0" length="3" dataType="str" codePage="1252" mappedColumnId="0"><properties>
-<property id="37" name="DBParamInfoFlags" dataType="System.Int32" state="default" isArray="false" description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">65</property></properties></externalMetadataColumn>
-<externalMetadataColumn id="38" name="@ExchangeRate" description="" precision="0" scale="0" length="0" dataType="r8" codePage="0" mappedColumnId="0"><properties>
-<property id="39" name="DBParamInfoFlags" dataType="System.Int32" state="default" isArray="false" description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values." typeConverter="" UITypeEditor="" containsID="false" expressionType="None">81</property></properties></externalMetadataColumn></externalMetadataColumns></input>
-</inputs>
-<outputs>
-<output id="31" name="OLE DB Command Output" description="" exclusionGroup="1" synchronousInputId="30" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="false" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><externalMetadataColumns isUsed="False"/></output>
-<output id="32" name="OLE DB Command Error Output" description="" exclusionGroup="1" synchronousInputId="30" deleteOutputOnPathDetached="false" hasSideEffects="false" dangling="false" isErrorOut="true" isSorted="false" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed"><outputColumns>
-<outputColumn id="33" name="ErrorCode" description="" lineageId="33" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="1" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/>
-<outputColumn id="34" name="ErrorColumn" description="" lineageId="34" precision="0" scale="0" length="0" dataType="i4" codePage="0" sortKeyPosition="0" comparisonFlags="0" specialFlags="2" errorOrTruncationOperation="" errorRowDisposition="NotUsed" truncationRowDisposition="NotUsed" externalMetadataColumnId="0" mappedColumnId="0"/></outputColumns><externalMetadataColumns isUsed="False"/></output>
-</outputs>
-</component>
-</components>
-<paths>
-<path id="35" name="Output 0" description="" startId="13" endId="30"/>
-</paths></pipeline></DTS:ObjectData></DTS:Executable>
-<DTS:Property DTS:Name="ObjectName">Loop Through Currencies</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{01BFFDD5-7A0B-4DC8-AD84-A3E6907EEDDC}</DTS:Property>
-<DTS:Property DTS:Name="Description">Foreach Loop Container</DTS:Property>
-<DTS:Property DTS:Name="CreationName">STOCK:FOREACHLOOP</DTS:Property>
-<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property>
-<DTS:ForEachVariableMapping>
-<DTS:Property DTS:Name="VariableName">User::Value</DTS:Property>
-<DTS:Property DTS:Name="ValueIndex" DTS:DataType="3">0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">{ED5F4122-FC0D-474A-B80F-FF79A937FE54}</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{ED5F4122-FC0D-474A-B80F-FF79A937FE54}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:ForEachVariableMapping></DTS:Executable>
-<DTS:PrecedenceConstraint>
-<DTS:Property DTS:Name="Value">0</DTS:Property>
-<DTS:Property DTS:Name="EvalOp">2</DTS:Property>
-<DTS:Property DTS:Name="LogicalAnd">-1</DTS:Property>
-<DTS:Property DTS:Name="Expression"></DTS:Property><DTS:Executable IDREF="{FEA7D784-4825-4B61-84EA-A47DD44E2251}" DTS:IsFrom="-1"/><DTS:Executable IDREF="{01BFFDD5-7A0B-4DC8-AD84-A3E6907EEDDC}" DTS:IsFrom="0"/>
-<DTS:Property DTS:Name="ObjectName">Constraint</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{C5F67B5F-CA7D-4853-AA08-A6925A056294}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PrecedenceConstraint>
-<DTS:Property DTS:Name="ObjectName">UpdateExchangeRate</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{855AF05D-820D-4311-8031-55076F8FF72E}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName">SSIS.Package.2</DTS:Property>
-<DTS:Property DTS:Name="DisableEventHandlers">0</DTS:Property>
-<DTS:PackageVariable>
-<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;TaskHost xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsDataFlowDiagram&gt;&lt;dwd:BoundingTop&gt;-500&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;
-  &lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout100" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout100" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="-1500" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="25612" y="13679" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="0" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;
-    &lt;font&gt;
-      &lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;
-    &lt;/font&gt;
-    &lt;mouseicon&gt;
-      &lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;
-    &lt;/mouseicon&gt;
-  &lt;/diagram&gt;
-  &lt;layoutmanager&gt;
-    &lt;ddsxmlobj /&gt;
-  &lt;/layoutmanager&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Executes a custom script." left="2223" top="3016" logicalid="4" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}/components/10" vartype="8" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Executes an SQL command for each row in a dataset." left="3943" top="7072" logicalid="5" controlid="2" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}/components/25" vartype="8" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="3623" top="3781" logicalid="6" controlid="3" masterid="0" hint1="0" hint2="0" width="2519" height="3791" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}/paths/35" vartype="8" /&gt;
-        &lt;property name="Virtual" value="0" vartype="11" /&gt;
-        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="1" destid="2" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
-      &lt;point x="4022" y="4180" /&gt;
-      &lt;point x="4022" y="5626" /&gt;
-      &lt;point x="5742" y="5626" /&gt;
-      &lt;point x="5742" y="7072" /&gt;
-    &lt;/connector&gt;
-  &lt;/ddscontrol&gt;
-&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortTop&gt;-1500&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsDataFlowDiagram&gt;&lt;/TaskHost&gt;</DTS:Property>
-<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{0695C3BA-6DA9-4E81-BF4E-5141A5D9E3AC}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
-<DTS:PackageVariable>
-<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;PipelinePath xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:SourceName&gt;Output 0&lt;/dwd:SourceName&gt;&lt;dwd:DestinationName&gt;OLE DB Command Input&lt;/dwd:DestinationName&gt;&lt;/PipelinePath&gt;</DTS:Property>
-<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}-35</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{A9E82DED-9B34-45FC-BB71-D7D31FE92C16}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
-<DTS:PackageVariable>
-<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-3&lt;/dwd:BoundingLeft&gt;&lt;dwd:Layout&gt;&lt;dds&gt;
-  &lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout100" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout100" version="7" nextobject="11" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1000" scrolltop="112" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="33602" y="13494" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;
-    &lt;font&gt;
-      &lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;
-    &lt;/font&gt;
-    &lt;mouseicon&gt;
-      &lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;
-    &lt;/mouseicon&gt;
-  &lt;/diagram&gt;
-  &lt;layoutmanager&gt;
-    &lt;ddsxmlobj /&gt;
-  &lt;/layoutmanager&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Get Currencies from Currency table" left="2307" top="0" logicalid="5" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{FEA7D784-4825-4B61-84EA-A47DD44E2251}" vartype="8" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsContainerObjectManagedBridge.2" tooltip="Foreach Loop Container" left="-3" top="2751" logicalid="6" controlid="2" masterid="0" hint1="0" hint2="0" width="8228" height="4498" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800002420000092110000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="Caption" value="Loop Through Currencies" vartype="8" /&gt;
-        &lt;property name="CaptionHeight" value="1164" vartype="3" /&gt;
-        &lt;property name="Collapsed" value="0" vartype="11" /&gt;
-        &lt;property name="CollapsedWidth" value="8228" vartype="3" /&gt;
-        &lt;property name="LogicalObject" value="{01BFFDD5-7A0B-4DC8-AD84-A3E6907EEDDC}" vartype="8" /&gt;
-        &lt;property name="RealHeight" value="0" vartype="3" /&gt;
-        &lt;property name="RealWidth" value="0" vartype="3" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="3707" top="765" logicalid="7" controlid="3" masterid="0" hint1="0" hint2="0" width="804" height="2486" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{C5F67B5F-CA7D-4853-AA08-A6925A056294}" vartype="8" /&gt;
-        &lt;property name="Virtual" value="0" vartype="11" /&gt;
-        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="1" destid="2" sourceattachpoint="7" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
-      &lt;point x="4106" y="1164" /&gt;
-      &lt;point x="4106" y="1957" /&gt;
-      &lt;point x="4111" y="1957" /&gt;
-      &lt;point x="4111" y="2751" /&gt;
-    &lt;/connector&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="2356" top="4662" logicalid="8" controlid="4" masterid="2" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}" vartype="8" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-1000&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;112&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
-<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">{855AF05D-820D-4311-8031-55076F8FF72E}</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{A2ED1D56-28EA-4DE8-B5EE-BA46A2497051}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
-<DTS:PackageVariable>
-<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
-<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">{C5F67B5F-CA7D-4853-AA08-A6925A056294}</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{A2C451D9-250D-40AD-B2F1-23309C3FC07B}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable>
-<DTS:PackageVariable>
-<DTS:Property DTS:Name="PackageVariableValue" DTS:DataType="8">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;-3&lt;/dwd:BoundingLeft&gt;&lt;dwd:Layout&gt;&lt;dds&gt;
-  &lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout100" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout100" version="7" nextobject="11" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1000" scrolltop="112" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="33602" y="13494" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;
-    &lt;font&gt;
-      &lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;
-    &lt;/font&gt;
-    &lt;mouseicon&gt;
-      &lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;
-    &lt;/mouseicon&gt;
-  &lt;/diagram&gt;
-  &lt;layoutmanager&gt;
-    &lt;ddsxmlobj /&gt;
-  &lt;/layoutmanager&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Get Currencies from Currency table" left="2307" top="0" logicalid="5" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{FEA7D784-4825-4B61-84EA-A47DD44E2251}" vartype="8" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsContainerObjectManagedBridge.2" tooltip="Foreach Loop Container" left="-3" top="2751" logicalid="6" controlid="2" masterid="0" hint1="0" hint2="0" width="8228" height="4498" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800002420000092110000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="Caption" value="Loop Through Currencies" vartype="8" /&gt;
-        &lt;property name="CaptionHeight" value="1164" vartype="3" /&gt;
-        &lt;property name="Collapsed" value="0" vartype="11" /&gt;
-        &lt;property name="CollapsedWidth" value="8228" vartype="3" /&gt;
-        &lt;property name="LogicalObject" value="{01BFFDD5-7A0B-4DC8-AD84-A3E6907EEDDC}" vartype="8" /&gt;
-        &lt;property name="RealHeight" value="0" vartype="3" /&gt;
-        &lt;property name="RealWidth" value="0" vartype="3" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="MSDDS.Polyline" left="3707" top="765" logicalid="7" controlid="3" masterid="0" hint1="0" hint2="0" width="804" height="2486" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{C5F67B5F-CA7D-4853-AA08-A6925A056294}" vartype="8" /&gt;
-        &lt;property name="Virtual" value="0" vartype="11" /&gt;
-        &lt;property name="VisibleAP" value="0" vartype="3" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout100" sourceid="1" destid="2" sourceattachpoint="7" destattachpoint="14" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;
-      &lt;point x="4106" y="1164" /&gt;
-      &lt;point x="4106" y="1957" /&gt;
-      &lt;point x="4111" y="1957" /&gt;
-      &lt;point x="4111" y="2751" /&gt;
-    &lt;/connector&gt;
-  &lt;/ddscontrol&gt;
-  &lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Data Flow Task" left="2356" top="4662" logicalid="8" controlid="4" masterid="2" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;
-    &lt;control&gt;
-      &lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;
-    &lt;/control&gt;
-    &lt;layoutobject&gt;
-      &lt;ddsxmlobj&gt;
-        &lt;property name="LogicalObject" value="{293CACE8-3B4B-483F-A7EC-6AEDA8514DF0}" vartype="8" /&gt;
-        &lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;
-      &lt;/ddsxmlobj&gt;
-    &lt;/layoutobject&gt;
-    &lt;shape groupshapeid="0" groupnode="0" /&gt;
-  &lt;/ddscontrol&gt;
-&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;dwd:PersistedViewPortLeft&gt;-1000&lt;/dwd:PersistedViewPortLeft&gt;&lt;dwd:PersistedViewPortTop&gt;112&lt;/dwd:PersistedViewPortTop&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
-<DTS:Property DTS:Name="Namespace">dts-designer-1.0</DTS:Property>
-<DTS:Property DTS:Name="ObjectName">package-diagram</DTS:Property>
-<DTS:Property DTS:Name="DTSID">{4DCC061A-2276-47A8-9B3D-43AB4542D93D}</DTS:Property>
-<DTS:Property DTS:Name="Description"></DTS:Property>
-<DTS:Property DTS:Name="CreationName"></DTS:Property></DTS:PackageVariable></DTS:Executable>
+#pragma warning restore 1591]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* Microsoft SQL Server Integration Services Script Component
+*  Write scripts using Microsoft Visual C# 2008.
+*  ScriptMain is the entry point class of the script.*/
+
+using Microsoft.SqlServer.Dts.Pipeline;
+using SC_08a78dde95ab41f58d813691aad5f38f.csproj.net.webservicex.www1;
+using System;
+
+[SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+          Add your code here for preprocessing or remove if not needed
+        */
+    }
+
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+          Add your code here for postprocessing or remove if not needed
+          You can set read/write variables here, for example:
+          Variables.MyIntVar = 100
+        */
+    }
+
+    public override void CreateNewOutputRows()
+    {
+        string response = string.Empty;
+        Currency inputCurrency = getCurrency(Variables.Value);
+        response = GetExchangeRate(inputCurrency);
+        processResponse(response, inputCurrency);
+    }
+
+    private string GetExchangeRate(Currency ToCurrency)
+    {
+        double conversionRate = 0;
+        CurrencyConvertor currConvertor = new CurrencyConvertor();
+
+        conversionRate = currConvertor.ConversionRate(Currency.AUD, ToCurrency);
+
+        //Add Margin of Safety to keep customers happy
+        conversionRate = conversionRate * 1.01;
+
+        return conversionRate.ToString();
+    }
+
+    private void processResponse(string resp, Currency toCurrency)
+    {
+        Output0Buffer.AddRow();
+        Output0Buffer.CurrencyValue = toCurrency.ToString();
+        Output0Buffer.ConversionRate = Convert.ToDouble(resp);
+    }
+
+    private Currency getCurrency(string inputValue)
+    {
+        return (Currency)Enum.Parse(typeof(Currency), inputValue, true);
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[app.config]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <applicationSettings>
+        <SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings>
+            <setting name="SC_08a78dde95ab41f58d813691aad5f38f_csproj_net_webservicex_www1_CurrencyConvertor"
+                serializeAs="String">
+                <value>http://www.webservicex.net/CurrencyConvertor.asmx</value>
+            </setting>
+        </SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties.Settings>
+    </applicationSettings>
+</configuration>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[web references\net.webservicex.www1\Reference.map]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.webservicex.net/CurrencyConvertor.asmx?wsdl" filename="CurrencyConvertor.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://www.webservicex.net/CurrencyConvertor.asmx?disco" filename="CurrencyConvertor.disco" />
+  </Results>
+</DiscoveryClientResultsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Settings.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[namespace SC_08a78dde95ab41f58d813691aad5f38f.csproj.Properties {
+    
+    
+    // This class allows you to handle specific events on the settings class:
+    //  The SettingChanging event is raised before a setting's value is changed.
+    //  The PropertyChanged event is raised after a setting's value is changed.
+    //  The SettingsLoaded event is raised after the setting values are loaded.
+    //  The SettingsSaving event is raised before the setting values are saved.
+    internal sealed partial class Settings {
+        
+        public Settings() {
+            // // To add event handlers for saving and changing settings, uncomment the lines below:
+            //
+            // this.SettingChanging += this.SettingChangingEventHandler;
+            //
+            // this.SettingsSaving += this.SettingsSavingEventHandler;
+            //
+        }
+        
+        private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e) {
+            // Add code to handle the SettingChangingEvent event here.
+        }
+        
+        private void SettingsSavingEventHandler(object sender, System.ComponentModel.CancelEventArgs e) {
+            // Add code to handle the SettingsSaving event here.
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_08a78dde95ab41f58d813691aad5f38f</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg">User::Value</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">c37283e74bce5aeb14a525d6dbb69cde</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop Through Currencies\Data Flow Task\WSCall.Connections[Connection]"
+                      connectionManagerID="Package.ConnectionManagers[APG-LAPTOP.eStore.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[APG-LAPTOP.eStore.sa]"
+                      name="Connection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0]"
+                      hasSideEffects="true"
+                      name="Output 0">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0].Columns[CurrencyValue]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0].Columns[CurrencyValue]"
+                          name="CurrencyValue" />
+                        <outputColumn
+                          refId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0].Columns[ConversionRate]"
+                          dataType="r8"
+                          lineageId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0].Columns[ConversionRate]"
+                          name="ConversionRate" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Loop Through Currencies\Data Flow Task.Paths[Output 0]"
+                  endId="Package\Loop Through Currencies\Data Flow Task\Update Currency.Inputs[OLE DB Command Input]"
+                  name="Output 0"
+                  startId="Package\Loop Through Currencies\Data Flow Task\WSCall.Outputs[Output 0]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{ED5F4122-FC0D-474A-B80F-FF79A937FE54}"
+          DTS:ObjectName="{ED5F4122-FC0D-474A-B80F-FF79A937FE54}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Value" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C5F67B5F-CA7D-4853-AA08-A6925A056294}"
+      DTS:From="Package\Get Currencies"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Loop Through Currencies" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Get Currencies"
+          TopLeft="92.6698113207547,5.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Loop Through Currencies\Data Flow Task"
+          TopLeft="89.0188679245283,29.1132075471698" />
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="310,126"
+          Size="310,170"
+          Id="Package\Loop Through Currencies"
+          TopLeft="5.5,109.311320754717" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="160.584905660377,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.811320754717"
+              Start="0,0"
+              End="0,52.311320754717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.311320754717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loop Through Currencies\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Loop Through Currencies\Data Flow Task\Update Currency"
+          TopLeft="70.4056603773585,158.556603773585" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Loop Through Currencies\Data Flow Task\WSCall"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Loop Through Currencies\Data Flow Task.Paths[Output 0]"
+          TopLeft="73.3867924528302,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.9056603773585,109.132075471698"
+              Start="0,0"
+              End="64.9056603773585,101.632075471698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5660377358491" />
+                  <mssgle:LineSegment
+                    End="64.9056603773585,54.5660377358491" />
+                  <mssgle:LineSegment
+                    End="64.9056603773585,101.632075471698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
