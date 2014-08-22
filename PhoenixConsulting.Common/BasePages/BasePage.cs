@@ -23,9 +23,6 @@
  * THE SOFTWARE.
  */
 #endregion
-using NLog;
-using phoenixconsulting.common.handlers;
-using phoenixconsulting.common.navigation;
 using System;
 using System.IO;
 using System.Text;
@@ -34,6 +31,9 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NLog;
+using phoenixconsulting.common.handlers;
+using phoenixconsulting.common.navigation;
 
 namespace phoenixconsulting.common.basepages {
     public class BasePage : Page {

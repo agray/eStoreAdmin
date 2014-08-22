@@ -23,11 +23,10 @@
  * THE SOFTWARE.
  */
 #endregion
-using eStoreAdminBLL;
-using NLog;
+using System;
+using System.IO;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
-using System.IO;
 
 namespace phoenixconsulting.epplus.readers {
     public class DepartmentReader : BaseReader {
@@ -91,25 +90,29 @@ namespace phoenixconsulting.epplus.readers {
             return (d.PrimaryKeyExists(departmentID));
         }
 
-        //private bool rowIsValid() {
-        //    departmentID = int.Parse(GetCellValueAsString(row.GetCell(0)));
-        //    name = GetCellValueAsString(row.GetCell(1));
-        //    seoTitle = GetCellValueAsString(row.GetCell(2));
-        //    seoKeywords = GetCellValueAsString(row.GetCell(3));
-        //    seoDescription = GetCellValueAsString(row.GetCell(4));
-        //    seoFriendlyName = GetCellValueAsString(row.GetCell(5));
+        private bool rowIsValid() {
+            departmentID = int.Parse(getCellValueAsString(row.GetCell(0)));
+            name = getCellValueAsString(row.GetCell(1));
+            seoTitle = getCellValueAsString(row.GetCell(2));
+            seoKeywords = getCellValueAsString(row.GetCell(3));
+            seoDescription = getCellValueAsString(row.GetCell(4));
+            seoFriendlyName = getCellValueAsString(row.GetCell(5));
 
-        //    try {
-        //        return Validator.ValidateInt(departmentID.ToString()) &&
-        //               Validator.ValidateAlpha(name) &&
-        //               Validator.ValidateAlpha(seoTitle) &&
-        //               Validator.ValidateAlpha(seoKeywords) &&
-        //               Validator.ValidateAlpha(seoDescription) &&
-        //               Validator.ValidateAlpha(seoFriendlyName);
-        //    } catch(ArgumentException) {
-        //        return false;
-        //    }
-        //}
+            try {
+                if(Validator.validateInt(departmentID.ToString()) &&
+                   Validator.validateAlpha(name) &&
+                   Validator.validateAlpha(seoTitle) &&
+                   Validator.validateAlpha(seoKeywords) &&
+                   Validator.validateAlpha(seoDescription) &&
+                   Validator.validateAlpha(seoFriendlyName)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch(ArgumentException) {
+                return false;
+            }
+        }
 
         private void updateRow() {
             DepartmentsBLL d = new DepartmentsBLL();

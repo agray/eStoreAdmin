@@ -25,10 +25,6 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
-using eStoreAdminBLL;
-using NLog;
-using eStoreAdminDAL;
-using OfficeOpenXml;
 
 namespace phoenixconsulting.epplus.writers {
     public class SupplierWriter : BaseWriter {
@@ -38,11 +34,11 @@ namespace phoenixconsulting.epplus.writers {
         private const string exportFilename = "Suppliers.xls";
         private const string sheetTitle = "Supplier Extract";
 
-        public override string GetFilename() {
+        public override string getFilename() {
             return exportFilename;
         }
 
-        public override MemoryStream Write(string rootPath) {
+        public override MemoryStream write(string rootPath) {
             InitializeWorkbook(rootPath, template, sheetTitle);
             return createSheetInMemory();
         }
@@ -53,41 +49,46 @@ namespace phoenixconsulting.epplus.writers {
 
             DAL.SupplierDataTable supplierDataTable = (new SuppliersBLL()).GetSuppliers();
 
-            ExcelWorksheet sheet1 = package.Workbook.Worksheets[sheetName];
-            int lastRowNum;
+            ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
 
             int rowCount = 1;
             int colCount = 0;
 
             foreach(DAL.SupplierRow row in supplierDataTable.Rows) {
-                sheet1.InsertRow(sheet1.Dimension.End.Row, 1);
-                lastRowNum = sheet1.Dimension.End.Row;
+                IRow excelRow = sheet1.CreateRow(rowCount);
                 colCount = 0;
 
-                SetCellValueAndFormat(lastRowNum, colCount++, row["ID"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["CompanyName"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["ContactName"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["Address"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["CitySuburb"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["StateProvinceRegion"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["ZipPostcode"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["Country"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["BusinessPhone"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["MobilePhone"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["EmailAddress"]);
+                setCellValueAndFormat(excelRow, colCount++, row["ID"]);
+                setCellValueAndFormat(excelRow, colCount++, row["CompanyName"]);
+                setCellValueAndFormat(excelRow, colCount++, row["ContactName"]);
+                setCellValueAndFormat(excelRow, colCount++, row["Address"]);
+                setCellValueAndFormat(excelRow, colCount++, row["CitySuburb"]);
+                setCellValueAndFormat(excelRow, colCount++, row["StateProvinceRegion"]);
+                setCellValueAndFormat(excelRow, colCount++, row["ZipPostcode"]);
+                setCellValueAndFormat(excelRow, colCount++, row["Country"]);
+                setCellValueAndFormat(excelRow, colCount++, row["BusinessPhone"]);
+                setCellValueAndFormat(excelRow, colCount++, row["MobilePhone"]);
+                setCellValueAndFormat(excelRow, colCount++, row["EmailAddress"]);
                 
-                AddBorder(lastRowNum);
+                addBorder(excelRow, colCount);
 
                 rowCount++;
             }
 
-            sheet1.Cells[sheet1.Dimension.Address].AutoFitColumns();
-            sheet1.Cells[sheet1.Dimension.Address].AutoFilter = true;
+            for(int col = 0; col < colCount; col++) {
+                sheet1.AutoSizeColumn(col);
+            }
+
+            sheet1.SetAutoFilter(getBoundingRange(rowCount, colCount));
 
             logger.Debug("Exported {0} suppliers", supplierDataTable.Rows.Count);
             logger.Debug("Completed SupplierWriter.createSheetInMemory");
 
             return WriteToStream();
+        }
+
+        private CellRangeAddress getBoundingRange(int rows, int cols) {
+            return new CellRangeAddress(0, rows, 0, cols - 1);
         }
     }
 }

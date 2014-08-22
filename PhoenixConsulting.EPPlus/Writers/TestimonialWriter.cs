@@ -25,10 +25,6 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
-using NLog;
-using eStoreAdminDAL;
-using eStoreAdminBLL;
-using OfficeOpenXml;
 
 namespace phoenixconsulting.epplus.writers {
     public class TestimonialWriter : BaseWriter {
@@ -38,11 +34,11 @@ namespace phoenixconsulting.epplus.writers {
         private const string exportFilename = "Testimonials.xls";
         private const string sheetTitle = "Testimonial Extract";
 
-        public override string GetFilename() {
+        public override string getFilename() {
             return exportFilename;
         }
 
-        public override MemoryStream Write(string rootPath) {
+        public override MemoryStream write(string rootPath) {
             InitializeWorkbook(rootPath, template, sheetTitle);
             return createSheetInMemory();
         }
@@ -52,35 +48,41 @@ namespace phoenixconsulting.epplus.writers {
             logger.Debug("Starting TestimonialWriter");
 
             DAL.TestimonialsDataTable testimonialDataTable = (new TestimonialBLL()).GetTestimonials();
-
-            ExcelWorksheet sheet1 = package.Workbook.Worksheets[sheetName];
-            int lastRowNum;
+            
+            ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
+            IRow excelRow;
 
             int rowCount = 1;
             int colCount = 0;
 
             foreach(DAL.TestimonialsRow row in testimonialDataTable.Rows) {
-                sheet1.InsertRow(sheet1.Dimension.End.Row, 1);
-                lastRowNum = sheet1.Dimension.End.Row;
+                excelRow = sheet1.CreateRow(rowCount);
                 colCount = 0;
 
-                SetCellValueAndFormat(lastRowNum, colCount++, row["ID"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["CustomerName"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["CustomerCountry"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["TestimonialText"]);
+                setCellValueAndFormat(excelRow, colCount++, row["ID"]);
+                setCellValueAndFormat(excelRow, colCount++, row["CustomerName"]);
+                setCellValueAndFormat(excelRow, colCount++, row["CustomerCountry"]);
+                setCellValueAndFormat(excelRow, colCount++, row["TestimonialText"]);
 
-                AddBorder(lastRowNum);
+                addBorder(excelRow, colCount);
 
                 rowCount++;
             }
 
-            sheet1.Cells[sheet1.Dimension.Address].AutoFitColumns();
-            sheet1.Cells[sheet1.Dimension.Address].AutoFilter = true;
+            for(int col = 0; col < colCount; col++) {
+                sheet1.AutoSizeColumn(col);
+            }
+
+            sheet1.SetAutoFilter(getBoundingRange(rowCount, colCount));
 
             logger.Debug("Exported {0} testimonials", testimonialDataTable.Rows.Count);
             logger.Debug("Completed TestimonialWriter.createSheetInMemory");
 
             return WriteToStream();
+        }
+
+        private CellRangeAddress getBoundingRange(int rows, int cols) {
+            return new CellRangeAddress(0, rows, 0, cols - 1);
         }
     }
 }

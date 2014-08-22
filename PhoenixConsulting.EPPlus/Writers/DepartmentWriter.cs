@@ -25,10 +25,6 @@
 #endregion
 using System.IO;
 using phoenixconsulting.epplus.Base;
-using NLog;
-using eStoreAdminBLL;
-using eStoreAdminDAL;
-using OfficeOpenXml;
 
 namespace phoenixconsulting.npoi {
     public class DepartmentWriter : BaseWriter {
@@ -38,11 +34,11 @@ namespace phoenixconsulting.npoi {
         private const string exportFilename = "Departments.xls";
         private const string sheetTitle = "Department Extract";
 
-        public override string GetFilename() {
+        public override string getFilename() {
             return exportFilename;
         }
 
-        public override MemoryStream Write(string rootPath) {
+        public override MemoryStream write(string rootPath) {
             InitializeWorkbook(rootPath, template, sheetTitle);
             return createSheetInMemory();
         }
@@ -55,36 +51,42 @@ namespace phoenixconsulting.npoi {
             DAL.DepartmentDataTable departmentDataTable = null;
             departmentDataTable = departmentAdapter.GetDepartments();
 
-            ExcelWorksheet sheet1 = package.Workbook.Worksheets[sheetName];
-            int lastRowNum;
+            ISheet sheet1 = hssfworkbook.GetSheet(sheetName);
+            IRow excelRow;
 
             int rowCount = 1;
             int colCount = 0;
             
             foreach(DAL.DepartmentRow row in departmentDataTable.Rows) {
-                sheet1.InsertRow(sheet1.Dimension.End.Row, 1);
-                lastRowNum = sheet1.Dimension.End.Row;
+                excelRow = sheet1.CreateRow(rowCount);
                 colCount = 0;
 
-                SetCellValueAndFormat(lastRowNum, colCount++, row["ID"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["Name"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["SEOTitle"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["SEOKeywords"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["SEODescription"]);
-                SetCellValueAndFormat(lastRowNum, colCount++, row["SEOFriendlyNameURL"]);
+                setCellValueAndFormat(excelRow, colCount++, row["ID"]);
+                setCellValueAndFormat(excelRow, colCount++, row["Name"]);
+                setCellValueAndFormat(excelRow, colCount++, row["SEOTitle"]);
+                setCellValueAndFormat(excelRow, colCount++, row["SEOKeywords"]);
+                setCellValueAndFormat(excelRow, colCount++, row["SEODescription"]);
+                setCellValueAndFormat(excelRow, colCount++, row["SEOFriendlyNameURL"]);
 
-                AddBorder(lastRowNum);
+                addBorder(excelRow, colCount);
 
                 rowCount++;
             }
 
-            sheet1.Cells[sheet1.Dimension.Address].AutoFitColumns();
-            sheet1.Cells[sheet1.Dimension.Address].AutoFilter = true;
+            for(int col = 0; col < colCount; col++) {
+                sheet1.AutoSizeColumn(col, true);
+            }
+
+            sheet1.SetAutoFilter(getBoundingRange(rowCount, colCount));
 
             logger.Debug("Exported {0} departments", departmentDataTable.Rows.Count);
             logger.Debug("Completed DepartmentWriter.createSheetInMemory");
 
             return WriteToStream();
+        }
+
+        private CellRangeAddress getBoundingRange(int rows, int cols) {
+            return new CellRangeAddress(0, rows, 0, cols - 1);
         }
     }
 }

@@ -27,9 +27,6 @@ using System;
 using System.IO;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
-using NLog;
-using eStoreAdminBLL;
-using com.phoenixconsulting.epplus.validators;
 
 namespace phoenixconsulting.epplus.readers {
     public class ProductPricingReader : BaseReader {
@@ -93,21 +90,25 @@ namespace phoenixconsulting.epplus.readers {
             return (p.PrimaryKeyExists(int.Parse(prodID)));
         }
 
-        //private bool rowIsValid() {
-        //    prodID = GetCellValueAsString(row.GetCell(0));
-        //    unitPrice = GetCellValueAsString(row.GetCell(2));
-        //    discountPrice = GetCellValueAsString(row.GetCell(3));
-        //    wholesalePrice = GetCellValueAsString(row.GetCell(4));
+        private bool rowIsValid() {
+            prodID = getCellValueAsString(row.GetCell(0));
+            unitPrice = getCellValueAsString(row.GetCell(2));
+            discountPrice = getCellValueAsString(row.GetCell(3));
+            wholesalePrice = getCellValueAsString(row.GetCell(4));
 
-        //    try {
-        //        return Validator.ValidateInt(prodID.ToString()) &&
-        //               Validator.ValidateDouble(unitPrice.ToString()) &&
-        //               Validator.ValidateDouble(discountPrice.ToString()) &&
-        //               Validator.ValidateDouble(wholesalePrice.ToString());
-        //    } catch(ArgumentException) {
-        //        return false;
-        //    }
-        //}
+            try {
+                if(Validator.validateInt(prodID.ToString()) &&
+                   Validator.validateDouble(unitPrice.ToString()) &&
+                   Validator.validateDouble(discountPrice.ToString()) &&
+                   Validator.validateDouble(wholesalePrice.ToString())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch(ArgumentException) {
+                return false;
+            }
+        }
 
         private void updateRow(ExcelRow row) {
             ProductsBLL p = new ProductsBLL();

@@ -27,9 +27,6 @@ using System;
 using System.IO;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
-using NLog;
-using eStoreAdminBLL;
-using com.phoenixconsulting.epplus.validators;
 
 namespace phoenixconsulting.epplus.readers {
     public class ProductInventoryReader : BaseReader {
@@ -88,37 +85,37 @@ namespace phoenixconsulting.epplus.readers {
                         updatedCount + " updated and " + insertedCount + " inserted rows.");
         }
 
-        //private bool rowIsValid() {
-        //    prodID = GetCellValueAsString(row.GetCell(0));
-        //    unitsInStock = GetCellValueAsString(row.GetCell(2));
-        //    unitsOnOrder = GetCellValueAsString(row.GetCell(3));
-        //    reorderLevel = GetCellValueAsString(row.GetCell(4));
+        private bool rowIsValid() {
+            prodID = getCellValueAsString(row.GetCell(0));
+            unitsInStock = getCellValueAsString(row.GetCell(2));
+            unitsOnOrder = getCellValueAsString(row.GetCell(3));
+            reorderLevel = getCellValueAsString(row.GetCell(4));
 
-        //    try {
-        //        if(Validator.ValidateInt(prodID.ToString()) &&
-        //           Validator.ValidateInt(unitsInStock.ToString()) &&
-        //           Validator.ValidateInt(unitsOnOrder.ToString()) &&
-        //           Validator.ValidateInt(reorderLevel.ToString())) {
-        //            return true;
-        //        } else {
-        //            return false;
-        //        }
-        //    } catch(ArgumentException) {
-        //        return false;
-        //    }
-        //}
+            try {
+                if(Validator.validateInt(prodID.ToString()) &&
+                   Validator.validateInt(unitsInStock.ToString()) &&
+                   Validator.validateInt(unitsOnOrder.ToString()) &&
+                   Validator.validateInt(reorderLevel.ToString())) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch(ArgumentException) {
+                return false;
+            }
+        }
 
-        //private bool updateInventoryRequirementsMet() {
-        //    ProductsBLL p = new ProductsBLL();
-        //    return (p.PrimaryKeyExists(int.Parse(prodID)));
-        //}
+        private bool updateInventoryRequirementsMet() {
+            ProductsBLL p = new ProductsBLL();
+            return (p.PrimaryKeyExists(int.Parse(prodID)));
+        }
 
-        //private void updateRow() {
-        //    ProductsBLL p = new ProductsBLL();
-        //    p.UpdateProductInventoryFromExcel(int.Parse(prodID), 
-        //                                      int.Parse(unitsInStock), 
-        //                                      int.Parse(unitsOnOrder), 
-        //                                      int.Parse(reorderLevel));
-        //}
+        private void updateRow() {
+            ProductsBLL p = new ProductsBLL();
+            p.UpdateProductInventoryFromExcel(int.Parse(prodID), 
+                                              int.Parse(unitsInStock), 
+                                              int.Parse(unitsOnOrder), 
+                                              int.Parse(reorderLevel));
+        }
     }
 }

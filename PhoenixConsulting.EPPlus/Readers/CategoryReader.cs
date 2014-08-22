@@ -27,9 +27,6 @@ using System;
 using System.IO;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
-using NLog;
-using eStoreAdminBLL;
-using com.phoenixconsulting.epplus.validators;
 
 namespace phoenixconsulting.epplus.readers {
     public class CategoryReader : BaseReader {
@@ -93,27 +90,27 @@ namespace phoenixconsulting.epplus.readers {
             return (c.PrimaryKeyExists(categoryID));
         }
 
-        //private bool rowIsValid() {
-        //    categoryID = int.Parse(GetCellValueAsString(row.GetCell(0)));
-        //    name = GetCellValueAsString(row.GetCell(1));
-        //    description = GetCellValueAsString(row.GetCell(2));
-        //    seoTitle = GetCellValueAsString(row.GetCell(3));
-        //    seoKeywords = GetCellValueAsString(row.GetCell(4));
-        //    seoDescription = GetCellValueAsString(row.GetCell(5));
-        //    seoFriendlyName = GetCellValueAsString(row.GetCell(6));
+        private bool rowIsValid() {
+            categoryID = int.Parse(getCellValueAsString(row.GetCell(0)));
+            name = getCellValueAsString(row.GetCell(1));
+            description = getCellValueAsString(row.GetCell(2));
+            seoTitle = getCellValueAsString(row.GetCell(3));
+            seoKeywords = getCellValueAsString(row.GetCell(4));
+            seoDescription = getCellValueAsString(row.GetCell(5));
+            seoFriendlyName = getCellValueAsString(row.GetCell(6));
 
-        //    try {
-        //        return Validator.ValidateInt(categoryID.ToString()) &&
-        //               Validator.ValidateAlpha(name) &&
-        //               Validator.ValidateAlpha(description) &&
-        //               Validator.ValidateAlpha(seoTitle) &&
-        //               Validator.ValidateAlpha(seoKeywords) &&
-        //               Validator.ValidateAlpha(seoDescription) &&
-        //               Validator.ValidateAlpha(seoFriendlyName);
-        //    } catch(ArgumentException) {
-        //        return false;
-        //    }
-        //}
+            try {
+                return Validator.validateInt(categoryID.ToString()) &&
+                       Validator.validateAlpha(name) &&
+                       Validator.validateAlpha(description) &&
+                       Validator.validateAlpha(seoTitle) &&
+                       Validator.validateAlpha(seoKeywords) &&
+                       Validator.validateAlpha(seoDescription) &&
+                       Validator.validateAlpha(seoFriendlyName);
+            } catch(ArgumentException) {
+                return false;
+            }
+        }
 
         private void updateRow() {
             CategoriesBLL c = new CategoriesBLL();

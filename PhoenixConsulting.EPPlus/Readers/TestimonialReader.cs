@@ -27,9 +27,6 @@ using System;
 using System.IO;
 using OfficeOpenXml;
 using phoenixconsulting.epplus.Base;
-using NLog;
-using eStoreAdminBLL;
-using com.phoenixconsulting.epplus.validators;
 
 namespace phoenixconsulting.epplus.readers {
     public class TestimonialReader : BaseReader {
@@ -106,20 +103,24 @@ namespace phoenixconsulting.epplus.readers {
             return (!(t.PrimaryKeyExists(testimonialID)));
         }
 
-        //private bool rowIsValid() {
-        //    testimonialID = int.Parse(GetCellValueAsString(row.GetCell(0)));
-        //    customerName = GetCellValueAsString(row.GetCell(1));
-        //    customerCountry = GetCellValueAsString(row.GetCell(2));
-        //    testimonialText = GetCellValueAsString(row.GetCell(3));
+        private bool rowIsValid() {
+            testimonialID = int.Parse(getCellValueAsString(row.GetCell(0)));
+            customerName = getCellValueAsString(row.GetCell(1));
+            customerCountry = getCellValueAsString(row.GetCell(2));
+            testimonialText = getCellValueAsString(row.GetCell(3));
 
-        //    try {
-        //        return Validator.ValidateInt(testimonialID.ToString()) &&
-        //               Validator.ValidateAlpha(customerName) &&
-        //               Validator.ValidateAlpha(customerCountry);
-        //    } catch (ArgumentException){
-        //        return false;
-        //    }
-        //}
+            try {
+                if(Validator.validateInt(testimonialID.ToString()) &&
+                   Validator.validateAlpha(customerName) &&
+                   Validator.validateAlpha(customerCountry)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (ArgumentException){
+                return false;
+            }
+        }
 
         private void updateRow() {
             TestimonialBLL t = new TestimonialBLL();

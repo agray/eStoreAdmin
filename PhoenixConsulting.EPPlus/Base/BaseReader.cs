@@ -23,14 +23,12 @@
  * THE SOFTWARE.
  */
 #endregion
-using OfficeOpenXml;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace phoenixconsulting.epplus.Base {
     public class BaseReader {
-        protected String GetCellValueAsString(ExcelRow row) {
-            return row.ToString();
-        }
-
     }
 }

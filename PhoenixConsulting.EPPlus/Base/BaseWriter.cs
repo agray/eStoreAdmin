@@ -23,22 +23,22 @@
  * THE SOFTWARE.
  */
 #endregion
-using com.phoenixconsulting.epplus.Base;
+using System.IO;
 using OfficeOpenXml;
 using OfficeOpenXml.Style;
-using System.Drawing;
-using System.IO;
 
 namespace phoenixconsulting.epplus.Base {
-    public abstract class BaseWriter {
-        protected ExcelPackage package;
+    public class BaseWriter {
+        protected ExcelWorkbook excelWorkbook;
 
-        public abstract string GetFilename();
-        public abstract MemoryStream Write(string rootPath);
+        public abstract string getFilename();
+        public abstract MemoryStream write(string rootPath);
 
         protected MemoryStream WriteToStream() {
             //Write the stream data of workbook to the root directory
-            return new MemoryStream(package.GetAsByteArray());
+            MemoryStream stream = new MemoryStream();
+            hssfworkbook.Write(stream);
+            return stream;
         }
 
         protected void InitializeWorkbook(string rootPath, string template, string sheetTitle) {
@@ -46,58 +46,83 @@ namespace phoenixconsulting.epplus.Base {
             //template is an Excel-2007-generated file, so some new unknown BIFF records are added. 
             FileStream file = new FileStream(rootPath + template, FileMode.Open, FileAccess.Read);
 
-            package = new ExcelPackage(file);
-            package.Workbook.Properties.Company = "Full Circle Solutions";
-            package.Workbook.Properties.Subject = "eStore Extract";
-            package.Workbook.Properties.Author = "Full Circle Solutions";
-            package.Workbook.Properties.Title = sheetTitle;
+            hssfworkbook = new HSSFWorkbook(file);
+
+            //create a entry of DocumentSummaryInformation
+            DocumentSummaryInformation dsi = PropertySetFactory.CreateDocumentSummaryInformation();
+            dsi.Company = "Pheonix Consulting";
+            hssfworkbook.DocumentSummaryInformation = dsi;
+
+            //create a entry of SummaryInformation
+            SummaryInformation si = PropertySetFactory.CreateSummaryInformation();
+            si.Subject = "eStore Extract";
+            si.Author = "Pheonix Consulting";
+            si.Title = sheetTitle;
+            hssfworkbook.SummaryInformation = si;
         }
 
-        protected void AddBorder(int rownum) {
+        protected void addBorder(ExcelRow excelRow, int cols) {
             // Style the cell with borders all around.
-            ExcelRow row = package.Workbook.Worksheets[0].Row(rownum);
-            row.Style.Border.BorderAround(ExcelBorderStyle.Thin, Color.Black);
+            ExcelStyles styles = excelWorkbook.Styles;
+            styles.Borders.BorderBottom = ExcelBorderStyle.Thin;
+            styles.BottomBorderColor = HSSFColor.BLACK.index;
+            styles.BorderLeft = ExcelBorderStyle.Thin;
+            styles.LeftBorderColor = HSSFColor.BLACK.index;
+            styles.BorderRight = ExcelBorderStyle.Thin;
+            styles.RightBorderColor = HSSFColor.BLACK.index;
+            styles.BorderTop = ExcelBorderStyle.Thin;
+            styles.TopBorderColor = HSSFColor.BLACK.index;
+
+            for(int i = 0; i < cols; i++) {
+                ExcelCell cell = excelRow.GetCell(i);
+                cell.CellStyle = styles;
+            }
         }
 
-        protected void SetCellValueAndFormat(int row, int col, object value, DataFormat dfrmt = DataFormat.NONE) {
-            ExcelWorksheet sheet = package.Workbook.Worksheets[0];
-            ExcelRange cell = sheet.Cells[row, col];
-            
+        protected void setCellValueAndFormat(ExcelRow row, int colCount, object value, DataFormat dfrmt = ExcelDataFormat.NONE) {
+            ExcelCellBase cell = row.CreateCell(colCount);
             string val = value.ToString();
 
             if(dfrmt.Equals(DataFormat.NONE)) {
-                package.Workbook.Worksheets[0].Cells[row, col].Value = val;
+                cell.SetCellValue(val);
             } else {
+                IDataFormat format = workbook.CreateDataForm();
+                ICellStyle cellStyle = ExcelWorkbook.CreateCellStyle();
                 double dbl;
 
                 switch(dfrmt) {
                     case DataFormat.PLAIN_NUMBER:
                         double.TryParse(val, out dbl);
-                        cell.Value = dbl;
-                        cell.Style.Numberformat.Format = "0";
+                        cell.SetCellValue(dbl);
+                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0.00");
                         break;
                     case DataFormat.PERCENT:
-                        cell.Value = val;
-                        cell.Style.Numberformat.Format = "0%";
+                        cell.SetCellValue(val);
+                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0.00%");
                         break;
                     case DataFormat.CURRENCY:
                         double.TryParse(val, out dbl);
-                        cell.Value = dbl;
-                        cell.Style.Numberformat.Format = "$#,##0.00";
+                        cell.SetCellValue(dbl);
+                        cellStyle.DataFormat = format.GetFormat("$#,##0.00");
+                        break;
+                    case DataFormat.SCIENTIFIC:
+                        cell.SetCellValue(val);
+                        cellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("0.00E+00");
                         break;
                     case DataFormat.PHONE_NUMBER:
-                        cell.Value = val;
-                        cell.Style.Numberformat.Format = "000-00000000";
+                        cell.SetCellValue(val);
+                        cellStyle.DataFormat = format.GetFormat("000-00000000");
                         break;
                     case DataFormat.CHINESE_CAPS_NUM:
-                        cell.Value = val;
-                        cell.Style.Numberformat.Format = "[DbNum2][$-804]0 元";
+                        cell.SetCellValue(val);
+                        cellStyle.DataFormat = format.GetFormat("[DbNum2][$-804]0 元");
                         break;
                     case DataFormat.CHINESE_DATE_STRING:
-                        cell.Value = val;
-                        cell.Style.Numberformat.Format = "yyyy年m月d日";
+                        cell.SetCellValue(val);
+                        cellStyle.DataFormat = format.GetFormat("yyyy年m月d日");
                         break;
                 }
+                cell.CellStyle = cellStyle;
             }
         }
     }
